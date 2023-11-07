@@ -4,20 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecretSantaApp.Model
+namespace Barroc_intens.Model
+
 {
-    internal class User
+    public class User
     {
+        public User()
+        {
+        }
+
+        public User(int id, string username, string password)
+        {
+            Id = id;
+            Username = username;
+            Password = password;
+        }
+
         public int Id { get; set; }
         public string Username { get; set; }
-        public bool IsAdmin { get; set; }
-        public int? PickedUserId { get; set; }
-
-        public User(string username)
-        {
-            this.Username = username;
-            this.IsAdmin = false;
-            this.PickedUserId = null;
-        }
+        public string Password { get; set; }
     }
 }

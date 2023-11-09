@@ -25,5 +25,9 @@ namespace Barroc_intens.Model
         public string Username { get; set; }
         public string Password { get; set; }
         public string JobFunction { get; set; }
+
+        public ICollection<Company> Companys { get; set; }
+
+    
     }
 }

@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Barroc_intens.Model;
 
 namespace Barroc_intens
 {
     internal class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Company> Companies { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
@@ -34,6 +34,28 @@ namespace Barroc_intens
                     Password = "test",
                 }
             );
+            modelBuilder.Entity<Company>().HasData(
+               new Company
+               {
+                   Id = 1,
+                   Name = "action",
+                   phone = 1234567890,
+                   street = "LangeStraat",
+                   houseNumber = 69,
+                   city = "breda",
+                   countryCode = 133,
+                },
+               new Company
+               {
+                   Id = 2,
+                   Name = "action",
+                   phone = 1234567890,
+                   street = "LangeStraat",
+                   houseNumber = 69,
+                   city = "breda",
+                   countryCode = 133,
+               }
+           );
         }
     }
 }

@@ -20,7 +20,6 @@ namespace Barroc_intens.Model
         public string CountryCode { get; set; }
         public DateTime? BkrCheckedAt { get; set; } // ? is voor nullable?
 
-        //public User Contact { get; set; } // UserId van degene die admin is van bedrijf, die moet Notes kunnen maken
 
 
     }

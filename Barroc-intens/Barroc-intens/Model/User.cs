@@ -16,13 +16,14 @@ namespace Barroc_intens.Model
         {
         }
 
-        public User(int id, string username, string password, string email, string jobfunction)
+        public User(int id, string username, string password, string email, JobFunction jobfunction)
         {
             Id = id;
             Username = username;
             Password = password;
             Email = email;
-            JobFunction = jobfunction;
+            JobFunction = jobfunction
+;
         }
         public int Id { get; set; }
         public string Username { get; set; }

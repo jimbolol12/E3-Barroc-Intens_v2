@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Barroc_intens.Model;
 
-namespace Barroc_intens
+namespace Barroc_intens.Data
 {
     internal class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
@@ -82,6 +82,45 @@ namespace Barroc_intens
                     Username = "Paul",
                     Password = "wachtwoord321",
                     JobFunction = "HoofdmedewerkerMaintenance"
+                }
+            );
+
+            modelBuilder.Entity<Product>().HasData(
+                new Product
+                {
+                    Id = "S234FREKT",
+                    Name = "Barroc Intens Italian Light",
+                    Dimensions = "",
+                    Description = "",
+                    Price = 499,
+                    Storage = 100,
+                },
+                new Product
+                {
+                    Id = "S234KNDPF",
+                    Name = "Barroc Intens Italian",
+                    Dimensions = "",
+                    Description = "",
+                    Price = 599,
+                    Storage = 100,
+                },
+                new Product
+                {
+                    Id = "S234NNBMV",
+                    Name = "Barroc Intens Italian Deluxe",
+                    Dimensions = "",
+                    Description = "",
+                    Price = 799,
+                    Storage = 100,
+                },
+                new Product
+                {
+                    Id = "S234MMPLA",
+                    Name = "Barroc Intens Italian Deluxe Special",
+                    Dimensions = "",
+                    Description = "",
+                    Price = 999,
+                    Storage = 100,
                 }
             );
         }

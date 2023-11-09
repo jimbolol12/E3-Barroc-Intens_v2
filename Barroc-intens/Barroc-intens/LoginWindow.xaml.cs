@@ -78,7 +78,7 @@ namespace Barroc_intens
                     hoofdmedewerkerWindow.Activate();
                 }
 
-                if (user.JobFunction == "PlannerMaintenance")
+                if (user.JobFunction == "Planner")
                 {
                     var plannerWindow = new PlannerMaintenanceWindow();
                     plannerWindow.Activate();

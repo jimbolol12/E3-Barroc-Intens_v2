@@ -33,12 +33,17 @@ namespace Barroc_intens
 
         }
 
-        private void BContact_Click(object sender, RoutedEventArgs e)
+        private void BContactinformatie_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
         private void BStoring_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BContact_Click(object sender, RoutedEventArgs e)
         {
 
         }

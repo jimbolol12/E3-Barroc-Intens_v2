@@ -48,8 +48,47 @@ namespace Barroc_intens
 
             if (user != null)
             {
-                var softwareDeveloperWindow = new MainWindow();
-                softwareDeveloperWindow.Activate();
+                if (user.JobFunction == "Klant")
+                {
+                    var klantWindow = new KlantenWindow();
+                    klantWindow.Activate();
+                }
+
+                if (user.JobFunction == "Finance")
+                {
+                    var financeWindow = new FinanceWindow();
+                    financeWindow.Activate();
+                }
+
+                if (user.JobFunction == "Inkoop")
+                {
+                    var inkoopWindow = new InkoopWindow();
+                    inkoopWindow.Activate();
+                }
+
+                if (user.JobFunction == "Sales")
+                {
+                    var salesWindow = new SalesWindow();
+                    salesWindow.Activate();
+                }
+
+                if (user.JobFunction == "HoofdmedewerkerMaintenance")
+                {
+                    var hoofdmedewerkerWindow = new HoofdmedewerkerMaintenanceWindow();
+                    hoofdmedewerkerWindow.Activate();
+                }
+
+                if (user.JobFunction == "PlannerMaintenance")
+                {
+                    var plannerWindow = new PlannerMaintenanceWindow();
+                    plannerWindow.Activate();
+                }
+
+                if (user.JobFunction == "Maintenance")
+                {
+                    var maintenanceWindow = new MaintenanceWindow();
+                    maintenanceWindow.Activate();
+                }
 
             }
             else

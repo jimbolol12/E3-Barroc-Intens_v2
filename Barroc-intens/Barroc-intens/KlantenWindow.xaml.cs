@@ -28,17 +28,22 @@ namespace Barroc_intens
             this.InitializeComponent();
         }
 
-        private void BContact_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BFactuur_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        private void BContactinformatie_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void BStoring_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BContact_Click(object sender, RoutedEventArgs e)
         {
 
         }

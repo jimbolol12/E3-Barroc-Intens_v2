@@ -34,9 +34,7 @@ namespace Barroc_intens
                 db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
             }
-
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string enteredUsername = UsernameTextBox.Text;

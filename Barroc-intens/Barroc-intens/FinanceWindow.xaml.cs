@@ -26,6 +26,20 @@ namespace Barroc_intens
         public FinanceWindow()
         {
             this.InitializeComponent();
+
+            using (var db = new AppDbContext())
+            {
+
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+
+                var company = db.Companies
+                     /* .Include(m => m.Id)*/
+                     .ToList();
+
+                companieListView.ItemsSource = company;
+            }
         }
     }
 }

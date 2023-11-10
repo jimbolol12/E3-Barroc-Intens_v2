@@ -42,7 +42,7 @@ namespace Barroc_intens.Data
                     Id = 1,
                     Username = "Alice",
                     Password = "test",
-                    JobFunction = "Klant",
+                    JobFunctionId = 1,
                 },
 
                 new User
@@ -50,7 +50,7 @@ namespace Barroc_intens.Data
                     Id = 2,
                     Username = "Jane",
                     Password = "wachtwoord",
-                    JobFunction = "Finance"
+                    JobFunctionId = 2,
                 },
 
                 new User
@@ -58,7 +58,7 @@ namespace Barroc_intens.Data
                     Id = 3,
                     Username = "Henk",
                     Password = "wachtwoord123",
-                    JobFunction = "Inkoop"
+                    JobFunctionId = 4,
                 },
 
                 new User
@@ -66,7 +66,7 @@ namespace Barroc_intens.Data
                     Id = 4,
                     Username = "Jan",
                     Password = "wachtwoord321",
-                    JobFunction = "Sales"
+                    JobFunctionId = 3,
                 },
 
                 new User
@@ -74,7 +74,7 @@ namespace Barroc_intens.Data
                     Id = 5,
                     Username = "Hanna",
                     Password = "wachtwoord321",
-                    JobFunction = "Maintenance"
+                    JobFunctionId = 5,
                 },
 
                 new User
@@ -82,7 +82,7 @@ namespace Barroc_intens.Data
                     Id = 6,
                     Username = "Jimmy",
                     Password = "wachtwoord321",
-                    JobFunction = "Planner"
+                    JobFunctionId = 7,
                 },
 
                 new User
@@ -90,7 +90,7 @@ namespace Barroc_intens.Data
                     Id = 7,
                     Username = "Paul",
                     Password = "wachtwoord321",
-                    JobFunction = "HoofdmedewerkerMaintenance"
+                    JobFunctionId = 6,
                 }
             );
 
@@ -130,6 +130,44 @@ namespace Barroc_intens.Data
                     Description = "",
                     Price = 999,
                     Storage = 100,
+                }
+            );
+
+            modelBuilder.Entity<Product>().HasData(
+                new JobFunction
+                {
+                    Id = 1,
+                    Name = "Klant",
+                },
+                new JobFunction
+                {
+                    Id = 2,
+                    Name = "Finance",
+                },
+                new JobFunction
+                {
+                    Id = 3,
+                    Name = "Sales",
+                },
+                new JobFunction
+                {
+                    Id = 4,
+                    Name = "Inkoop",
+                },
+                new JobFunction
+                {
+                    Id = 5,
+                    Name = "Maintenance",
+                },
+                new JobFunction
+                {
+                    Id = 6,
+                    Name = "HoofdmedewerkerMaintenance",
+                },
+                new JobFunction
+                {
+                    Id = 7,
+                    Name = "Planner",
                 }
             );
         }

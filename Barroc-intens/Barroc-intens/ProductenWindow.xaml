@@ -44,7 +44,7 @@
 
         <Button x:Name="BCreateProduct"
                 Content="Aanmaken"
-                Padding="20"
+                Margin="20"
                 VerticalAlignment="Bottom"
                 Click="BCreateProduct_Click"></Button>
 

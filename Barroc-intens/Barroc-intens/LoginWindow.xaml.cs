@@ -48,46 +48,53 @@ namespace Barroc_intens
 
             if (user != null)
             {
-                if (user.JobFunction == "Klant")
+                if (user.JobFunctionId == 1)
                 {
                     var klantWindow = new KlantenWindow();
                     klantWindow.Activate();
+                    this.Close();
                 }
 
-                if (user.JobFunction == "Finance")
+                if (user.JobFunctionId == 2)
                 {
                     var financeWindow = new FinanceWindow();
                     financeWindow.Activate();
+                    this.Close();
                 }
 
-                if (user.JobFunction == "Inkoop")
+                if (user.JobFunctionId == 4)
                 {
                     var inkoopWindow = new InkoopWindow();
                     inkoopWindow.Activate();
+                    this.Close();
                 }
 
-                if (user.JobFunction == "Sales")
+                if (user.JobFunctionId == 3)
                 {
                     var salesWindow = new SalesWindow();
                     salesWindow.Activate();
+                    this.Close();
                 }
 
-                if (user.JobFunction == "HoofdmedewerkerMaintenance")
+                if (user.JobFunctionId == 6)
                 {
                     var hoofdmedewerkerWindow = new HoofdmedewerkerMaintenanceWindow();
                     hoofdmedewerkerWindow.Activate();
+                    this.Close();
                 }
 
-                if (user.JobFunction == "Planner")
+                if (user.JobFunctionId == 7)
                 {
                     var plannerWindow = new PlannerMaintenanceWindow();
                     plannerWindow.Activate();
+                    this.Close();
                 }
 
-                if (user.JobFunction == "Maintenance")
+                if (user.JobFunctionId == 5)
                 {
                     var maintenanceWindow = new MaintenanceWindow();
                     maintenanceWindow.Activate();
+                    this.Close();
                 }
 
             }

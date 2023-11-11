@@ -8,29 +8,40 @@
         mc:Ignorable="d">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Inloggen"
-                       FontSize="24"
-                       Margin="0 0 0 20" />
+        <Grid Grid.Column="0"
+              Background="#FDD716" />
 
-            <TextBlock x:Name="ErrorTextBlock"
-                       Foreground="#FDD716" />
 
-            <TextBox x:Name="UsernameTextBox"
-                     PlaceholderText="Gebruikersnaam"
-                     Margin="0 0 10 0" />
+        <Grid Grid.Column="1">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
 
-            <PasswordBox x:Name="PasswordBox"
-                         PlaceholderText="Wachtwoord"
+                <TextBlock Text="Inloggen"
+                           FontSize="24"
+                           Margin="0 0 0 20" />
+
+                <TextBlock x:Name="ErrorTextBlock"
+                           Foreground="#FDD716" />
+
+                <TextBox x:Name="UsernameTextBox"
+                         PlaceholderText="Gebruikersnaam"
                          Margin="0 0 10 0" />
 
-            <Button Content="Inloggen"
-                    Click="Button_Click_1" />
+                <PasswordBox x:Name="PasswordBox"
+                             PlaceholderText="Wachtwoord"
+                             Margin="0 0 10 0" />
 
-        </StackPanel>
+                <Button Content="Inloggen"
+                        Click="Button_Click_1" />
+
+            </StackPanel>
+        </Grid>
+            
     </Grid>
-
 
 </Window>

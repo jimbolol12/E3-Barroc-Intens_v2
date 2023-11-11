@@ -5,6 +5,7 @@
         xmlns:local="using:Barroc_intens"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localData="using:Barroc_intens.Model"
         mc:Ignorable="d">
 
     <Grid>
@@ -16,12 +17,28 @@
 
         <!-- Linkerkant -->
         <Grid Grid.Column="0">
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+
+            <!--Lease contract button-->
+            <Grid Grid.Row="0">
+
+                <Button x:Name="Bleasecontract"
+                        Content="Naar lease contract"
+                        Click="Bleasecontract_Click"
+                        VerticalAlignment="Top"
+                        Margin="10"
+                        HorizontalAlignment="Center" />
+            </Grid>
+
+            <Grid Grid.Row="1">
+
+            </Grid>
 
             <!-- Bovenste twee blokken -->
             <Grid Grid.Row="2">
@@ -30,23 +47,24 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Column="0"
-                        BorderBrush="White"
-                        BorderThickness="1"
-                        Margin="5">
-                    <TextBlock Text="Inkomsten per maand"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center" />
-                </Border>
+                <Grid Grid.Column="0">
+                    <Border BorderBrush="#FDD716"
+                            BorderThickness="1">
+                        <TextBlock Text="Inkomsten per maand"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
 
-                <Border Grid.Column="1"
-                        BorderBrush="White"
-                        BorderThickness="1"
-                        Margin="5">
-                    <TextBlock Text="Inkomsten per jaar"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center" />
-                </Border>
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="#FDD716"
+                            BorderThickness="1">
+                        <TextBlock Text="Inkomsten per maand"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
+
             </Grid>
 
             <!-- Onderste twee blokken -->
@@ -56,55 +74,45 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Column="0"
-                        BorderBrush="White"
-                        BorderThickness="1"
-                        Margin="5">
-                    <TextBlock Text="Uitgaven per maand"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center" />
-                </Border>
+                <Grid Grid.Column="0">
+                    <Border BorderBrush="#FDD716"
+                            BorderThickness="1">
+                        <TextBlock Text="Uitgaven per maand"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
 
-                <Border Grid.Column="1"
-                        BorderBrush="White"
-                        BorderThickness="1"
-                        Margin="5">
-                    <TextBlock Text="Uitgaven per jaar"
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="#FDD716"
+                            BorderThickness="1">
+                        <TextBlock Text="Uitgaven per jaar"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center" />
-                </Border>
+                    </Border>
+                </Grid>
             </Grid>
         </Grid>
 
-        <!-- Titel met border aan linkerbovenkant -->
-        <Border Grid.Column="0"
-                Grid.Row="1"
-                BorderBrush="White"
-                BorderThickness="1"
-                Margin="5">
-            <Button x:Name="Bleasecontract"
-                    Content="Naar lease contract"
-                    Click="Bleasecontract_Click"
-                    HorizontalAlignment="Center" />
-        </Border>
-
-        <!-- Rechterkant -->
-        <ListView x:Name="companieListView"
-                  Grid.Column="1">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="localData:Company">
-                    <StackPanel Margin="20">
-                        <TextBlock Text="{x:Bind Name}" />
-                        <TextBlock Text="{x:Bind phone}" />
-                        <TextBlock Text="{x:Bind street}" />
-                        <TextBlock Text="{x:Bind houseNumber}" />
-                        <TextBlock Text="{x:Bind city}" />
-                        <TextBlock Text="{x:Bind countryCode}" />
-                        <TextBlock Text="{x:Bind bkrCheckedAt}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Grid Grid.Column="1">
+            <!-- Rechterkant -->
+            <ListView x:Name="companieListView"
+                      Grid.Column="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="localData:Company">
+                        <StackPanel Margin="20">
+                            <TextBlock Text="{x:Bind Name}" />
+                            <TextBlock Text="{x:Bind Phone}" />
+                            <TextBlock Text="{x:Bind Street}" />
+                            <TextBlock Text="{x:Bind HouseNumber}" />
+                            <TextBlock Text="{x:Bind City}" />
+                            <TextBlock Text="{x:Bind CountryCode}" />
+                            <TextBlock Text="{x:Bind BkrCheckedAt}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 
 </Window>

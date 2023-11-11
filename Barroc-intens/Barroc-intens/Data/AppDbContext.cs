@@ -133,7 +133,7 @@ namespace Barroc_intens.Data
                 }
             );
 
-            modelBuilder.Entity<Product>().HasData(
+            modelBuilder.Entity<JobFunction>().HasData(
                 new JobFunction
                 {
                     Id = 1,

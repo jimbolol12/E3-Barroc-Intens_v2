@@ -64,10 +64,6 @@
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Bottom">
 
-                <Button x:Name="BEditProduct"
-                        Content="Bewerken"
-                        Click="BEditProduct_Click"></Button>
-
                 <Button x:Name="BDeleteProduct"
                         Content="Verwijderen"
                         Click="BDeleteProduct_Click"></Button>

@@ -10,11 +10,6 @@
 
     <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
         <ListView x:Name="lvProducts"
                   IsItemClickEnabled="True"
                   ItemClick="lvProducts_ItemClick">

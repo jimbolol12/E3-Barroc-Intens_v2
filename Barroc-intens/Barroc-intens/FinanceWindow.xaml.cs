@@ -1,3 +1,4 @@
+using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,15 @@ namespace Barroc_intens
         public FinanceWindow()
         {
             this.InitializeComponent();
+
+            using (var db = new AppDbContext())
+            {
+                var company = db.Companies
+                 /* .Include(m => m.Id)*/
+                 .ToList();
+
+                companieListView.ItemsSource = company;
+            }
         }
     }
 }

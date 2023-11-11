@@ -46,31 +46,16 @@
                 Content="Aanmaken"
                 Margin="20"
                 VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
                 Click="BCreateProduct_Click"></Button>
 
-        <Grid Grid.Column="1"
-              Padding="20"
-              ColumnSpacing="20">
-
-            <StackPanel Spacing="30"
-                        Orientation="Vertical">
-                <TextBlock x:Name="tbSelectedProductname" />
-                <TextBlock x:Name="tbSelectedProductdimensions" />
-                <TextBlock x:Name="tbSelectedProductdescription" />
-                <TextBlock x:Name="tbSelectedProductprice" />
-                <TextBlock x:Name="tbSelectedProductstorage" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal"
-                        VerticalAlignment="Bottom">
-
-                <Button x:Name="BDeleteProduct"
-                        Content="Verwijderen"
-                        Click="BDeleteProduct_Click"></Button>
-
-            </StackPanel>
-
-        </Grid>
+        <Button x:Name="BDeleteProduct"
+                Content="Verwijderen"
+                Margin="20"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Click="BDeleteProduct_Click"></Button>
 
     </Grid>
+    
 </Window>

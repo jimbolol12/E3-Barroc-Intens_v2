@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 namespace Barroc_intens
 {
     internal class AppDbContext : DbContext
-    {
+    {        
         public DbSet<User> Users { get; set; }
         public DbSet<Company> Companies { get; set; }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(

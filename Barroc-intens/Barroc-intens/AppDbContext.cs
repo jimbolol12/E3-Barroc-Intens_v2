@@ -94,8 +94,7 @@ namespace Barroc_intens
                     JobFunctionId = 6,
                 }
             );
-<<<<<<< Updated upstream:Barroc-intens/Barroc-intens/AppDbContext.cs
-=======
+
 
             modelBuilder.Entity<Product>().HasData(
                 new Product
@@ -136,7 +135,7 @@ namespace Barroc_intens
                 }
             );
 
-            modelBuilder.Entity<Product>().HasData(
+            modelBuilder.Entity<JobFunction>().HasData(
                 new JobFunction
                 {
                     Id = 1,
@@ -173,7 +172,6 @@ namespace Barroc_intens
                     Name = "Planner",
                 }
             );
->>>>>>> Stashed changes:Barroc-intens/Barroc-intens/Data/AppDbContext.cs
         }
     }
 }

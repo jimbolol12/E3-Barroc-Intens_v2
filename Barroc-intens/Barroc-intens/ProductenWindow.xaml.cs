@@ -1,5 +1,5 @@
 using Barroc_intens.Model;
-using Barroc_intens.Data;
+//using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -35,21 +35,26 @@ namespace Barroc_intens
 
         private void lvProducts_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var selectedProduct = (Product)e.ClickedItem;
+            //var selectedProduct = (Product)e.ClickedItem;
 
-            var editWindow = new EditWindow(selectedProduct);
-            editWindow.Activate();
-            this.Close();
+            //var editWindow = new EditWindow(selectedProduct);
+            //editWindow.Activate();
+            //this.Close();
         }
 
         private void BCreateProduct_Click(object sender, RoutedEventArgs e)
         {
-            var createWindow = new CreateWindow();
-            createWindow.Activate();
-            this.Close();
+            //var createWindow = new CreateWindow();
+            //createWindow.Activate();
+            //this.Close();
         }
 
         private void BDeleteProduct_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BEditProduct_Click(object sender, RoutedEventArgs e)
         {
 
         }

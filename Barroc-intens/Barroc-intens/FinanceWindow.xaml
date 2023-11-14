@@ -9,6 +9,37 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button 
+                x:Name="BLeaseContract"
+                Content="Naar lease contract"
+                Click="BLeaseContract_Click"
+                BorderBrush="Yellow"
+                BorderThickness="1"
+                CornerRadius="10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="2">
+            <TextBlock>
+                <Run Text="Bedrijfsnaam"/>
+                <Run Text="Bedrijfsnummer"/>
+            </TextBlock>
+        </StackPanel>
+        
+        
     </Grid>
 </Window>

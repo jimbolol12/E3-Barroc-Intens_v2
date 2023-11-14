@@ -29,10 +29,6 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
 
-            using var db = new AppDbContext();
-            db.Database.EnsureDeleted();
-            db.Database.EnsureCreated();
-
         }
         private void myButton_Click(object sender, RoutedEventArgs e)
         {

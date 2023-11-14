@@ -27,5 +27,17 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
         }
+
+        private void BStorage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BProduct_Click(object sender, RoutedEventArgs e)
+        {
+            var productWindow = new ProductenWindow();
+            productWindow.Activate();
+            this.Close();
+        }
     }
 }

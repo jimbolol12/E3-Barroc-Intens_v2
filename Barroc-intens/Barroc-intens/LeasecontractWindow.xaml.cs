@@ -1,4 +1,3 @@
-using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -22,27 +21,12 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class FinanceWindow : Window
+    public sealed partial class LeasecontractWindow : Window
     {
-        public FinanceWindow()
+        public ImageSource Source { get; set; }
+        public LeasecontractWindow()
         {
             this.InitializeComponent();
-
-            using (var db = new AppDbContext())
-            {
-                var company = db.Companies
-                 /* .Include(m => m.Id)*/
-                 .ToList();
-
-                companieListView.ItemsSource = company;
-            }
-        }
-
-        private void Bleasecontract_Click(object sender, RoutedEventArgs e)
-        {
-            var leaseWindow = new LeasecontractWindow();
-            leaseWindow.Activate();
-            this.Close();
         }
     }
 }

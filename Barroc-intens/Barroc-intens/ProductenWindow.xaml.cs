@@ -33,13 +33,21 @@ namespace Barroc_intens
             lvProducts.ItemsSource = products;
         }
 
-        private void lvProducts_ItemClick(object sender, ItemClickEventArgs e)
+        private void lvProducts_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            var selectedProduct = (Product)e.ClickedItem;
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is Product clickedProduct)
+            {
+                var productEditWindow = new EditWindow(clickedProduct);
+                productEditWindow.Closed += ProductEditWindow_Closed;
+                productEditWindow.Activate();
+            }
+        }
 
-            var editWindow = new EditWindow(selectedProduct);
-            editWindow.Activate();
-            this.Close();
+        private void ProductEditWindow_Closed(object sender, WindowEventArgs args)
+        {
+            using var db = new AppDbContext();
+            var products = db.Products.ToList();
+            lvProducts.ItemsSource = products;
         }
 
         private void BCreateProduct_Click(object sender, RoutedEventArgs e)
@@ -52,6 +60,14 @@ namespace Barroc_intens
         private void BDeleteProduct_Click(object sender, RoutedEventArgs e)
         {
 
+            if (lvProducts.SelectedItem is Product selectedproduct)
+            {
+                using var db = new AppDbContext();
+                db.Products.Remove(selectedproduct);
+                db.SaveChanges();
+
+                lvProducts.ItemsSource = db.Products.ToList();
+            }
         }
     }
 }

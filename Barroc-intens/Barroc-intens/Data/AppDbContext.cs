@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Barroc_intens.Model;
 
-namespace Barroc_intens
+namespace Barroc_intens.Data
 {
     public class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Company> Companies { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<CustomInvoice> CustomInvoices { get; set; }
@@ -27,8 +27,8 @@ namespace Barroc_intens
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=root;" +
-                "password=18nlw;" +
+                "user=c_sharp;" +
+                "password=Krijnisleider;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -94,8 +94,6 @@ namespace Barroc_intens
                     JobFunctionId = 6,
                 }
             );
-<<<<<<< Updated upstream:Barroc-intens/Barroc-intens/AppDbContext.cs
-=======
 
             modelBuilder.Entity<Product>().HasData(
                 new Product
@@ -136,7 +134,7 @@ namespace Barroc_intens
                 }
             );
 
-            modelBuilder.Entity<Product>().HasData(
+            modelBuilder.Entity<JobFunction>().HasData(
                 new JobFunction
                 {
                     Id = 1,
@@ -173,7 +171,6 @@ namespace Barroc_intens
                     Name = "Planner",
                 }
             );
->>>>>>> Stashed changes:Barroc-intens/Barroc-intens/Data/AppDbContext.cs
         }
     }
 }

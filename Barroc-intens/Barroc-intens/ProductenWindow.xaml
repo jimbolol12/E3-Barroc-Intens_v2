@@ -12,7 +12,9 @@
 
         <ListView x:Name="lvProducts"
                   IsItemClickEnabled="True"
-                  ItemClick="lvProducts_ItemClick">
+                  IsDoubleTapEnabled="True"
+                  DoubleTapped="lvProducts_DoubleTapped"
+                  AllowFocusOnInteraction="False">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Product">
                     <Border BorderThickness="1"

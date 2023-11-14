@@ -26,27 +26,38 @@ namespace Barroc_intens
     /// </summary>
     public sealed partial class EditWindow : Window
     {
+        private Product clickedproduct;
         public EditWindow(Product selectedProduct)
         {
             this.InitializeComponent();
 
-            using (var dbContext = new AppDbContext())
-            {
-                dbContext.Products.Attach(selectedProduct);
-                tbProductname.Text = selectedProduct.Name;
-                tbProductdimensions.Text = selectedProduct.Dimensions;
-                tbProductdescription.Text = selectedProduct.Description;
-                tbProductprice.Text = selectedProduct.PriceFormatted;
-                tbProductstorage.Text = selectedProduct.StorageFormatted;
-            }
+            this.clickedproduct = selectedProduct;
+
+            using (var dbContext = new AppDbContext())               
+            dbContext.Products.Attach(selectedProduct);
+            tbProductname.Text = selectedProduct.Name;
+            tbProductdimensions.Text = selectedProduct.Dimensions;
+            tbProductdescription.Text = selectedProduct.Description;
+            tbProductprice.Text = selectedProduct.PriceFormatted;
 
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)
         {
+            var product = clickedproduct;
+
             using var dbContext = new AppDbContext();
+
+            var clickproduct = dbContext.Products.Find(clickedproduct.Id);
+
+            clickproduct.Name = tbProductname.Text;
+            clickproduct.Dimensions = tbProductdimensions.Text;
+            clickproduct.Description = tbProductdescription.Text;
+            clickproduct.Price = decimal.Parse(tbProductprice.Text);
+
             dbContext.SaveChanges();
-            BSave.Content = "Saved!!";
+
+            this.Close();
         }
     }
 }

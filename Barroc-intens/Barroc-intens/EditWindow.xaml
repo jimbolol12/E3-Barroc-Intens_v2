@@ -17,7 +17,6 @@
             <TextBox x:Name="tbProductdimensions" />
             <TextBox x:Name="tbProductdescription" />
             <TextBox x:Name="tbProductprice" />
-            <TextBox x:Name="tbProductstorage" />
 
         </StackPanel>
 

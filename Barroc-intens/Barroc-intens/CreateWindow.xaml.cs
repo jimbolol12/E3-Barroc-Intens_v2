@@ -1,4 +1,5 @@
 using Barroc_intens.Data;
+using Barroc_intens.Model;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -22,25 +23,29 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class FinanceWindow : Window
+    public sealed partial class CreateWindow : Window
     {
-        public FinanceWindow()
+        public CreateWindow()
         {
             this.InitializeComponent();
+        }
 
-            using (var db = new AppDbContext())
+        private void Bcreate_Click(object sender, RoutedEventArgs e)
+        {
+            using var db = new AppDbContext();
+            db.Products.Add(new Product
             {
-
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-
-
-                var company = db.Companies
-                     /* .Include(m => m.Id)*/
-                     .ToList();
-
-                companieListView.ItemsSource = company;
+                Id = tbProductid.Text,
+                Name = tbProductname.Text,
+                Dimensions = tbProductdimensions.Text,
+                Description = tbProductdescription.Text,
+                Price = decimal.Parse(tbProductprice.Text),
+                Storage = int.Parse(tbProductstorage.Text),
             }
+                );
+            db.SaveChanges();
+
+            this.Close();
         }
     }
 }

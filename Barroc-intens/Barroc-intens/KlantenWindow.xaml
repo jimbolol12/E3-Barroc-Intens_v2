@@ -9,11 +9,6 @@
 
     <Grid Grid.Row="0"
           Background="#FDD716">
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
 
 
         <StackPanel Background="#FDD716"

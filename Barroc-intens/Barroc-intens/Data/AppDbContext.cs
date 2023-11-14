@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Barroc_intens
+namespace Barroc_intens.Data
 {
   
      
@@ -30,8 +30,8 @@ namespace Barroc_intens
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=root;" +
-                "password=18nlw;" +
+                "user=c_sharp;" +
+                "password=Krijnisleider;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -156,7 +156,7 @@ namespace Barroc_intens
                 }
             );
 
-            modelBuilder.Entity<Product>().HasData(
+            modelBuilder.Entity<JobFunction>().HasData(
                 new JobFunction
                 {
                     Id = 1,

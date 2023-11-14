@@ -21,9 +21,10 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LeaseContractWindow : Window
+    public sealed partial class LeasecontractWindow : Window
     {
-        public LeaseContractWindow()
+        public ImageSource Source { get; set; }
+        public LeasecontractWindow()
         {
             this.InitializeComponent();
         }

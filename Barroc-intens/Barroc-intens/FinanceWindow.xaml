@@ -69,12 +69,12 @@
                 <DataTemplate x:DataType="localData:Company">
                     <StackPanel Margin="20">
                         <TextBlock Text="{x:Bind Name}" />
-                        <TextBlock Text="{x:Bind phone}" />
-                        <TextBlock Text="{x:Bind street}" />
-                        <TextBlock Text="{x:Bind houseNumber}" />
-                        <TextBlock Text="{x:Bind city}" />
-                        <TextBlock Text="{x:Bind countryCode}" />
-                        <TextBlock Text="{x:Bind bkrCheckedAt}" />
+                        <TextBlock Text="{x:Bind Phone}" />
+                        <TextBlock Text="{x:Bind Street}" />
+                        <TextBlock Text="{x:Bind HouseNumber}" />
+                        <TextBlock Text="{x:Bind City}" />
+                        <TextBlock Text="{x:Bind CountryCode}" />
+                        <TextBlock Text="{x:Bind BkrCheckedAt}" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

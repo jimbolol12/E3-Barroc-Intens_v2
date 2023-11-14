@@ -34,18 +34,18 @@ namespace Barroc_intens
 
         private void lvProducts_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var selectedProduct = (Product)e.ClickedItem;
+            /*var selectedProduct = (Product)e.ClickedItem;*/
 
-            var editWindow = new EditWindow(selectedProduct);
+          /*  var editWindow = new EditWindow(selectedProduct);
             editWindow.Activate();
-            this.Close();
+            this.Close();*/
         }
 
         private void BCreateProduct_Click(object sender, RoutedEventArgs e)
         {
-            var createWindow = new CreateWindow();
+          /*  var createWindow = new CreateWindow();
             createWindow.Activate();
-            this.Close();
+            this.Close();*/
         }
 
         private void BDeleteProduct_Click(object sender, RoutedEventArgs e)

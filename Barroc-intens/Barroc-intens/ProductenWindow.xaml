@@ -29,10 +29,9 @@
 
                                 <TextBlock FontSize="15">
                                     <Run Text="{x:Bind Name}" />
-                                    <Run Text="{x:Bind Dimensions}" />
                                     <Run Text="{x:Bind Description}" />
-                                    <Run Text="{x:Bind PriceFormatted}" />
-                                    <Run Text="{x:Bind StorageFormatted}" />
+                                    <Run Text="{x:Bind Price}" />
+                                    <Run Text="{x:Bind Stock}" />
                                 </TextBlock>
 
                             </StackPanel>

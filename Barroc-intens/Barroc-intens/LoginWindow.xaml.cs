@@ -12,8 +12,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Microsoft.UI.Xaml.Controls;
 using Barroc_intens.Model;
+using Barroc_intens.Data;
 using Microsoft.UI;
 
 // To learn more about WinUI, the WinUI project structure,

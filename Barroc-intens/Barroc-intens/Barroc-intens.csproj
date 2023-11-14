@@ -12,8 +12,11 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="LeaseContractWindow.xaml" />
+    <None Remove="CreateWindow.xaml" />
+    <None Remove="EditWindow.xaml" />
+    <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
+    <None Remove="ProductenWindow.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,7 +54,22 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="LeaseContractWindow.xaml">
+    <Page Update="LeasecontractWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="EditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="CreateWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ProductenWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -59,6 +77,9 @@
     <Page Update="LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Img\" />
   </ItemGroup>
 
   <!-- 

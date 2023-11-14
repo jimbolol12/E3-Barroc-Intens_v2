@@ -1,4 +1,6 @@
 using Barroc_intens.Data;
+using Barroc_intens.Model;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -22,34 +24,29 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class FinanceWindow : Window
+    public sealed partial class EditWindow : Window
     {
-        public FinanceWindow()
+        public EditWindow(Product selectedProduct)
         {
             this.InitializeComponent();
 
-            using (var db = new AppDbContext())
+            using (var dbContext = new AppDbContext())
             {
-                var company = db.Companies
-                 /* .Include(m => m.Id)*/
-                 .ToList();
-
-                companieListView.ItemsSource = company;
+                dbContext.Products.Attach(selectedProduct);
+                tbProductname.Text = selectedProduct.Name;
+                tbProductdimensions.Text = selectedProduct.Dimensions;
+                tbProductdescription.Text = selectedProduct.Description;
+                tbProductprice.Text = selectedProduct.PriceFormatted;
+                tbProductstorage.Text = selectedProduct.StorageFormatted;
             }
+
         }
 
-        private void Bleasecontract_Click(object sender, RoutedEventArgs e)
+        private void BSave_Click(object sender, RoutedEventArgs e)
         {
-            var leaseWindow = new LeasecontractWindow();
-            leaseWindow.Activate();
-            this.Close();
-        }
-
-        private void BLeaseContract_Click(object sender, RoutedEventArgs e)
-        {
-            var leaseContractWindow = new LeaseContractWindow();
-            leaseContractWindow.Activate();
-            this.Close();
+            using var dbContext = new AppDbContext();
+            dbContext.SaveChanges();
+            BSave.Content = "Saved!!";
         }
     }
 }

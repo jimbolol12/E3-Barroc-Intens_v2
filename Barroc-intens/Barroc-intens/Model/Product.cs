@@ -18,7 +18,7 @@ namespace Barroc_intens.Model
         //public Product_category category { get; set; }
         //public int Product_catogory { get; set; }
         public string PriceFormatted => string.Format("{0:N2}", Price);
-        public int Storage { get; set; }
+        public int Storage {  get; set; }
 
         public string StorageFormatted => string.Format("{0:F2}", Storage);
     }

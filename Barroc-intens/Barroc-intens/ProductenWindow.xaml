@@ -28,7 +28,7 @@
                                     <Run Text="{x:Bind Name}" />
                                     <Run Text="{x:Bind Description}" />
                                     <Run Text="{x:Bind Price}" />
-                                    <Run Text="{x:Bind Stock}" />
+                                    <Run Text="{x:Bind Storage}" />
                                 </TextBlock>
 
                             </StackPanel>

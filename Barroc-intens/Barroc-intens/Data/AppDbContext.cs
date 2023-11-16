@@ -30,8 +30,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=c_sharp;" +
-                "password=Krijnisleider;" +
+                "user=root;" +
+                "password=;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -112,7 +112,7 @@ namespace Barroc_intens.Data
                new Company
                {
                    Id = 2,
-                   Name = "action",
+                   Name = "kruidvat",
                    Phone = 1234567890,
                    Street = "LangeStraat",
                    HouseNumber = 69,
@@ -124,35 +124,35 @@ namespace Barroc_intens.Data
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {
-                    Id = 1,
+                    Id = "1",
                     Name = "Barroc Intens Italian Light",
                     Description = "",
                     Price = 499,
-                    Stock = 100,
+                    Storage = 100,
                 },
                 new Product
                 {
-                    Id = 2,
+                    Id = "2",
                     Name = "Barroc Intens Italian",
                     Description = "",
                     Price = 599,
-                    Stock = 100,
+                    Storage = 100,
                 },
                 new Product
                 {
-                    Id = 3,
+                    Id = "3",
                     Name = "Barroc Intens Italian Deluxe",
                     Description = "",
                     Price = 799,
-                    Stock = 100,
+                    Storage = 100,
                 },
                 new Product
                 {
-                    Id = 4,
+                    Id = "4",
                     Name = "Barroc Intens Italian Deluxe Special",
                     Description = "",
                     Price = 999,
-                    Stock = 100,
+                    Storage = 100,
                 }
             );
 

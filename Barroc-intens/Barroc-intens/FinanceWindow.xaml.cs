@@ -42,5 +42,10 @@ namespace Barroc_intens
                 companieListView.ItemsSource = company;
             }
         }
+
+        private void Bleasecontract_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

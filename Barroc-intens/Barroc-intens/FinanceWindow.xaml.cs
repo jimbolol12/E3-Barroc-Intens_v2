@@ -1,4 +1,3 @@
-using Barroc_intens.Model;
 using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -14,7 +13,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using WinRT.Interop;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -24,22 +22,30 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainWindow : Window
+    public sealed partial class FinanceWindow : Window
     {
-        public MainWindow()
+        public FinanceWindow()
         {
             this.InitializeComponent();
-<<<<<<< HEAD
 
-            
-        }
-=======
->>>>>>> main
+            using (var db = new AppDbContext())
+            {
 
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+
+                var company = db.Companies
+                     /* .Include(m => m.Id)*/
+                     .ToList();
+
+                companieListView.ItemsSource = company;
+            }
         }
-        private void myButton_Click(object sender, RoutedEventArgs e)
+
+        private void Bleasecontract_Click(object sender, RoutedEventArgs e)
         {
-            myButton.Content = "Clicked";
+
         }
     }
 }

@@ -10,5 +10,8 @@
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    </StackPanel> 
+    
 </Window>
+<!--c:\laragon\www\e3-barroc-intens_v2\barroc-intens\barroc-intens\mainwindow.xaml.cs
+c:\laragon\www\e3-barroc-intens_v2\barroc-intens\barroc-intens\mainwindow.xaml-->

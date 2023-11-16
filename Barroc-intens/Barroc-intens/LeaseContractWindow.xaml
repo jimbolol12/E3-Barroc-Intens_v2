@@ -9,8 +9,12 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <StackPanel VerticalAlignment="Top">
+        <StackPanel VerticalAlignment="Top" Grid.Row="0">
             
             <TextBlock FontFamily="BigShouldersDisplay"
                        FontWeight="Bold"
@@ -21,7 +25,12 @@
             <Image Source="Img/Logo4_klein.png"></Image>
             
         </StackPanel>
-
+        <StackPanel Grid.Row="1">
+            <Button 
+                Content="Nieuw lease contract aanmaken"
+                x:Name="BNieuwLeaseContract"
+                Click="BNieuwLeaseContract_Click"/>
+        </StackPanel>
 
 
 

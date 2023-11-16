@@ -1,3 +1,4 @@
+using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -27,6 +28,13 @@ namespace Barroc_intens
         public LeasecontractWindow()
         {
             this.InitializeComponent();
+        }
+
+        private void BNieuwLeaseContract_Click(object sender, RoutedEventArgs e)
+        {
+            var newLeaseWindow = new CreateNewLeaseWindow();
+            newLeaseWindow.Activate();
+            this.Close();
         }
     }
 }

@@ -16,11 +16,12 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>-->
 
+        
         <!-- Linkerkant -->
         <Grid Grid.Column="0">
 
@@ -103,7 +104,7 @@
         <Grid Grid.Column="1">
             <!-- Rechterkant -->
             <ListView x:Name="companieListView"
-                      Grid.Column="1">
+                      Grid.Column="2">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="localData:Company">
                         <StackPanel Margin="20">
@@ -113,7 +114,11 @@
                             <TextBlock Text="{x:Bind HouseNumber}" />
                             <TextBlock Text="{x:Bind City}" />
                             <TextBlock Text="{x:Bind CountryCode}" />
-                            <TextBlock Text="{x:Bind BkrCheckedAt}" />
+                            <TextBlock>
+                                <Run Text="BKR Voldaan op: "/>
+                                <Run Text="{x:Bind BkrCheckedAt}"/>
+                            </TextBlock>
+                            <TextBlock Text="{x:Bind Contact.Username}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

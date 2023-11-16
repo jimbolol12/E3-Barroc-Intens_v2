@@ -29,17 +29,12 @@ namespace Barroc_intens
         public MainWindow()
         {
             this.InitializeComponent();
-<<<<<<< HEAD
+
 
             
         }
-=======
->>>>>>> main
 
-        }
-        private void myButton_Click(object sender, RoutedEventArgs e)
-        {
-            myButton.Content = "Clicked";
-        }
+        
+       
     }
 }

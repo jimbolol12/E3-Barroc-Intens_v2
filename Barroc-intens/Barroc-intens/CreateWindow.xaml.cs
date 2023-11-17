@@ -45,6 +45,8 @@ namespace Barroc_intens
                 );
             db.SaveChanges();
 
+            var productWindow = new ProductenWindow();
+            productWindow.Activate();
             this.Close();
         }
     }

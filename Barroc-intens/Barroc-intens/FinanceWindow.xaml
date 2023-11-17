@@ -9,100 +9,91 @@
         mc:Ignorable="d">
 
     <Grid>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>-->
-
         
         <!-- Linkerkant -->
-    <Grid Grid.Column="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-        <!--Lease contract button-->
-        <Grid Grid.Row="0">
-
-            <Button x:Name="Bleasecontract"
+            <!--Lease contract button-->
+            <Grid Grid.Row="0">
+                <Button x:Name="Bleasecontract"
                         Content="Naar lease contract"
                         Click="Bleasecontract_Click"
                         VerticalAlignment="Top"
                         Margin="10"
                         HorizontalAlignment="Center" />
-        </Grid>
+            </Grid>
 
-        <Grid Grid.Row="1">
+            <Grid Grid.Row="1">
 
-        </Grid>
+            </Grid>
 
-        <!-- Bovenste twee blokken -->
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+            <!-- Bovenste twee blokken -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0">
-                <Border BorderBrush="#FDD716"
+                <Grid Grid.Column="0">
+                    <Border BorderBrush="#FDD716"
                             BorderThickness="1">
-                    <TextBlock Text="Inkomsten per maand"
+                        <TextBlock Text="Inkomsten per maand"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
-                </Border>
-            </Grid>
+                    </Border>
+                </Grid>
 
-            <Grid Grid.Column="1">
-                <Border BorderBrush="#FDD716"
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="#FDD716"
                             BorderThickness="1">
-                    <TextBlock Text="Inkomsten per maand"
+                        <TextBlock Text="Inkomsten per maand"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
-                </Border>
+                    </Border>
+                </Grid>
             </Grid>
 
-        </Grid>
+            <Grid Grid.Row="3">
+                <!-- Onderste twee blokken -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-        <!-- Onderste twee blokken -->
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Grid Grid.Column="0">
-                <Border BorderBrush="#FDD716"
+                <Grid Grid.Column="0">
+                    <Border BorderBrush="#FDD716"
                             BorderThickness="1">
-                    <TextBlock Text="Uitgaven per maand"
+                        <TextBlock Text="Uitgaven per maand"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
-                </Border>
-            </Grid>
+                    </Border>
+                </Grid>
 
-            <Grid Grid.Column="1">
-                <Border BorderBrush="#FDD716"
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="#FDD716"
                             BorderThickness="1">
-                    <TextBlock Text="Uitgaven per jaar"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center" />
-                </Border>
+                        <TextBlock Text="Uitgaven per jaar"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
             </Grid>
         </Grid>
-
 
         <Grid Grid.Column="1">
             <!-- Rechterkant -->
             <ListView x:Name="companieListView"
-                      Grid.Column="2">
+                          Grid.Column="1">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="localData:Company">
                         <StackPanel Margin="20">
@@ -123,6 +114,4 @@
             </ListView>
         </Grid>
     </Grid>
-
-
 </Window>

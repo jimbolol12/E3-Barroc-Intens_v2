@@ -12,6 +12,7 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="CreateNewLeaseWindow.xaml" />
     <None Remove="CreateWindow.xaml" />
     <None Remove="EditWindow.xaml" />
     <None Remove="LeasecontractWindow.xaml" />
@@ -80,6 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="CreateNewLeaseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!-- 

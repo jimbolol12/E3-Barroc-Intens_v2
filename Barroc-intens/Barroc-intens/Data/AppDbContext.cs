@@ -192,7 +192,35 @@ namespace Barroc_intens.Data
                     Id = 7,
                     Name = "Planner",
                 }
+                
             );
+            modelBuilder.Entity<Company>().HasData(
+                    new Company
+                    {
+                        Id = 1,
+                        ContactId = 1,
+                        Name = "Curio",
+                        Phone = "0696969",
+                        Street = "Terheijdenseweg",
+                        HouseNumber = "350",
+                        City = "Breda",
+                        CountryCode = "6969 BG",
+                        BkrCheckedAt = new DateOnly(2020, 7, 12)
+                    },
+
+                    new Company
+                    {
+                        Id = 2,
+                        ContactId = 1,
+                        Name = "Rombouts Elektro",
+                        Phone = "01010101",
+                        Street = "Prins Bernhardstraat",
+                        HouseNumber = "3",
+                        City = "Breda",
+                        CountryCode = "4891 AC",
+
+                    }
+                );
         }
     }
 }

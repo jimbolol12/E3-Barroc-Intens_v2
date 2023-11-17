@@ -63,7 +63,6 @@ namespace Barroc_intens
             if (lvProducts.SelectedItem is Product selectedproduct)
             using (var db = new AppDbContext())
             {
-                using var db = new AppDbContext();
                 db.Products.Remove(selectedproduct);
                 db.SaveChanges();
 

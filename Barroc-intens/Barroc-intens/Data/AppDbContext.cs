@@ -32,7 +32,7 @@ namespace Barroc_intens.Data
                 "server=localhost;" +
                 "port=3306;" +
                 "user=root;" +
-                "password=;" +
+                "password=18nlw;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -119,7 +119,8 @@ namespace Barroc_intens.Data
                    Street = "LangeStraat",
                    HouseNumber = 69,
                    City = "breda",
-                   CountryCode = 133,
+                   CountryCode = "133",
+                   ContactId = 1
                 },
                new Company
                {
@@ -129,7 +130,8 @@ namespace Barroc_intens.Data
                    Street = "LangeStraat",
                    HouseNumber = 69,
                    City = "breda",
-                   CountryCode = 133,
+                   CountryCode = "133",
+                   ContactId = 1
                }
            );
 
@@ -206,33 +208,7 @@ namespace Barroc_intens.Data
                 }
                 
             );
-            modelBuilder.Entity<Company>().HasData(
-                    new Company
-                    {
-                        Id = 1,
-                        ContactId = 1,
-                        Name = "Curio",
-                        Phone = "0696969",
-                        Street = "Terheijdenseweg",
-                        HouseNumber = "350",
-                        City = "Breda",
-                        CountryCode = "6969 BG",
-                        BkrCheckedAt = new DateOnly(2020, 7, 12)
-                    },
-
-                    new Company
-                    {
-                        Id = 2,
-                        ContactId = 1,
-                        Name = "Rombouts Elektro",
-                        Phone = "01010101",
-                        Street = "Prins Bernhardstraat",
-                        HouseNumber = "3",
-                        City = "Breda",
-                        CountryCode = "4891 AC",
-
-                    }
-                );
+            
         }
     }
 }

@@ -33,6 +33,6 @@ namespace Barroc_intens.Model
         public JobFunction JobFunction { get; set; }
         
         
-
+   
     }
 }

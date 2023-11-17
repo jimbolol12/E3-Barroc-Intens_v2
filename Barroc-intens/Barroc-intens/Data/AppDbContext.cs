@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,6 +98,17 @@ namespace Barroc_intens.Data
                     JobFunctionId = 6,
                 }
             );
+
+            modelBuilder.Entity<FaultyRequest>().HasData(
+              new FaultyRequest
+              {
+                  Id = 1,
+                  ProductId = 1,
+                  UserId = 1,
+                  ScheduledAt = DateTime.UtcNow,
+                  Description = "dfdfdfdf",
+                  Done = false,
+              });
 
             modelBuilder.Entity<Company>().HasData(
                new Company

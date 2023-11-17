@@ -1,3 +1,4 @@
+using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,8 @@ namespace Barroc_intens
         public MaintenanceWindow()
         {
             this.InitializeComponent();
+
+           
         }
     }
 }

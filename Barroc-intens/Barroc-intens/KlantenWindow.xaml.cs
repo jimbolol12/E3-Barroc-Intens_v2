@@ -1,3 +1,4 @@
+using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,9 @@ namespace Barroc_intens
         public KlantenWindow()
         {
             this.InitializeComponent();
+            using var db = new AppDbContext();
+            var products = db.Products.ToList();
+            lvProducts.ItemsSource = products;
         }
 
         private void BFactuur_Click(object sender, RoutedEventArgs e)
@@ -46,6 +50,14 @@ namespace Barroc_intens
         private void BContact_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void tbSearchbar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var searchInput = tbSearchbar.Text;
+
+            using var db = new AppDbContext();
+            lvProducts.ItemsSource = db.Products.Where(p => p.Name.Contains(searchInput));
         }
     }
 }

@@ -45,7 +45,9 @@ namespace Barroc_intens
 
         private void Bleasecontract_Click(object sender, RoutedEventArgs e)
         {
-
+            var leasewindow = new LeasecontractWindow();
+            leasewindow.Activate();
+            this.Close();
         }
     }
 }

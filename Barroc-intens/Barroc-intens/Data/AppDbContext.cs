@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Barroc_intens.Data
 {
+  
+     
+
     public class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
@@ -27,8 +30,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=c_sharp;" +
-                "password=Krijnisleider;" +
+                "user=root;" +
+                "password=;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -95,39 +98,58 @@ namespace Barroc_intens.Data
                 }
             );
 
+            modelBuilder.Entity<Company>().HasData(
+               new Company
+               {
+                   Id = 1,
+                   Name = "action",
+                   Phone = 1234567890,
+                   Street = "LangeStraat",
+                   HouseNumber = 69,
+                   City = "breda",
+                   CountryCode = 133,
+                },
+               new Company
+               {
+                   Id = 2,
+                   Name = "kruidvat",
+                   Phone = 1234567890,
+                   Street = "LangeStraat",
+                   HouseNumber = 69,
+                   City = "breda",
+                   CountryCode = 133,
+               }
+           );
+
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {
-                    Id = "S234FREKT",
+                    Id = "1",
                     Name = "Barroc Intens Italian Light",
-                    Dimensions = "",
                     Description = "",
                     Price = 499,
                     Storage = 100,
                 },
                 new Product
                 {
-                    Id = "S234KNDPF",
+                    Id = "2",
                     Name = "Barroc Intens Italian",
-                    Dimensions = "",
                     Description = "",
                     Price = 599,
                     Storage = 100,
                 },
                 new Product
                 {
-                    Id = "S234NNBMV",
+                    Id = "3",
                     Name = "Barroc Intens Italian Deluxe",
-                    Dimensions = "",
                     Description = "",
                     Price = 799,
                     Storage = 100,
                 },
                 new Product
                 {
-                    Id = "S234MMPLA",
+                    Id = "4",
                     Name = "Barroc Intens Italian Deluxe Special",
-                    Dimensions = "",
                     Description = "",
                     Price = 999,
                     Storage = 100,

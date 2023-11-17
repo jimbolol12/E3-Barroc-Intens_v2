@@ -13,14 +13,12 @@ namespace Barroc_intens.Model
         public int Id { get; set; }
         public User Contact { get; set; }
         public string Name { get; set; }
-        public string Phone { get; set; }
+        public int Phone { get; set; }
         public string Street { get; set; }
-        public string HouseNumber {  get; set; }
+        public int HouseNumber {  get; set; }
         public string City { get; set; }
-        public string CountryCode { get; set; }
+        public int CountryCode { get; set; }
         public DateTime? BkrCheckedAt { get; set; } // ? is voor nullable?
-
-
 
     }
 }

@@ -52,9 +52,9 @@ namespace Barroc_intens
 
         private void BCreateProduct_Click(object sender, RoutedEventArgs e)
         {
-            var createWindow = new CreateWindow();
+          /*  var createWindow = new CreateWindow();
             createWindow.Activate();
-            this.Close();
+            this.Close();*/
         }
 
         private void BDeleteProduct_Click(object sender, RoutedEventArgs e)

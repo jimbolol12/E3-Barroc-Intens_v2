@@ -30,9 +30,14 @@ namespace Barroc_intens
 
             using (var db = new AppDbContext())
             {
+
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+
                 var company = db.Companies
-                 /* .Include(m => m.Id)*/
-                 .ToList();
+                     /* .Include(m => m.Id)*/
+                     .ToList();
 
                 companieListView.ItemsSource = company;
             }
@@ -40,9 +45,7 @@ namespace Barroc_intens
 
         private void Bleasecontract_Click(object sender, RoutedEventArgs e)
         {
-            var leaseWindow = new LeasecontractWindow();
-            leaseWindow.Activate();
-            this.Close();
+
         }
     }
 }

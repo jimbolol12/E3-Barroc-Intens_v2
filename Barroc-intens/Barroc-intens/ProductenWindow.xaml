@@ -12,16 +12,15 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-
             <ListView x:Name="lvProducts"
-                  IsItemClickEnabled="True"
-                  IsDoubleTapEnabled="True"
-                  DoubleTapped="lvProducts_DoubleTapped"
-                  AllowFocusOnInteraction="False">
+                      IsItemClickEnabled="True"
+                      IsDoubleTapEnabled="True"
+                      DoubleTapped="lvProducts_DoubleTapped"
+                      AllowFocusOnInteraction="False">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Product">
                         <Border BorderThickness="1"
@@ -30,27 +29,22 @@
                             <StackPanel Orientation="Horizontal"
                                         Spacing="50">
                                 <StackPanel>
-
                                     <TextBlock FontSize="15"
                                                Text="Name: ">
                                         <Run Text="{x:Bind Name}" />
-                                    </TextBlock>
-
+                                    </TextBlock
                                     <TextBlock FontSize="15"
                                                Text="Description: ">
-                                        <Run Text="{x:Bind Description}" />
+                                    <Run Text="{x:Bind Description}" />
                                     </TextBlock>
-
                                     <TextBlock FontSize="15"
                                                Text="Price: ">
                                         <Run Text="{x:Bind PriceFormatted}" />
                                     </TextBlock>
-
                                     <TextBlock FontSize="15"
                                                Text="Storage: ">
                                         <Run Text="{x:Bind StorageFormatted}" />
                                     </TextBlock>
-
                                 </StackPanel>
                             </StackPanel>
                         </Border>
@@ -60,7 +54,6 @@
         </Grid>
 
         <Grid Grid.Row="1">
-
             <Button x:Name="BCreateProduct"
                     Content="Aanmaken"
                     Margin="20"
@@ -75,7 +68,5 @@
                     HorizontalAlignment="Right"
                     Click="BDeleteProduct_Click"></Button>
         </Grid>
-
     </Grid>
-    
 </Window>

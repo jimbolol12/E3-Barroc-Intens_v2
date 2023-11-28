@@ -17,17 +17,17 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            
-            <Button x:Name="BStorage"
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BStorage"
                     Content="Naar magazijn"
                     Click="BStorage_Click"
                     HorizontalAlignment="Left" />
 
-            <Button x:Name="BProduct"
+        <Button x:Name="BProduct"
                     Content="Naar producten"
                     Click="BProduct_Click"
                     HorizontalAlignment="Right" />

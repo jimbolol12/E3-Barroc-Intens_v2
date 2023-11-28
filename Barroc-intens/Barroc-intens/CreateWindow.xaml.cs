@@ -32,20 +32,34 @@ namespace Barroc_intens
 
         private void Bcreate_Click(object sender, RoutedEventArgs e)
         {
-            using var db = new AppDbContext();
-            db.Products.Add(new Product
+            try
             {
-                Id = tbProductid.Text,
-                Name = tbProductname.Text,
-                Dimensions = tbProductdimensions.Text,
-                Description = tbProductdescription.Text,
-                Price = decimal.Parse(tbProductprice.Text),
-                Storage = int.Parse(tbProductstorage.Text),
-            }
-                );
-            db.SaveChanges();
+                using var db = new AppDbContext();
+                db.Products.Add(new Product
+                {
+                    Id = tbProductid.Text,
+                    Name = tbProductname.Text,
+                    Dimensions = tbProductdimensions.Text,
+                    Description = tbProductdescription.Text,
+                    Price = decimal.Parse(tbProductprice.Text),
+                    Storage = int.Parse(tbProductstorage.Text),
+                });
+                db.SaveChanges();
 
-            this.Close();
+                var productWindow = new ProductenWindow();
+                productWindow.Activate();
+                this.Close();
+            }
+            catch (FormatException)
+            {
+                // Hier kun je de foutmelding weergeven voor ongeldige gegevens
+                MessageBox.Show("Ongeldige gegevens. Controleer of de ingevoerde waarden correct zijn.");
+            }
+            catch (Exception ex)
+            {
+                // Hier kun je een algemene foutmelding weergeven voor andere uitzonderingen
+                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
+            }
         }
     }
 }

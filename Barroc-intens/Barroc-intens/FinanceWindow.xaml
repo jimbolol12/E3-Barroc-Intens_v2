@@ -97,13 +97,34 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="localData:Company">
                         <StackPanel Margin="20">
-                            <TextBlock Text="{x:Bind Name}" />
-                            <TextBlock Text="{x:Bind Phone}" />
-                            <TextBlock Text="{x:Bind Street}" />
-                            <TextBlock Text="{x:Bind HouseNumber}" />
-                            <TextBlock Text="{x:Bind City}" />
-                            <TextBlock Text="{x:Bind CountryCode}" />
-                            <TextBlock Text="{x:Bind BkrCheckedAt}" />
+                            <TextBlock>
+                                <Run FontWeight="Bold" Text="Naam:" ></Run>
+                                <Run Text="{x:Bind Name}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run FontWeight="Bold" Text="telefoon nummer:"></Run>
+                                <Run Text="{x:Bind Phone}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run FontWeight="Bold" Text="Straat:"></Run>
+                                <Run Text="{x:Bind Street}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run FontWeight="Bold" Text="huisnummer:"></Run>
+                                <Run Text="{x:Bind HouseNumber}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run FontWeight="Bold" Text="Stad:"></Run>
+                                <Run Text="{x:Bind City}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run FontWeight="Bold" Text="BKR Voldaan op: "/>
+                                <Run Text="{x:Bind BkrCheckedAt}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run FontWeight="Bold" Text="Username: "/>
+                                <Run Text="{x:Bind Contact.Username}"/>
+                            </TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

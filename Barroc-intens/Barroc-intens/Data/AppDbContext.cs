@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 
 namespace Barroc_intens.Data
 {
-  
-     
-
     public class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }

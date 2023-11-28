@@ -21,16 +21,18 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            
+
+        <StackPanel>
             <Button x:Name="BStorage"
-                    Content="Naar magazijn"
-                    Click="BStorage_Click"
-                    HorizontalAlignment="Left" />
+                Content="Naar magazijn"
+                Click="BStorage_Click"
+                HorizontalAlignment="Left" />
 
             <Button x:Name="BProduct"
-                    Content="Naar producten"
-                    Click="BProduct_Click"
-                    HorizontalAlignment="Right" />
+                Content="Naar producten"
+                Click="BProduct_Click"
+                HorizontalAlignment="Right" />
+        </StackPanel>
 
         <Grid Grid.Column="1">
 

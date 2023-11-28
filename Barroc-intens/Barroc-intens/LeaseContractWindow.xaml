@@ -50,15 +50,15 @@
 
                     <TextBox FontFamily="BigShouldersDisplay"
                              FontWeight="Bold"
-                             PlaceholderText="Bedrijfsnaam"
+                             Header="Bedrijfsnaam"
                              Margin="10,0,0,5" />
 
                     <TextBox FontFamily="BigShouldersDisplay"
-                             PlaceholderText="Bedrijfadress"
+                             Header="Bedrijfadress"
                              Margin="10,0,0,5" />
 
                     <TextBox FontFamily="BigShouldersDisplay"
-                             PlaceholderText="Bedrijfpostcode"
+                             Header="Bedrijfpostcode"
                              Margin="10,0,0,5" />
                 </StackPanel>
 

@@ -11,10 +11,14 @@
 
         <StackPanel Orientation="Vertical"
                     Margin="10">
-            <TextBox x:Name="tbProductname" />
-            <TextBox x:Name="tbProductdimensions" />
-            <TextBox x:Name="tbProductdescription" />
-            <TextBox x:Name="tbProductprice" />
+            <TextBox x:Name="tbProductname"
+                     Header="Name" />
+            <TextBox x:Name="tbProductdimensions"
+                     Header="Dimensions"/>
+            <TextBox x:Name="tbProductdescription" 
+                     Header="Description"/>
+            <TextBox x:Name="tbProductprice"
+                     Header="Price"/>
         </StackPanel>
 
         <Button x:Name="BSave"

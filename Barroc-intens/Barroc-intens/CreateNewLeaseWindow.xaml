@@ -31,6 +31,7 @@
             </ComboBox>
             <RadioButton x:Name="RBBkrChecked" Content="BKR Check geslaagd?"/>
             <Button x:Name="BSaveContract" Click="BSaveContract_Click" Content="Contract Aanmaken"/>
+            
             <!--<ComboBox VerticalAlignment="Center">
                 <ComboBoxItem Content="Maandelijks"/>
                 <ComboBoxItem Content="Jaarlijks"/>

@@ -26,5 +26,5 @@
                 Margin="20"
                 Click="BSave_Click"></Button>
     </Grid>
-    
+
 </Window>

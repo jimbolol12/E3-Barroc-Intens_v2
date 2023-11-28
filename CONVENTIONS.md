@@ -65,6 +65,11 @@ var gingerbread = new ProductenWindow();
   ```
   #
 
+  **Opmaak XAML code**
+  
+  klik in je XAML code op edit/advanced/format document om een nette XAML layout te krijgen.
+  #
+
  **Commentaar en Tekst**
   
   Schrijf commentaren in het Nederlands.

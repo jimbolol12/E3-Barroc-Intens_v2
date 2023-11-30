@@ -32,7 +32,7 @@
                                     <TextBlock FontSize="15"
                                                Text="Name: ">
                                         <Run Text="{x:Bind Name}" />
-                                    </TextBlock
+                                    </TextBlock>
                                     <TextBlock FontSize="15"
                                                Text="Description: ">
                                     <Run Text="{x:Bind Description}" />

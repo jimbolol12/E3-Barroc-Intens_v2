@@ -44,7 +44,9 @@ namespace Barroc_intens
 
         private void BStoring_Click(object sender, RoutedEventArgs e)
         {
-
+            var storingWindow = new StoringsWindow();
+            storingWindow.Activate();
+            this.Close();
         }
 
         private void BContact_Click(object sender, RoutedEventArgs e)

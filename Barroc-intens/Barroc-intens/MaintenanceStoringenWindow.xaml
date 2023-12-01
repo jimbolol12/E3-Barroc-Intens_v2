@@ -6,6 +6,7 @@
     xmlns:local="using:Barroc_intens"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:localData="using:Barroc_intens.Model"
     mc:Ignorable="d">
 
     <Grid>
@@ -15,17 +16,29 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0"
-      Background="#FDD716" />
+            Background="#FDD716" />
 
 
         <Grid Grid.Column="1">
             <StackPanel HorizontalAlignment="Center"
-                VerticalAlignment="Top">
+                        VerticalAlignment="Top">
                 <TextBlock Text="Storingen"
-                   FontSize="24"
-                   Margin="0 20 0 20" />
+                           FontSize="24"
+                           Margin="0 20 0 20" />
+                <ListView x:Name="storingenListView"
+                          Grid.Column="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="localData:FaultyRequest">
+                            <StackPanel Margin="20">
+                                <TextBlock Text="{x:Bind Product.Name}" />
+                                <TextBlock Text="{x:Bind Description}" />
+                                <TextBlock Text="{x:Bind Employee.Username}" />
+                                <TextBlock Text="{x:Bind Done}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-                
 
             </StackPanel>
         </Grid>

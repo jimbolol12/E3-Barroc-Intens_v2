@@ -21,6 +21,7 @@ namespace Barroc_intens.Model
         public string City { get; set; }
         public string CountryCode { get; set; }
         public DateOnly? BkrCheckedAt { get; set; } // ? is voor nullable?
+        public bool BkrChecked => BkrCheckedAt != null;
 
 
     }

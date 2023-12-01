@@ -1,4 +1,5 @@
 using Barroc_intens.Data;
+using Barroc_intens.Model;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -31,15 +32,18 @@ namespace Barroc_intens
             using (var db = new AppDbContext())
             {
 
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-
+                //db.Database.EnsureDeleted();
+                //db.Database.EnsureCreated();
+                
 
                 var company = db.Companies
                      /* .Include(m => m.Id)*/
                      .ToList();
-
+                
                 companieListView.ItemsSource = company;
+
+
+                
             }
         }
 
@@ -50,6 +54,36 @@ namespace Barroc_intens
             this.Close();
         }
 
-        
+        private void TBBkrCheck_Click(object sender, RoutedEventArgs e)
+        {
+            var toggle = (ToggleButton)sender;
+            if (toggle.IsChecked == true)
+            {
+                var companyId = (int)toggle.Tag;
+
+                using (var db = new AppDbContext())
+                {
+                    var company = db.Companies.Single(c => c.Id == companyId);
+                    var now = DateTime.Now;
+                    company.BkrCheckedAt = DateOnly.FromDateTime(now);
+                    db.SaveChanges();
+                }
+            }
+            else if (toggle.IsChecked == false)
+            {
+                var companyId = (int)toggle.Tag;
+
+                using (var db = new AppDbContext())
+                {
+                    var company = db.Companies.Single(c => c.Id == companyId);
+                    company.BkrCheckedAt = null;
+                    db.SaveChanges();
+                }
+            }
+            var financeWindow = new FinanceWindow();
+            financeWindow.Activate();
+            this.Close();
+        }
+
     }
 }

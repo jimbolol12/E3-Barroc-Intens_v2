@@ -1,3 +1,5 @@
+using Barroc_intens.Model;
+using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +28,23 @@ namespace Barroc_intens
         public SalesWindow()
         {
             this.InitializeComponent();
+            using var db = new AppDbContext();
+            var products = db.Products.ToList();
+            var companies= db.Companies.ToList();
+            lvProducts.ItemsSource = products;
+            lvbedrijf.ItemsSource = companies;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var Offertewindow = new offerteWindow();
+            Offertewindow.Activate();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

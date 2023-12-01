@@ -6,9 +6,98 @@
     xmlns:local="using:Barroc_intens"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:Barroc_intens.Model"
     mc:Ignorable="d">
 
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            
+
+           
+        </Grid.RowDefinitions>
+
+
+
+        <Button Grid.Column="0" Padding="150,75" Click="Button_Click">Offerte Aanmaken</Button>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <ListView x:Name="lvProducts">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Product">
+                        <Border BorderThickness="1"
+                    Margin="20"
+                    Padding="30">
+                            <StackPanel Orientation="Horizontal"
+                            Spacing="50">
+                                <StackPanel>
+
+                                    <TextBlock FontSize="15"
+                                   Text="Name: ">
+                            <Run Text="{x:Bind Name}" />
+                                    </TextBlock>
+                                    
+                                    <TextBlock FontSize="15"
+                                   Text="Storage: ">
+                            <Run Text="{x:Bind StorageFormatted}" />
+                                    </TextBlock>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <ListView x:Name="lvbedrijf">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Company">
+                        <Border BorderThickness="1"
+         Margin="20"
+         Padding="30">
+                            <StackPanel Orientation="Horizontal"
+                 Spacing="50">
+                                <StackPanel>
+
+                                    <TextBlock FontSize="15"
+                        Text="Name: ">
+                 <Run Text="{x:Bind Name}" />
+                                    </TextBlock>
+
+                                    <TextBlock FontSize="15"
+                        Text="Storage: ">
+                 <Run Text="{x:Bind Street}" />
+                                    </TextBlock>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button Click="Button_Click_1">notes maken</Button>
+            
+
+
+        </StackPanel>
+
+
+
 
     </Grid>
 </Window>

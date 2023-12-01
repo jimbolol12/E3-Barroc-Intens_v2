@@ -85,6 +85,14 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 6,
+                    Username = "Paul",
+                    Password = "test",
+                    JobFunctionId = 5,
+                },
+
+                new User
+                {
+                    Id = 7,
                     Username = "Jimmy",
                     Password = "wachtwoord321",
                     JobFunctionId = 7,
@@ -92,10 +100,18 @@ namespace Barroc_intens.Data
 
                 new User
                 {
-                    Id = 7,
+                    Id = 8,
                     Username = "Paul",
                     Password = "wachtwoord321",
                     JobFunctionId = 6,
+                },
+
+                new User
+                {
+                    Id = 9,
+                    Username = "Jan",
+                    Password = "test",
+                    JobFunctionId = 5,
                 }
             );
 

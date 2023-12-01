@@ -15,6 +15,7 @@ using Microsoft.UI.Xaml.Navigation;
 using Barroc_intens.Data;
 using Barroc_intens.Model;
 using Aspose.Pdf.LogicalStructure;
+using System.Configuration;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -39,7 +40,7 @@ namespace Barroc_intens
                 //Random functie voor het koppelen van medewerker aan storing
                 Random r = new Random();
                 var employeeList = new List<User>();
-                employeeList = db.Users.ToList();
+                employeeList = db.Users.Where(u => u.JobFunctionId == 5).ToList();
                 int index = r.Next(employeeList.Count);
                 User randomEmployee = employeeList[index];
                 //Toevoegen aan de database

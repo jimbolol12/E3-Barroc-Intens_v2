@@ -20,28 +20,21 @@
         <Grid Grid.Column="1">
             <StackPanel HorizontalAlignment="Center"
                         VerticalAlignment="Center">
-
                 <TextBlock Text="Inloggen"
                            FontSize="24"
                            Margin="0 0 0 20" />
-
                 <TextBlock x:Name="ErrorTextBlock"
                            Foreground="#FDD716" />
-
                 <TextBox x:Name="UsernameTextBox"
                          PlaceholderText="Gebruikersnaam"
                          Margin="0 0 10 0" />
-
                 <PasswordBox x:Name="PasswordBox"
                              PlaceholderText="Wachtwoord"
                              Margin="0 0 10 0" />
-
                 <Button Content="Inloggen"
                         Click="Button_Click_1" />
 
             </StackPanel>
         </Grid>
-            
     </Grid>
-
 </Window>

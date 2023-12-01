@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window
-    x:Class="Barroc_intens.InkoopWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Barroc_intens"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+<Window x:Class="Barroc_intens.InkoopWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:Barroc_intens"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
 
 
     <Grid>
@@ -17,21 +16,21 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
         <StackPanel>
             <Button x:Name="BStorage"
-                Content="Naar magazijn"
-                Click="BStorage_Click"
-                HorizontalAlignment="Left" />
+                    Content="Naar magazijn"
+                    Click="BStorage_Click"
+                    HorizontalAlignment="Left" />
 
             <Button x:Name="BProduct"
-                Content="Naar producten"
-                Click="BProduct_Click"
-                HorizontalAlignment="Right" />
+                    Content="Naar producten"
+                    Click="BProduct_Click"
+                    HorizontalAlignment="Right" />
         </StackPanel>
 
         <Grid Grid.Column="1">

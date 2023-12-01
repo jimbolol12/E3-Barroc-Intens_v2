@@ -13,7 +13,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <!-- Linkerkant -->
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -47,6 +47,7 @@
                 <Grid Grid.Column="0">
                     <Border BorderBrush="#FDD716"
                             BorderThickness="1">
+                        
                         <TextBlock Text="Inkomsten per maand"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
@@ -93,7 +94,7 @@
         <Grid Grid.Column="1">
             <!-- Rechterkant -->
             <ListView x:Name="companieListView"
-                          Grid.Column="1">
+                      Grid.Column="1">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="localData:Company">
                         <StackPanel Margin="20">
@@ -104,10 +105,12 @@
                             <TextBlock Text="{x:Bind City}" />
                             <TextBlock Text="{x:Bind CountryCode}" />
                             <TextBlock>
-                                <Run Text="BKR Voldaan op: "/>
-                                <Run Text="{x:Bind BkrCheckedAt}"/>
+                                <Run Text="BKR Voldaan op: " />
+                                <Run Text="{x:Bind BkrCheckedAt}" />
                             </TextBlock>
                             <TextBlock Text="{x:Bind Contact.Username}" />
+                            <ToggleButton x:Name="TBBkrCheck" Content="Toggle BKR Check" Click="TBBkrCheck_Click" Tag="{x:Bind Id}" IsChecked="{x:Bind BkrChecked}"/>
+
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
@@ -19,6 +19,7 @@
     <None Remove="LoginWindow.xaml" />
     <None Remove="Notes.xaml" />
     <None Remove="ProductenWindow.xaml" />
+    <None Remove="StoringsWindow.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -86,6 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Notes.xaml">
+    <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="StoringsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

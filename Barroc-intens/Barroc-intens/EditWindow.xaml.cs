@@ -44,20 +44,38 @@ namespace Barroc_intens
 
         private void BSave_Click(object sender, RoutedEventArgs e)
         {
-            var product = clickedproduct;
+            try
+            {
 
-            using var dbContext = new AppDbContext();
 
-            var clickproduct = dbContext.Products.Find(clickedproduct.Id);
+                var product = clickedproduct;
 
-            clickproduct.Name = tbProductname.Text;
-            clickproduct.Dimensions = tbProductdimensions.Text;
-            clickproduct.Description = tbProductdescription.Text;
-            clickproduct.Price = decimal.Parse(tbProductprice.Text);
+                using var dbContext = new AppDbContext();
 
-            dbContext.SaveChanges();
+                var clickproduct = dbContext.Products.Find(clickedproduct.Id);
 
-            this.Close();
+                clickproduct.Name = tbProductname.Text;
+                clickproduct.Dimensions = tbProductdimensions.Text;
+                clickproduct.Description = tbProductdescription.Text;
+                clickproduct.Price = decimal.Parse(tbProductprice.Text);
+
+                dbContext.SaveChanges();
+
+                this.Close();
+
+            }
+            catch (FormatException)
+            {
+                // Hier kun je de foutmelding weergeven voor ongeldige gegevens
+                /* MessageBox.Show("Ongeldige gegevens. Controleer of de ingevoerde waarden correct zijn.");*/
+                MessageBox.Text = "Incorecte gegevens ingevuld";
+            }
+            catch (Exception ex)
+            {
+                // Hier kun je een algemene foutmelding weergeven voor andere uitzonderingen
+                /* MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");*/
+                MessageBox.Text = "Incorecte gegevens ingevuld";
+            }
         }
     }
 }

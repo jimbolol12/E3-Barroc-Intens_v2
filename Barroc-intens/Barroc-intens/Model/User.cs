@@ -10,8 +10,6 @@ namespace Barroc_intens.Model
 {
     public class User
     {
-        
-
         public User()
         {
         }
@@ -31,8 +29,5 @@ namespace Barroc_intens.Model
         public string Email { get; set; }
         public int JobFunctionId { get; set; }
         public JobFunction JobFunction { get; set; }
-        
-        
-   
     }
 }

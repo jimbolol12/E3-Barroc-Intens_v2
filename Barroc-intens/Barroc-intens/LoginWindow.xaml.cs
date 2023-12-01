@@ -26,6 +26,7 @@ namespace Barroc_intens
     /// </summary>
     public sealed partial class LoginWindow : Window
     {
+        public static User LoggedInUser { get; private set; }
         public LoginWindow()
         {
             this.InitializeComponent();
@@ -43,6 +44,7 @@ namespace Barroc_intens
 
             var context = new AppDbContext();
             var user = context.Users.SingleOrDefault(u => u.Username == enteredUsername && u.Password == enteredPassword);
+            LoggedInUser = user;
 
             if (user != null)
             {

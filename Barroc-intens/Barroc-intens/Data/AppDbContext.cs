@@ -31,8 +31,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=root;" +
-                "password=;" +
+                "user=c_sharp;" +
+                "password=Krijnisleider;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -103,8 +103,9 @@ namespace Barroc_intens.Data
               new FaultyRequest
               {
                   Id = 1,
-                  ProductId = 1,
+                  ProductId = "S234FREKT",
                   UserId = 1,
+                  EmployeeId = 2,
                   ScheduledAt = DateTime.UtcNow,
                   Description = "dfdfdfdf",
                   Done = false,
@@ -138,7 +139,7 @@ namespace Barroc_intens.Data
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {
-                    Id = "1",
+                    Id = "S234FREKT",
                     Name = "Barroc Intens Italian Light",
                     Description = "",
                     Price = 499,
@@ -146,7 +147,7 @@ namespace Barroc_intens.Data
                 },
                 new Product
                 {
-                    Id = "2",
+                    Id = "S234KNDPF",
                     Name = "Barroc Intens Italian",
                     Description = "",
                     Price = 599,
@@ -154,7 +155,7 @@ namespace Barroc_intens.Data
                 },
                 new Product
                 {
-                    Id = "3",
+                    Id = "S234NNBMV",
                     Name = "Barroc Intens Italian Deluxe",
                     Description = "",
                     Price = 799,
@@ -162,7 +163,7 @@ namespace Barroc_intens.Data
                 },
                 new Product
                 {
-                    Id = "4",
+                    Id = "S234MMPLA",
                     Name = "Barroc Intens Italian Deluxe Special",
                     Description = "",
                     Price = 999,

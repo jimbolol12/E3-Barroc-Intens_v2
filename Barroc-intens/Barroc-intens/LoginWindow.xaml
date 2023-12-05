@@ -32,7 +32,7 @@
                              PlaceholderText="Wachtwoord"
                              Margin="0 0 10 0" />
                 <Button Content="Inloggen"
-                        Click="Button_Click_1" />
+                        Click="Login_Click" />
 
             </StackPanel>
         </Grid>

@@ -32,21 +32,12 @@ namespace Barroc_intens
             this.InitializeComponent();
 
             using (var db = new AppDbContext())
-<<<<<<< Updated upstream
-            { 
-<<<<<<< Updated upstream
-                db.Database.EnsureDeleted();
-=======
             {
                 //db.Database.EnsureDeleted();
->>>>>>> Stashed changes
-=======
-                //db.Database.EnsureDeleted();
->>>>>>> Stashed changes
                 db.Database.EnsureCreated();
             }
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
             string enteredUsername = UsernameTextBox.Text;
             string enteredPassword = PasswordBox.Password;
@@ -113,6 +104,5 @@ namespace Barroc_intens
             }
         }
     }
-    
 }
 

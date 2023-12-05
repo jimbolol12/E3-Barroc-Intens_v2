@@ -32,8 +32,13 @@ namespace Barroc_intens
             this.InitializeComponent();
 
             using (var db = new AppDbContext())
+<<<<<<< Updated upstream
             { 
                 db.Database.EnsureDeleted();
+=======
+            {
+                //db.Database.EnsureDeleted();
+>>>>>>> Stashed changes
                 db.Database.EnsureCreated();
             }
         }

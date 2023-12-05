@@ -34,6 +34,11 @@ namespace Barroc_intens
         public App()
         {
             this.InitializeComponent();
+            using (var db = new AppDbContext())
+            {
+                //db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+            }
         }
 
         /// <summary>

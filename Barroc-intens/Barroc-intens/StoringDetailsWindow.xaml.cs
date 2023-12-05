@@ -24,33 +24,31 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MaintenanceStoringenWindow : Window
+    public sealed partial class StoringDetailsWindow : Window
     {
-        public MaintenanceStoringenWindow()
+        public StoringDetailsWindow(FaultyRequest selectedStoring)
         {
             this.InitializeComponent();
+
             using (var db = new AppDbContext())
             {
-                var storing = db.FaultyRequests
-                    .Include(s => s.Product)
-                    .ToList();
-                    
+                
 
-                storingenListView.ItemsSource = storing;
+                var storingDetail = db.FaultyRequests
+                    .Include(sd => sd.Product)
+                    .Include(sd => sd.Employee)
+                    .ToList()
+                    .Where(sd => sd.Id == selectedStoring.Id);
+                    
+                storingDetailsListView.ItemsSource = storingDetail;
             }
         }
-        private void storingenListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+
+        private void BGoBack_Click(object sender, RoutedEventArgs e)
         {
-
-            if (e.OriginalSource is FrameworkElement element && element.DataContext is FaultyRequest ClickedStoring)
-            {
-                var storingDetailsWindow = new StoringDetailsWindow(ClickedStoring);
-                storingDetailsWindow.Activate();
-                this.Close();
-            }
-
-           
-            
+            var maintenanceStoringenWindow = new MaintenanceStoringenWindow();
+            maintenanceStoringenWindow.Activate();
+            this.Close();
         }
     }
 }

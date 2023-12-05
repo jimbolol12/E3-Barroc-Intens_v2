@@ -26,7 +26,10 @@
                            FontSize="24"
                            Margin="0 20 0 20" />
                 <ListView x:Name="storingenListView"
-                          Grid.Column="1">
+                          Grid.Column="1"
+                          IsItemClickEnabled="True"
+                          IsDoubleTapEnabled="True"
+                          DoubleTapped="storingenListView_DoubleTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="localData:FaultyRequest">
                             <StackPanel Margin="20">
@@ -38,6 +41,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+
 
 
             </StackPanel>

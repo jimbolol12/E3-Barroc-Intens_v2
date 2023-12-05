@@ -1,3 +1,5 @@
+using Barroc_intens.Data;
+using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +28,25 @@ namespace Barroc_intens
         public PlannerMaintenanceWindow()
         {
             this.InitializeComponent();
+            using var db = new AppDbContext();
+            var apointements = db.FaultyRequests.ToList();
+            lvApointements.ItemsSource = apointements;
+        }
+
+        private void CalendarView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+           
+        }
+
+        private void lvApointements_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            CalendarDatePicker Calendar_FaultyrequestPlanner = new CalendarDatePicker();
+            Calendar_FaultyrequestPlanner.Visibility = Visibility.Visible;
+        }
+
+        private void CalendarView_CalendarViewDayItemChanging(CalendarView sender, CalendarViewDayItemChangingEventArgs args)
+        {
+
         }
     }
 }

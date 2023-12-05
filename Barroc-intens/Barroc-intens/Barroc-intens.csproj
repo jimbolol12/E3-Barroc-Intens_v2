@@ -82,9 +82,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Img\" />
-  </ItemGroup>
-  <ItemGroup>
     <Page Update="StoringsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

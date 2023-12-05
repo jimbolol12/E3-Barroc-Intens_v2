@@ -28,8 +28,6 @@
                        Margin="10"
                        FontSize="40"
                        Text="Factuur" />
-
-            <!--<Image Source="Logo4_klein.png" />-->
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"
@@ -62,7 +60,7 @@
                             Grid.Column="1">
                     <TextBlock FontStyle="Italic"
                                FontFamily="BigShouldersDisplay"
-                               Text="Barroc intense" />
+                               Text="Barroc intens" />
                     <TextBlock FontStyle="Italic"
                                FontFamily="BigShouldersDisplay"
                                Text="Terheidenseweg 350" />

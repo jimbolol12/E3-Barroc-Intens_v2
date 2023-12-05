@@ -53,12 +53,12 @@ namespace Barroc_intens
             catch (FormatException)
             {
                 // Hier kun je de foutmelding weergeven voor ongeldige gegevens
-                MessageBox.Show("Ongeldige gegevens. Controleer of de ingevoerde waarden correct zijn.");
+                MessageBox.Text = "Ongeldige gegevens";
             }
             catch (Exception ex)
             {
                 // Hier kun je een algemene foutmelding weergeven voor andere uitzonderingen
-                MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");
+                MessageBox.Text = "Ongeldige gegevens";
             }
         }
     }

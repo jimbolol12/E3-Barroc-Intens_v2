@@ -23,19 +23,27 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MaintenanceWindow : Window
+    public sealed partial class MaintenanceWerkbonnen : Window
     {
-        public MaintenanceWindow()
+        public MaintenanceWerkbonnen()
         {
             this.InitializeComponent();
 
-           
+            using (var db = new AppDbContext())
+            {
+
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+                var maintenance = db.MaintenanceAppointments.ToList();
+                NoteListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
+
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var window = new MaintenanceWerkbonnen();
-            window.Activate();
+
         }
     }
 }

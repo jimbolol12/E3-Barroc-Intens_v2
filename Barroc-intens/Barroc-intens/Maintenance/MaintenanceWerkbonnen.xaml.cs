@@ -43,7 +43,8 @@ namespace Barroc_intens
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            var window = new MaintenancePlanner();
+            window.Activate();
         }
     }
 }

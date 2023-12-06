@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Img\" />
+    <Folder Include="Maintenance\" />
   </ItemGroup>
   <ItemGroup>
     <Page Update="MaintenanceWerkbonnen.xaml">

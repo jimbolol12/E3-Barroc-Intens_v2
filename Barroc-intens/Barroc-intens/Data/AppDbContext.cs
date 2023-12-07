@@ -31,8 +31,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=c_sharp;" +
-                "password=Krijnisleider;" +
+                "user=root;" +
+                "password=18nlw;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -40,7 +40,6 @@ namespace Barroc_intens.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
@@ -151,6 +150,32 @@ namespace Barroc_intens.Data
                    ContactId = 1
                }
            );
+            
+            modelBuilder.Entity<Category>().HasData(
+                new Category
+                {
+                    Id = 1,
+                    Name = "Materiaal",
+                    IsEmployeeOnly = true,
+                },
+                new Category
+                {
+                    Id = 2,
+                    Name = "Product",
+                    IsEmployeeOnly = false,
+                },
+                new Category
+                {
+                    Id = 3,
+                    Name = "Deluxe",
+                    IsEmployeeOnly = false,
+                },
+                new Category
+                {
+                    Id = 4,
+                    Name = "Special",
+                    IsEmployeeOnly = false,
+                });
 
             modelBuilder.Entity<Product>().HasData(
                 new Product
@@ -160,6 +185,7 @@ namespace Barroc_intens.Data
                     Description = "",
                     Price = 499,
                     Storage = 100,
+                    CategoryId = 2
                 },
                 new Product
                 {
@@ -168,14 +194,25 @@ namespace Barroc_intens.Data
                     Description = "",
                     Price = 599,
                     Storage = 100,
+                    CategoryId = 2
                 },
                 new Product
                 {
                     Id = "S234NNBMV",
+                    Name = "Stroom Kabel",
+                    Description = "",
+                    Price = 45,
+                    Storage = 50,
+                    CategoryId = 1
+                },
+                new Product
+                {
+                    Id = "S234UUQRF",
                     Name = "Barroc Intens Italian Deluxe",
                     Description = "",
                     Price = 799,
                     Storage = 100,
+                    CategoryId = 3
                 },
                 new Product
                 {
@@ -184,6 +221,7 @@ namespace Barroc_intens.Data
                     Description = "",
                     Price = 999,
                     Storage = 100,
+                    CategoryId = 4
                 }
             );
 

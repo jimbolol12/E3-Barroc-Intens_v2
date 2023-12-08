@@ -16,6 +16,7 @@ using Barroc_intens.Model;
 using Microsoft.EntityFrameworkCore;
 using Barroc_intens.Data;
 using System.ComponentModel.Design;
+using Windows.UI;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -36,11 +37,27 @@ namespace Barroc_intens
         {
             using var db = new AppDbContext();
             db.MaintenanceAppointments.Add(new MaintenanceAppointment
-          {
-               /* CompanId = int.Parse(tbCompany.Text),
+            {
                 Remark = tbRemark.Text,
-                DateAdded = tbDateAdded.Date.Date*/
-            });
+                DateAdded = tbDateAdded.Date.Date,
+
+                var selectedGenres = GenreListBox.SelectedItems.Cast<Genre>().ToList();
+            dbContext.GameGenres.RemoveRange(dbContext.GameGenres.Where(gg => gg.GameId == clickedgame.Id));
+            dbContext.SaveChanges();
+
+
+            foreach (var selectedGenre in selectedGenres)
+            {
+                var gameGenre = new GameGenre
+                {
+                    GameId = clickedgame.Id,
+                    GenreId = selectedGenre.Id,
+                };
+
+                dbContext.GameGenres.Add(gameGenre);
+            }
+            dbContext.SaveChanges();
+        });
             db.SaveChanges();
         }
     }

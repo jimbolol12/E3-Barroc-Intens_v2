@@ -31,7 +31,7 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
 
-           
+
         }
 
         private void BStoringRedirect_Click(object sender, RoutedEventArgs e)
@@ -39,14 +39,18 @@ namespace Barroc_intens
             var maintenanceStoringenWindow = new MaintenanceStoringenWindow();
             maintenanceStoringenWindow.Activate();
             this.Close();
+
+
+
+        }
         private void CalendarView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
 
         }
-
         private void CalendarView_CalendarViewDayItemChanging(CalendarView sender, CalendarViewDayItemChangingEventArgs args)
         {
 
         }
     }
 }
+

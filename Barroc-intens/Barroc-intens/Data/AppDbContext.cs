@@ -123,17 +123,8 @@ namespace Barroc_intens.Data
                   ScheduledAt = DateTime.UtcNow,
                   Description = "dfdfdfdf",
                   Done = false,
-              },
-
-              new FaultyRequest
-              {
-                  Id = 2,
-                  ProductId = "S234FREKT",
-                  UserId = 1,
-                  ScheduledAt = DateTime.UtcNow,
-                  Description = "Kapoet, werkt nie",
-                  Done = false,
               });
+
 
             modelBuilder.Entity<Company>().HasData(
                new Company

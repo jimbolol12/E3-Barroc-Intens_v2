@@ -1,5 +1,4 @@
 using Barroc_intens.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -36,12 +35,6 @@ namespace Barroc_intens
             var newLeaseWindow = new CreateNewLeaseWindow();
             newLeaseWindow.Activate();
             this.Close();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new MaintenanceWerkbonnen();
-            window.Activate();
         }
     }
 }

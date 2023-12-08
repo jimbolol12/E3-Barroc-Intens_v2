@@ -15,11 +15,12 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!--Kies de datum voor het inplannen-->
-        <CalendarDatePicker Grid.Column="0"
-                            VerticalAlignment="Top"
-                            PlaceholderText="Routine matig bezoek plannen"
-                            Header="Calendar" />
+        <Button Grid.Column="0"
+                x:Name="bCreateRoutineVisit"
+                VerticalAlignment="Top"
+                Content="Routine matig bezoek inplannen"
+                Click="bCreateRoutineVisit_Click">
+        </Button>
         
         <!--Zorg dat het in de kalender komt-->
         <CalendarView Grid.Column="0"

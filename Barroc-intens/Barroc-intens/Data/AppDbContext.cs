@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 
 namespace Barroc_intens.Data
 {
-  
-     
-
     public class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
@@ -122,6 +119,7 @@ namespace Barroc_intens.Data
                   ProductId = "S234FREKT",
                   UserId = 1,
                   EmployeeId = 2,
+                  Location = "Terheidenseweg 350",
                   ScheduledAt = DateTime.UtcNow,
                   Description = "dfdfdfdf",
                   Done = false,

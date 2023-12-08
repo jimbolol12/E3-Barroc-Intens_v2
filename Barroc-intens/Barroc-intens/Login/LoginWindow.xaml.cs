@@ -33,7 +33,7 @@ namespace Barroc_intens
 
             using (var db = new AppDbContext())
             {
-                //db.Database.EnsureDeleted();
+                db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
             }
         }

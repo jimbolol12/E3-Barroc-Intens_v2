@@ -27,6 +27,8 @@ namespace Barroc_intens
     /// </summary>
     public sealed partial class PlannerMaintenanceWindow : Window
     {
+        private FaultyRequest _clickedRequest;
+
         static ObservableCollection<FaultyRequest> AllCalendarItems = new ObservableCollection<FaultyRequest>();
         public PlannerMaintenanceWindow()
         {
@@ -41,11 +43,24 @@ namespace Barroc_intens
            
         }
 
-        //Zorgt dat de listview een double tap heeft
+        //Toevoegen aan de kalender
         private void lvApointements_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            CalendarDatePicker Calendar_FaultyrequestPlanner = new CalendarDatePicker();
-            Calendar_FaultyrequestPlanner.Visibility = Visibility.Visible;
+            var clickedRequest = (FaultyRequest)lvApointements.SelectedItem;
+            var newCalendarItem = new FaultyRequest()
+            {
+                ProductId = clickedRequest.ProductId,
+                ScheduledAt = clickedRequest.ScheduledAt,
+                Location = clickedRequest.Location,
+                Description = clickedRequest.Description,
+            };
+
+            AllCalendarItems.Add(newCalendarItem);
+
+            // Refresh page to update calendar view
+            var plannerWindowRefresh = new PlannerMaintenanceWindow();
+            plannerWindowRefresh.Activate();
+            this.Close();
         }
 
         private void CalendarView_CalendarViewDayItemChanging(CalendarView sender, CalendarViewDayItemChangingEventArgs args)
@@ -55,11 +70,6 @@ namespace Barroc_intens
 
             // De DataContext is vanuit de xaml te benaderen met {Binding}
             args.Item.DataContext = relevantCalendarItems;
-
-            if (relevantCalendarItems.Count() == 0)
-            {
-                args.Item.IsBlackout = true;
-            }
         }
         
         //Laat alles goed zien in de kalender
@@ -70,31 +80,12 @@ namespace Barroc_intens
             var dialog = new ContentDialog()
             {
                 Title = clickedCalendarItem.ProductId,
-                Content = $"Start: {clickedCalendarItem.ScheduledAt}\nLocation: {clickedCalendarItem.UserId}\nDetails: {clickedCalendarItem.Description}",
+                Content = $"Start: {clickedCalendarItem.ScheduledAt}\nLocation: {clickedCalendarItem.Location}\nDetails: {clickedCalendarItem.Description}",
                 CloseButtonText = "Close",
                 XamlRoot = this.Content.XamlRoot,
             };
 
             await dialog.ShowAsync();
-        }
-
-        //Toevoegen aan de kalender
-        private void Calendar_FaultyrequestPlanner_Click(object sender, RoutedEventArgs e)
-        {
-            var newCalendarItem = new FaultyRequest()
-            {
-                ProductId = "New Calendar Item",
-                ScheduledAt = DateTime.Now,
-                Location = "New Location",
-                Description = "New Details"
-            };
-
-            AllCalendarItems.Add(newCalendarItem);
-
-            // Refresh page to update calendar view
-            this.Close();
-            var plannerWindowRefresh = new PlannerMaintenanceWindow();
-            plannerWindowRefresh.Activate();
         }
     }
 }

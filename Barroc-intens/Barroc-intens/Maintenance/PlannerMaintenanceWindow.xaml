@@ -50,7 +50,7 @@
                                                            FontWeight="Bold" />
                                                 <TextBlock Text="{x:Bind UserId}" />
                                                 <TextBlock Text="{x:Bind EmployeeId}"
-                                                           FontStyle="Italic"/>
+                                                           FontStyle="Italic" />
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -62,11 +62,6 @@
             </CalendarView.CalendarViewDayItemStyle>
         </CalendarView>
 
-        <Button Grid.Column="1"
-                Click="Calendar_FaultyrequestPlanner_Click"
-                x:Name="Calendar_FaultyrequestPlanner"
-                Content="Storing inplannen"/>
-
         <ListView x:Name="lvApointements"
                   Grid.Column="1"
                   IsDoubleTapEnabled="True"
@@ -75,7 +70,7 @@
                 <DataTemplate x:DataType="model:FaultyRequest">
                     <StackPanel>
                         <TextBlock>
-                            <Run Text="{x:Bind ProductId }" />
+                            <Run Text="{x:Bind ProductId }"/>
                             <Run Text="{x:Bind Location }" />
                             <Run Text="{x:Bind EmployeeId }" />
                             <Run Text="{x:Bind Description }" />

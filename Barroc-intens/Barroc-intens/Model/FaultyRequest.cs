@@ -14,9 +14,11 @@ namespace Barroc_intens.Model
         public Product Product { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
-        public int? EmployeeId { get; set; } // is Nullable | Kan zijn dat dr nog geen medewerker aan is gewezen om hieraan te werken.
+        public string Location { get; set; }
+        public int EmployeeId { get; set; }
         public User Employee { get; set; }
-        public DateTime? ScheduledAt { get; set; }
+        public DateTime ScheduledAt { get; set; }
+        // TODO: EmployeeId | Nullable: Kan zijn dat dr nog geen medewerker aan is gewezen om hieraan te werken.
         public string Description { get; set; }
         public bool Done { get; set; }
     }

@@ -1,4 +1,6 @@
 using Barroc_intens.Data;
+using Barroc_intens.Model;
+using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -8,6 +10,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -36,6 +39,14 @@ namespace Barroc_intens
             var maintenanceStoringenWindow = new MaintenanceStoringenWindow();
             maintenanceStoringenWindow.Activate();
             this.Close();
+        private void CalendarView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void CalendarView_CalendarViewDayItemChanging(CalendarView sender, CalendarViewDayItemChangingEventArgs args)
+        {
+
         }
     }
 }

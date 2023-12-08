@@ -18,6 +18,10 @@
                      Header="Product Id of fault"
                      Margin="0,10,0,0" />
 
+            <TextBox x:Name="tbFaultyRequestlocation"
+                     Header="Location"
+                     Margin="0,10,0,0" />
+
             <TextBox x:Name="tbFaultyRequestdescription"
                      Header="Description"
                      Margin="0,10,0,0" />

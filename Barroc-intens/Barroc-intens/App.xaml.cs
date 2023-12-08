@@ -1,4 +1,5 @@
-﻿using Microsoft.UI.Xaml;
+﻿using Barroc_intens.Data;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
@@ -33,6 +34,11 @@ namespace Barroc_intens
         public App()
         {
             this.InitializeComponent();
+            using (var db = new AppDbContext())
+            {
+                //db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+            }
         }
 
         /// <summary>

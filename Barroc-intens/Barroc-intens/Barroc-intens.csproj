@@ -17,7 +17,9 @@
     <None Remove="EditWindow.xaml" />
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
+    <None Remove="MaintenanceStoringenWindow.xaml" />
     <None Remove="ProductenWindow.xaml" />
+    <None Remove="StoringDetailsWindow.xaml" />
     <None Remove="StoringsWindow.xaml" />
   </ItemGroup>
 
@@ -85,6 +87,16 @@
     <Folder Include="Img\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Update="StoringDetailsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MaintenanceStoringenWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="StoringsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,6 +105,14 @@
     <Page Update="CreateNewLeaseWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Maintenance\" />
+    <Folder Include="Inkoop\" />
+    <Folder Include="Klant\" />
+    <Folder Include="Finance\" />
+    <Folder Include="Login\" />
+    <Folder Include="Sales\" />
   </ItemGroup>
 
   <!-- 

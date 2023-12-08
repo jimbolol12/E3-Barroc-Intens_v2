@@ -49,6 +49,7 @@ namespace Barroc_intens
                     ProductId = tbFaultyRequestproduct.Text,
                     UserId = LoginWindow.LoggedInUser.Id,
                     Employee = randomEmployee,
+                    Location = tbFaultyRequestlocation.Text,
                     Description = tbFaultyRequestdescription.Text,
                     Done = false,
                 }
@@ -63,12 +64,12 @@ namespace Barroc_intens
                 /* MessageBox.Show("Ongeldige gegevens. Controleer of de ingevoerde waarden correct zijn.");*/
                 MessageBox.Text = "Incorecte gegevens ingevuld";
             }
-            catch (Exception ex)
-            {
-                // Hier kun je een algemene foutmelding weergeven voor andere uitzonderingen
-                /* MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");*/
-                MessageBox.Text = "Incorecte gegevens ingevuld";
-            }
+            //catch (Exception ex)
+            //{
+            //     Hier kun je een algemene foutmelding weergeven voor andere uitzonderingen
+            //    /* MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");*/
+            //    MessageBox.Text = "Incorecte gegevens ingevuld";
+            //}
         }
     }
 }

@@ -31,8 +31,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=c_sharp;" +
-                "password=Krijnisleider;" +
+                "user=root;" +
+                "password=18nlw;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -78,7 +78,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 5,
                     Username = "Hanna",
-                    Password = "wachtwoord321",
+                    Password = "a",
                     JobFunctionId = 5,
                 },
 
@@ -124,6 +124,16 @@ namespace Barroc_intens.Data
                   EmployeeId = 2,
                   ScheduledAt = DateTime.UtcNow,
                   Description = "dfdfdfdf",
+                  Done = false,
+              },
+
+              new FaultyRequest
+              {
+                  Id = 2,
+                  ProductId = "S234FREKT",
+                  UserId = 1,
+                  ScheduledAt = DateTime.UtcNow,
+                  Description = "Kapoet, werkt nie",
                   Done = false,
               });
 

@@ -30,5 +30,12 @@ namespace Barroc_intens
 
            
         }
+
+        private void BStoringRedirect_Click(object sender, RoutedEventArgs e)
+        {
+            var maintenanceStoringenWindow = new MaintenanceStoringenWindow();
+            maintenanceStoringenWindow.Activate();
+            this.Close();
+        }
     }
 }

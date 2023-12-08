@@ -224,7 +224,22 @@ namespace Barroc_intens.Data
                 }
                 
             );
-            
+            modelBuilder.Entity<MaintenanceAppointment>().HasData(
+              new MaintenanceAppointment
+              {
+                  Id = 1,
+                  CompanyId = 1,
+                  Remark = "yahhhh",
+                  DateAdded = DateTime.Now,
+              },
+              new MaintenanceAppointment
+              {
+                  Id = 2,
+                  CompanyId = 2,
+                  Remark = "yuhhhh",
+                  DateAdded = DateTime.Now,
+              }
+              );
         }
     }
 }

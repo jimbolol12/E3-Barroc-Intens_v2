@@ -6,6 +6,7 @@
     xmlns:local="using:Barroc_intens"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<<<<<<< HEAD
     mc:Ignorable="d">
 
     <Grid>
@@ -52,5 +53,13 @@
             </ListView.ItemTemplate>
         </ListView>-->
 
+=======
+    xmlns:localData="using:Barroc_intens.Model"
+    mc:Ignorable="d">
+
+
+    <Grid>
+        <Button Content="Inkomende Storingen" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" Click="Button_Click"/>
+>>>>>>> MaintanenceWerkbronnenWindow
     </Grid>
 </Window>

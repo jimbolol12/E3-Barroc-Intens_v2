@@ -18,6 +18,8 @@
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
     <None Remove="MaintenanceStoringenWindow.xaml" />
+    <None Remove="MaintenancePlanner.xaml" />
+    <None Remove="MaintenanceWerkbonnen.xaml" />
     <None Remove="ProductenWindow.xaml" />
     <None Remove="StoringDetailsWindow.xaml" />
     <None Remove="StoringsWindow.xaml" />
@@ -85,6 +87,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Img\" />
+    <Folder Include="Maintenance\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MaintenanceWerkbonnen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MaintenancePlanner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="StoringDetailsWindow.xaml">

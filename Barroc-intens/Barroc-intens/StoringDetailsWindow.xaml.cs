@@ -46,9 +46,21 @@ namespace Barroc_intens
 
         private void BGoBack_Click(object sender, RoutedEventArgs e)
         {
-            var maintenanceStoringenWindow = new MaintenanceStoringenWindow();
-            maintenanceStoringenWindow.Activate();
-            this.Close();
+            var windowPlanner = new MaintenancePlanner();
+            windowPlanner.Activate();
+            windowPlanner.Closed += Window_Closed;
+        }
+
+        private void Window_Closed(object sender, WindowEventArgs args)
+        {
+        
+            using (var db = new AppDbContext())
+            {
+                var maintenance = db.MaintenanceAppointments.ToList();
+                NoteListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
+
+            }
+
         }
     }
 }

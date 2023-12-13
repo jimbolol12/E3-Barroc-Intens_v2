@@ -28,13 +28,24 @@ namespace Barroc_intens
         public LeasecontractWindow()
         {
             this.InitializeComponent();
+            using var db = new AppDbContext();
         }
 
         private void BNieuwLeaseContract_Click(object sender, RoutedEventArgs e)
         {
-            var newLeaseWindow = new CreateNewLeaseWindow();
-            newLeaseWindow.Activate();
+
+            using var db = new AppDbContext();
+            db.MaintenanceAppointments.Add(new MaintenanceAppointment
+            {
+                CompanyId = int.Parse(tbCompany.Text),
+                Remark = tbRemark.Text,
+                DateAdded = tbDateAdded.Date.Date
+            });
+            
+            db.SaveChanges();
+            
             this.Close();
+
         }
     }
 }

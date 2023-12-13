@@ -12,9 +12,9 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Aspose.Pdf;
+using Microsoft.EntityFrameworkCore;
 using Barroc_intens.Data;
-using Barroc_intens.Model;
-using Windows.System;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -24,34 +24,37 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Notes : Window
+    public sealed partial class notedetailWindow : Window
     {
-        public Notes()
+        private int currentnoteid;
+        private Note currentNote;
+
+
+        public notedetailWindow(int noteId)
         {
             this.InitializeComponent();
+
+            currentnoteid = noteId;
+            using (var db = new AppDbContext())
+            {
+                var note = db.Notes
+                    .FirstOrDefault(g => g.Id == currentnoteid);
+
+                titel.Text = note.Titlel;
+                inhoud.Text = note.Description;
+
+
+
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var ar = LoginWindow.LoggedInUser;
-
-            using var db = new AppDbContext();
-            db.Notes.Add(new Note
-            {
-                Titlel = titel.Text,
-                AuthorId = LoginWindow.LoggedInUser.Id,
-                /*Author = ar.*/
-                Description = beschrijving.Text,
-                Date = DateTime.Now
-               
-            }
-                );
-            db.SaveChanges();
-
             var saleswindow = new SalesWindow();
             saleswindow.Activate();
             this.Close();
-
         }
+
     }
+    
 }

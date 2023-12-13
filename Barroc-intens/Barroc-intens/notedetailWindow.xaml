@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window
-    x:Class="Barroc_intens.Notes"
+    x:Class="Barroc_intens.notedetailWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Barroc_intens"
@@ -10,10 +10,13 @@
 
     <Grid>
         <StackPanel>
-            <TextBox x:Name="titel" PlaceholderText="titel"></TextBox>
-            <TextBox x:Name="beschrijving" PlaceholderText=" beschrijving "></TextBox>
-            <Button Click="Button_Click" >oplsaan</Button>
+            <TextBlock x:Name="titel"></TextBlock>
+            <TextBlock x:Name="inhoud"></TextBlock>
         </StackPanel>
+
+        <Button Click="Button_Click">Go Back</Button>
+        
+        
 
     </Grid>
 </Window>

@@ -17,6 +17,7 @@
     <None Remove="EditWindow.xaml" />
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
+    <None Remove="notedetailWindow.xaml" />
     <None Remove="Notes.xaml" />
     <None Remove="ProductenWindow.xaml" />
     <None Remove="StoringsWindow.xaml" />
@@ -84,6 +85,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="notedetailWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Notes.xaml">

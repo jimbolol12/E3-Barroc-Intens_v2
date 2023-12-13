@@ -31,8 +31,11 @@ namespace Barroc_intens
             using var db = new AppDbContext();
             var products = db.Products.ToList();
             var companies= db.Companies.ToList();
+            var notes = db.Notes.ToList();
             lvProducts.ItemsSource = products;
             lvbedrijf.ItemsSource = companies;
+            lvnote.ItemsSource = notes;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,6 +47,24 @@ namespace Barroc_intens
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            var notewindow = new Notes();
+            notewindow.Activate();
+            this.Close();
+        }
+
+        
+        private void lvnote_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            if(lvnote.SelectedItems.Count > 0)
+    {
+                // Hier krijg je de geselecteerde notitie
+                var selectedNote = (Note)lvnote.SelectedItems[0];
+
+                // Voer de gewenste acties uit, zoals het openen van een nieuw venster
+                var notedetailWindow = new notedetailWindow(selectedNote.Id);
+                notedetailWindow.Activate();
+                this.Close();
+            }
 
         }
     }

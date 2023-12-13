@@ -60,7 +60,7 @@ namespace Barroc_intens
             var searchInput = tbSearchbar.Text;
 
             using var db = new AppDbContext();
-            lvProducts.ItemsSource = db.Products.Where(p => p.Name.Contains(searchInput));
+            lvProducts.ItemsSource = db.Products.Where(p => p.Name.Contains(searchInput) && p.Category.IsEmployeeOnly == false);
         }
     }
 }

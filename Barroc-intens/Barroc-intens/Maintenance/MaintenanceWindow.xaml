@@ -35,22 +35,12 @@
 
                 <Button x:Name="BStoringRedirect" Content="Storings Meldingen Beheren"
             Click="BStoringRedirect_Click"/>
+                <Button x:Name="BProductenRedirect" Content="Producten"
+                        Click="BProductenRedirect_Click"/>
 
             </StackPanel>
         </Grid>
-        <!--<ListView x:Name="lvProducts"
-                  Grid.Column="1">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="">
-                    <StackPanel>
-                        <TextBlock>
-                            <Run Text="{x:Bind }" />
-                            <Run Text="{x:Bind }" />
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
+        
 
     </Grid>
 </Window>

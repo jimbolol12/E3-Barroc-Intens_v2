@@ -154,7 +154,7 @@ namespace Barroc_intens.Data
                 new Category
                 {
                     Id = 1,
-                    Name = "Materiaal",
+                    Name = "Materiaal/Gereedschap",
                     IsEmployeeOnly = true,
                 },
                 new Category
@@ -174,7 +174,8 @@ namespace Barroc_intens.Data
                     Id = 4,
                     Name = "Special",
                     IsEmployeeOnly = false,
-                });
+                }
+                );
 
             modelBuilder.Entity<Product>().HasData(
                 new Product

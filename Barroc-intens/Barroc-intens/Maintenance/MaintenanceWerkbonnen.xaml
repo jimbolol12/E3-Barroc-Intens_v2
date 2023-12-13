@@ -12,29 +12,25 @@
     <Grid Grid.Column="1">
         <ListView x:Name="NoteListview"
               Grid.Column="1"
-              Background="Black" 
-            BorderBrush="DarkGray"
-            
-            BorderThickness="2"
-          
-            Margin="10">
-
+              Background="Black"
+              BorderBrush="DarkGray"
+              BorderThickness="2"
+              Margin="10">
 
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localData:MaintenanceAppointment">
                     <StackPanel Margin="20"
                             Background="DarkGray"
-                        BorderBrush="Black"
-                                
-                        BorderThickness="1" 
-                        CornerRadius="5">
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
 
-
+        
                         <TextBlock Text="{x:Bind Company.Name}"
-                               FontWeight="Bold" 
+                               FontWeight="Bold"
                                FontSize="16"
                                Foreground="White" />
-
+                        
                         <TextBlock Text="{x:Bind Remark}"
                                FontStyle="Italic"
                                Foreground="LightGray"
@@ -51,4 +47,5 @@
 
         <Button Content="Inplannen" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20" Click="Button_Click"/>
     </Grid>
+
 </Window>

@@ -12,8 +12,11 @@
     <Grid>
         <StackPanel Orientation="Vertical"
              Margin="10">
+            <TextBlock Text="Company Id"></TextBlock>
             <TextBox x:Name="tbCompany" />
+            <TextBlock Text="Description"></TextBlock>
             <TextBox x:Name="tbRemark" />
+            <TextBlock Text="Date"></TextBlock>
             <DatePicker x:Name="tbDateAdded"></DatePicker>
         </StackPanel>
 

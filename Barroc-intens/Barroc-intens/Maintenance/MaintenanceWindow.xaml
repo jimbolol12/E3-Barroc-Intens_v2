@@ -12,5 +12,46 @@
 
     <Grid>
         <Button Content="Inkomende Storingen" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" Click="Button_Click"/>
+        
+        
+        
+        <!-- Rechterkant -->
+        <ListView x:Name="companieListView"
+              Grid.Column="1">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="localData:Company">
+                    <StackPanel Margin="20">
+                        <TextBlock>
+                        <Run FontWeight="Bold" Text="Naam:" ></Run>
+                        <Run Text="{x:Bind Name}"></Run>
+                        </TextBlock>
+                        <TextBlock>
+                        <Run FontWeight="Bold" Text="telefoon nummer:"></Run>
+                        <Run Text="{x:Bind Phone}"></Run>
+                        </TextBlock>
+                        <TextBlock>
+                        <Run FontWeight="Bold" Text="Straat:"></Run>
+                        <Run Text="{x:Bind Street}"></Run>
+                        </TextBlock>
+                        <TextBlock>
+                        <Run FontWeight="Bold" Text="huisnummer:"></Run>
+                        <Run Text="{x:Bind HouseNumber}"></Run>
+                        </TextBlock>
+                        <TextBlock>
+                        <Run FontWeight="Bold" Text="Stad:"></Run>
+                        <Run Text="{x:Bind City}"></Run>
+                        </TextBlock>
+                        <TextBlock>
+                        <Run FontWeight="Bold" Text="BKR Voldaan op: "/>
+                        <Run Text="{x:Bind BkrCheckedAt}"/>
+                        </TextBlock>
+                        <TextBlock>
+                        <Run FontWeight="Bold" Text="Username: "/>
+                        <Run Text="{x:Bind Contact.Username}"/>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

@@ -30,18 +30,23 @@ namespace Barroc_intens
         public MaintenancePlanner()
         {
             this.InitializeComponent();
+            using var db = new AppDbContext();
         }
 
         private void Bcreate_Click(object sender, RoutedEventArgs e)
         {
             using var db = new AppDbContext();
             db.MaintenanceAppointments.Add(new MaintenanceAppointment
-          {
-               /* CompanId = int.Parse(tbCompany.Text),
+            {
+                CompanyId = int.Parse(tbCompany.Text),
                 Remark = tbRemark.Text,
-                DateAdded = tbDateAdded.Date.Date*/
+                DateAdded = tbDateAdded.Date.Date
             });
+            
             db.SaveChanges();
+            
+            this.Close();
+
         }
     }
 }

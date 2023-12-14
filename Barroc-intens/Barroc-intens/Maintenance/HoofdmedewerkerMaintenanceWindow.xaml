@@ -15,6 +15,7 @@
         </Grid.ColumnDefinitions>
 
         <Button Grid.Column="0" Content="Bekijk Werkbonnen" x:Name="BRedirectWerkbonnenWindow" Click="BRedirectWerkbonnenWindow_Click" VerticalAlignment="Top"/>
+
         <Grid Grid.Column="1">
             <ListView x:Name="NoteListview"
               Grid.Column="1">
@@ -33,5 +34,5 @@
         </Grid>
     </Grid>
 
-    
+
 </Window>

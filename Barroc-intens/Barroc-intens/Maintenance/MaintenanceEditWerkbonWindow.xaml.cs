@@ -1,3 +1,6 @@
+using Barroc_intens.Data;
+using Barroc_intens.Model;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -23,9 +26,20 @@ namespace Barroc_intens.Maintenance
     /// </summary>
     public sealed partial class MaintenanceEditWerkbonWindow : Window
     {
-        public MaintenanceEditWerkbonWindow()
+        public MaintenanceEditWerkbonWindow(MaintenanceAppointment selectedAppointment)
         {
             this.InitializeComponent();
+            using (var db = new AppDbContext())
+            {
+
+
+                var storingDetail = db.MaintenanceAppointments
+                    .Include(ma => ma.Company)
+                    .Where(ma => ma.Id == selectedAppointment.Id)
+                    .ToList();
+                
+
+            }
         }
     }
 }

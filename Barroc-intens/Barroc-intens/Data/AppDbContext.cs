@@ -192,6 +192,7 @@ namespace Barroc_intens.Data
                     Price = 999,
                     Storage = 100,
                 }
+                
             );
 
             modelBuilder.Entity<JobFunction>().HasData(

@@ -38,19 +38,7 @@
 
             </StackPanel>
         </Grid>
-        <!--<ListView x:Name="lvProducts"
-                  Grid.Column="1">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="">
-                    <StackPanel>
-                        <TextBlock>
-                            <Run Text="{x:Bind }" />
-                            <Run Text="{x:Bind }" />
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
+        
 
     </Grid>
 </Window>

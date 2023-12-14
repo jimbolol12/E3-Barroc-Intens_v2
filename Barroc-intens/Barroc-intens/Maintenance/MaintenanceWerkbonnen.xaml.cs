@@ -1,4 +1,6 @@
 using Barroc_intens.Data;
+using Barroc_intens.Maintenance;
+using Barroc_intens.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -60,7 +62,14 @@ namespace Barroc_intens
         }
         private void SPWerkbon_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is MaintenanceAppointment selectedAppointment)
+            {
+                var SelectedWerkbonWindow = new MaintenanceEditWerkbonWindow(selectedAppointment);
+                SelectedWerkbonWindow.Activate();
+                this.Close();
+            }
 
+            
         }
     }
 }

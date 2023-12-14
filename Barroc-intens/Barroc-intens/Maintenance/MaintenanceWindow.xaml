@@ -19,7 +19,7 @@
         <ListView x:Name="companieListView"
               Grid.Column="1">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="localData:Company">
+                <DataTemplate x:DataType="localData:">
                     <StackPanel Margin="20">
                         <TextBlock>
                         <Run FontWeight="Bold" Text="Naam:" ></Run>

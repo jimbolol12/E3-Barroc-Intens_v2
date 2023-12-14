@@ -56,8 +56,8 @@ namespace Barroc_intens
         
             using (var db = new AppDbContext())
             {
-                /*var maintenance = db.MaintenanceAppointments.ToList();
-                NoteListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);*/
+                var maintenance = db.MaintenanceAppointments.ToList();
+                NoteListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
 
             }
 

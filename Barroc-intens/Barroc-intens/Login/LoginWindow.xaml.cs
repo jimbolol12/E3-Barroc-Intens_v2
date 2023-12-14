@@ -42,66 +42,71 @@ namespace Barroc_intens
             string enteredUsername = UsernameTextBox.Text;
             string enteredPassword = PasswordBox.Password;
 
-            var context = new AppDbContext();
-            var user = context.Users.SingleOrDefault(u => u.Username == enteredUsername && u.Password == enteredPassword);
-            LoggedInUser = user;
+            var user = AuthenticateUser(enteredUsername, enteredPassword);
 
             if (user != null)
             {
-                if (user.JobFunctionId == 1)
-                {
-                    var klantWindow = new KlantenWindow();
-                    klantWindow.Activate();
-                    this.Close();
-                }
-
-                if (user.JobFunctionId == 2)
-                {
-                    var financeWindow = new FinanceWindow();
-                    financeWindow.Activate();
-                    this.Close();
-                }
-
-                if (user.JobFunctionId == 4)
-                {
-                    var inkoopWindow = new InkoopWindow();
-                    inkoopWindow.Activate();
-                    this.Close();
-                }
-
-                if (user.JobFunctionId == 3)
-                {
-                    var salesWindow = new SalesWindow();
-                    salesWindow.Activate();
-                    this.Close();
-                }
-
-                if (user.JobFunctionId == 6)
-                {
-                    var hoofdmedewerkerWindow = new HoofdmedewerkerMaintenanceWindow();
-                    hoofdmedewerkerWindow.Activate();
-                    this.Close();
-                }
-
-                if (user.JobFunctionId == 7)
-                {
-                    var plannerWindow = new PlannerMaintenanceWindow();
-                    plannerWindow.Activate();
-                    this.Close();
-                }
-
-                if (user.JobFunctionId == 5)
-                {
-                    var maintenanceWindow = new MaintenanceWindow();
-                    maintenanceWindow.Activate();
-                    this.Close();
-                }
-
+                OpenWindowBasedOnRole(user);
             }
             else
             {
-                ErrorTextBlock.Text = "Ongeldige inloggegevens";
+                DisplayInvalidCredentialsError();
             }
+        }
+
+        private User AuthenticateUser(string enteredUsername, string enteredPassword)
+        {
+            using (var context = new AppDbContext())
+            {
+                return context.Users.SingleOrDefault(u => u.Username == enteredUsername && u.Password == enteredPassword);
+            }
+        }
+
+        private void OpenWindowBasedOnRole(User user)
+        {
+            Window window = null;
+
+            switch (user.JobFunctionId)
+            {
+                case 1:
+                    window = new KlantenWindow();
+                    break;
+
+                case 2:
+                    window = new FinanceWindow();
+                    break;
+
+                case 3:
+                    window = new SalesWindow();
+                    break;
+
+                case 4:
+                    window = new InkoopWindow();
+                    break;
+
+                case 5:
+                    window = new MaintenanceWindow();
+                    break;
+
+                case 6:
+                    window = new HoofdmedewerkerMaintenanceWindow();
+                    break;
+
+                case 7:
+                    window = new PlannerMaintenanceWindow();
+                    break;
+            }
+
+            if (window != null)
+            {
+                window.Activate();
+                this.Close();
+            }
+        }
+
+        private void DisplayInvalidCredentialsError()
+        {
+            ErrorTextBlock.Text = "Ongeldige inloggegevens";
         }
     }
 }

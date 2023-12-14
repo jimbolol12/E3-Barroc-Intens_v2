@@ -46,36 +46,56 @@ namespace Barroc_intens
         {
             try
             {
-
-
-                var product = clickedproduct;
-
-                using var dbContext = new AppDbContext();
-
-                var clickproduct = dbContext.Products.Find(clickedproduct.Id);
-
-                clickproduct.Name = tbProductname.Text;
-                clickproduct.Dimensions = tbProductdimensions.Text;
-                clickproduct.Description = tbProductdescription.Text;
-                clickproduct.Price = decimal.Parse(tbProductprice.Text);
-
-                dbContext.SaveChanges();
-
-                this.Close();
-
+                UpdateProductAndSaveChanges();
+                CloseCurrentWindow();
             }
             catch (FormatException)
             {
-                // Hier kun je de foutmelding weergeven voor ongeldige gegevens
-                /* MessageBox.Show("Ongeldige gegevens. Controleer of de ingevoerde waarden correct zijn.");*/
-                MessageBox.Text = "Incorecte gegevens ingevuld";
+                HandleInvalidData("Incorrecte gegevens ingevuld");
             }
             catch (Exception ex)
             {
-                // Hier kun je een algemene foutmelding weergeven voor andere uitzonderingen
-                /* MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");*/
-                MessageBox.Text = "Incorecte gegevens ingevuld";
+                HandleGeneralException($"Er is een fout opgetreden: {ex.Message}");
             }
+        }
+
+        private void UpdateProductAndSaveChanges()
+        {
+            var product = clickedproduct;
+
+            using (var dbContext = new AppDbContext())
+            {
+                var existingProduct = dbContext.Products.Find(clickedproduct.Id);
+
+                if (existingProduct != null)
+                {
+                    UpdateProductDetails(existingProduct);
+                    dbContext.SaveChanges();
+                }
+            }
+        }
+
+        private void UpdateProductDetails(Product existingProduct)
+        {
+            existingProduct.Name = tbProductname.Text;
+            existingProduct.Dimensions = tbProductdimensions.Text;
+            existingProduct.Description = tbProductdescription.Text;
+            existingProduct.Price = decimal.Parse(tbProductprice.Text);
+        }
+
+        private void CloseCurrentWindow()
+        {
+            this.Close();
+        }
+
+        private void HandleInvalidData(string errorMessage)
+        {
+            MessageBox.Text = errorMessage;
+        }
+
+        private void HandleGeneralException(string errorMessage)
+        {
+            MessageBox.Text = errorMessage;
         }
     }
 }

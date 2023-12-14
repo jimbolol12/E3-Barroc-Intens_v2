@@ -18,6 +18,7 @@
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
     <None Remove="MaintenanceStoringenWindow.xaml" />
+    <None Remove="Maintenance\MaintenanceEditWerkbonWindow.xaml" />
     <None Remove="notedetailWindow.xaml" />
     <None Remove="Notes.xaml" />
     <None Remove="ProductenWindow.xaml" />
@@ -115,12 +116,16 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Maintenance\" />
     <Folder Include="Inkoop\" />
     <Folder Include="Klant\" />
     <Folder Include="Finance\" />
     <Folder Include="Login\" />
     <Folder Include="Sales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Maintenance\MaintenanceEditWerkbonWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!-- 

@@ -24,8 +24,10 @@
                 <DataTemplate x:DataType="localData:MaintenanceAppointment">
                     <StackPanel Margin="20"
                             Background="DarkGray"
+                        x:Name="SPWerkbon"
                         BorderBrush="Black"
-                                
+                        IsDoubleTapEnabled="True"
+                        DoubleTapped="SPWerkbon_DoubleTapped"
                         BorderThickness="1" 
                         CornerRadius="5">
 

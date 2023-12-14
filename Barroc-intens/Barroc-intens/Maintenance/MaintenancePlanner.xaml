@@ -12,8 +12,8 @@
     <Grid>
         <StackPanel Orientation="Vertical"
              Margin="10">
-            <TextBox x:Name="tbCompany" />
-            <TextBox x:Name="tbRemark" />
+            <TextBox x:Name="tbCompany" Header="Bedrijf:  "/>
+            <TextBox x:Name="tbRemark" Header="Opmerking: "/>
             <DatePicker x:Name="tbDateAdded"></DatePicker>
         </StackPanel>
 

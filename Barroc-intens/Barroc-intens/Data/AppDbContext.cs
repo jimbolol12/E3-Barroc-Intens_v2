@@ -111,7 +111,15 @@ namespace Barroc_intens.Data
                     JobFunctionId = 5,
                 }
             );
-
+            modelBuilder.Entity<MaintenanceAppointment>().HasData(
+                new MaintenanceAppointment
+                {
+                    Id = 1,
+                    CompanyId = 1,
+                    Remark = "KoffiezetApparaat is hervuld",
+                    DateAdded = DateTime.Now,
+                    
+                });
             modelBuilder.Entity<FaultyRequest>().HasData(
               new FaultyRequest
               {

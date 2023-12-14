@@ -31,10 +31,6 @@ namespace Barroc_intens
 
             using (var db = new AppDbContext())
             {
-
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-
                 var maintenance = db.MaintenanceAppointments.ToList();
                 AppointmentListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
                     
@@ -60,6 +56,10 @@ namespace Barroc_intens
             var windowPlanner = new MaintenancePlanner();
             windowPlanner.Activate();
             windowPlanner.Closed += Window_Closed;
+
+        }
+        private void SPWerkbon_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
 
         }
     }

@@ -17,6 +17,7 @@
     <None Remove="EditWindow.xaml" />
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
+    <None Remove="Maintenance\CreateRoutineVisitWindow.xaml" />
     <None Remove="ProductenWindow.xaml" />
     <None Remove="StoringsWindow.xaml" />
   </ItemGroup>
@@ -92,12 +93,16 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Maintenance\" />
     <Folder Include="Inkoop\" />
     <Folder Include="Klant\" />
     <Folder Include="Finance\" />
     <Folder Include="Login\" />
     <Folder Include="Sales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Maintenance\CreateRoutineVisitWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!-- 

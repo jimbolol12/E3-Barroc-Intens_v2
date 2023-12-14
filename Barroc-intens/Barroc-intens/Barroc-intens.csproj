@@ -90,6 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="StoringDetailsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="notedetailWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

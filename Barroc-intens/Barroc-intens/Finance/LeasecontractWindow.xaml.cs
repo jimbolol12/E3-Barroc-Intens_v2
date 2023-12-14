@@ -1,4 +1,5 @@
 using Barroc_intens.Data;
+using Barroc_intens.Model;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -37,9 +38,11 @@ namespace Barroc_intens
             using var db = new AppDbContext();
             db.MaintenanceAppointments.Add(new MaintenanceAppointment
             {
-                CompanyId = int.Parse(tbCompany.Text),
+                // Staat gecomment: vgm staat dit namelijk verkeerd
+
+                /*CompanyId = int.Parse(tbCompany.Text),
                 Remark = tbRemark.Text,
-                DateAdded = tbDateAdded.Date.Date
+                DateAdded = tbDateAdded.Date.Date*/
             });
             
             db.SaveChanges();

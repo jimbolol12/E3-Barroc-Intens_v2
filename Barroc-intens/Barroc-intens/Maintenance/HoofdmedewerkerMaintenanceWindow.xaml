@@ -9,6 +9,9 @@
         mc:Ignorable="d">
 
     <Grid Grid.Column="1">
+        
+        
+        
         <ListView x:Name="NoteListview"
                   Grid.Column="1">
             <ListView.ItemTemplate>
@@ -24,4 +27,6 @@
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
+
+    
 </Window>

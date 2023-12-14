@@ -29,7 +29,7 @@ namespace Barroc_intens.Data
                 "server=localhost;" +
                 "port=3306;" +
                 "user=root;" +
-                "password=root;" +
+                "password=18nlw;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -98,8 +98,8 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 8,
-                    Username = "Paul",
-                    Password = "wachtwoord321",
+                    Username = "Piet",
+                    Password = "123",
                     JobFunctionId = 6,
                 },
 

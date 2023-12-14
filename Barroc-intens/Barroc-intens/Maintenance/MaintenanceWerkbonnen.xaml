@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <Grid Grid.Column="1">
-        <ListView x:Name="NoteListview"
+        <ListView x:Name="AppointmentListview"
               Grid.Column="1"
               Background="Black" 
             BorderBrush="DarkGray"
@@ -49,6 +49,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Content="Inplannen" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20" Click="Button_Click"/>
+        
+        <Button x:Name="BRedirectToPlannerWindow" Content="Inplannen" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20" Click="BRedirectToPlannerWindow_Click"/>
     </Grid>
 </Window>

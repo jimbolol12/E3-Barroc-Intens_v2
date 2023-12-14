@@ -9,6 +9,7 @@ namespace Barroc_intens.Model
     public class MaintenanceAppointment
     {
         public int Id { get; set; }
+        public int CompanyId { get; set; }
         public Company Company { get; set; }
         
         public string Remark { get; set; }

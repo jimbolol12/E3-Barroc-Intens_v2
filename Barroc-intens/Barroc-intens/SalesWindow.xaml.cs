@@ -67,5 +67,13 @@ namespace Barroc_intens
             }
 
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var klantaanmaakwindow = new klantaanmakenWindow();
+            klantaanmaakwindow.Activate();
+            this.Close();
+
+        }
     }
 }

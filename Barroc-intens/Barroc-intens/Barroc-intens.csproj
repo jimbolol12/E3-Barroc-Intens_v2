@@ -15,6 +15,7 @@
     <None Remove="CreateNewLeaseWindow.xaml" />
     <None Remove="CreateWindow.xaml" />
     <None Remove="EditWindow.xaml" />
+    <None Remove="klantaanmakenWindow.xaml" />
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
     <None Remove="notedetailWindow.xaml" />
@@ -85,6 +86,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="klantaanmakenWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="notedetailWindow.xaml">

@@ -13,7 +13,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
@@ -29,8 +29,9 @@
 
 
         <Button Grid.Column="0" Padding="150,75" Click="Button_Click">Offerte Aanmaken</Button>
-        <Button Grid.Row="0" Grid.Column="1" Padding="150,75" >klant aanmaken </Button>
+        <Button Grid.Row="0" Grid.Column="1" Padding="150,75" Click="Button_Click_2" >klant aanmaken </Button>
         <Button Grid.Row="0" Grid.Column="2" Padding="150,75" Click="Button_Click_1">notes maken</Button>
+        
         
 
 

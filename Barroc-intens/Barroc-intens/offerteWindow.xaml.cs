@@ -54,7 +54,7 @@ namespace Barroc_intens
             document.Save(dataDir + "offerte.pdf");
 
 
-            // Afzender en ontvanger e-mailadressen
+            /*// Afzender en ontvanger e-mailadressen
             string afzender = "";
             string ontvanger = "thomasbouman1505@gmail.com";
 
@@ -82,7 +82,7 @@ namespace Barroc_intens
             SmtpClient smtpClient = new SmtpClient(smtpServer);
             smtpClient.Port = smtpPort;
             smtpClient.Credentials = new NetworkCredential(gebruikersnaam, wachtwoord);
-            smtpClient.EnableSsl = true; // Schakel SSL in als de SMTP-server dit vereist
+            smtpClient.EnableSsl = true; // Schakel SSL in als de SMTP-server dit vereist*/
 
 
 

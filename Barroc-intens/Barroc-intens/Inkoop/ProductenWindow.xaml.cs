@@ -14,6 +14,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Microsoft.EntityFrameworkCore;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -28,9 +29,9 @@ namespace Barroc_intens
         public ProductenWindow()
         {
             this.InitializeComponent();
-            using var db = new AppDbContext();
-            var products = db.Products.ToList();
-            lvProducts.ItemsSource = products;
+            GetProductsWithJob();
+
+
         }
 
         private void lvProducts_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
@@ -45,9 +46,7 @@ namespace Barroc_intens
 
         private void ProductEditWindow_Closed(object sender, WindowEventArgs args)
         {
-            using var db = new AppDbContext();
-            var products = db.Products.ToList();
-            lvProducts.ItemsSource = products;
+            GetProductsWithJob();
         }
 
         private void BCreateProduct_Click(object sender, RoutedEventArgs e)
@@ -61,12 +60,30 @@ namespace Barroc_intens
         {
 
             if (lvProducts.SelectedItem is Product selectedproduct)
-            using (var db = new AppDbContext())
-            {
-                db.Products.Remove(selectedproduct);
-                db.SaveChanges();
+                using (var db = new AppDbContext())
+                {
+                    db.Products.Remove(selectedproduct);
+                    db.SaveChanges();
 
-                lvProducts.ItemsSource = db.Products.ToList();
+                    lvProducts.ItemsSource = db.Products.ToList();
+                }
+        }
+        public void GetProductsWithJob()
+        {
+            using var db = new AppDbContext();
+            User user = LoginWindow.LoggedInUser;
+            if (user.JobFunctionId == 4)
+            {
+                var products = db.Products
+                .ToList();
+                lvProducts.ItemsSource = products;
+            }
+            else if (user.JobFunctionId == 5)
+            {
+                var products = db.Products
+                .Where(p => p.Category.Name == "Materiaal/Gereedschap")
+                .ToList();
+                lvProducts.ItemsSource = products;
             }
         }
     }

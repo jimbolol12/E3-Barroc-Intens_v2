@@ -35,6 +35,8 @@
 
                 <Button x:Name="BStoringRedirect" Content="Storings Meldingen Beheren"
             Click="BStoringRedirect_Click"/>
+                <Button x:Name="BProductenRedirect" Content="Producten"
+                        Click="BProductenRedirect_Click"/>
 
             </StackPanel>
         </Grid>

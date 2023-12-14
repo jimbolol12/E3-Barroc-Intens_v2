@@ -22,11 +22,14 @@ using Windows.Foundation.Collections;
 
 namespace Barroc_intens
 {
+
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MaintenanceWindow : Window
     {
+        public static User LoggedInUser { get; }
+
         public MaintenanceWindow()
         {
             this.InitializeComponent();
@@ -50,6 +53,13 @@ namespace Barroc_intens
         private void CalendarView_CalendarViewDayItemChanging(CalendarView sender, CalendarViewDayItemChangingEventArgs args)
         {
 
+        }
+
+        private void BProductenRedirect_Click(object sender, RoutedEventArgs e)
+        {
+            var productenWindow = new ProductenWindow();
+            productenWindow.Activate();
+            this.Close();
         }
     }
 }

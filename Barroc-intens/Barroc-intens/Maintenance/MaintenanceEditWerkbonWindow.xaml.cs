@@ -26,20 +26,54 @@ namespace Barroc_intens.Maintenance
     /// </summary>
     public sealed partial class MaintenanceEditWerkbonWindow : Window
     {
+        private MaintenanceAppointment clickedAppointment;
         public MaintenanceEditWerkbonWindow(MaintenanceAppointment selectedAppointment)
         {
             this.InitializeComponent();
+
+            this.clickedAppointment = selectedAppointment;
+
             using (var db = new AppDbContext())
             {
+                var selectedAppointmentCompany = db.Companies
+                    .Where(sac => sac.Id == selectedAppointment.Company.Id)
+                    .FirstOrDefault(); 
 
+                var companies = db.Companies.ToList();
 
-                var storingDetail = db.MaintenanceAppointments
-                    .Include(ma => ma.Company)
-                    .Where(ma => ma.Id == selectedAppointment.Id)
-                    .ToList();
+                TbRemark.Text = selectedAppointment.Remark;
+                AppointmentCompanyCombobox.ItemsSource = companies;
+                AppointmentCompanyCombobox.SelectedValue = selectedAppointmentCompany;
+
                 
+                DatePickerDateAdded.Date = selectedAppointment.DateAdded.Date; 
+            }
+        }
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (clickedAppointment != null)
+            {
+                var appointment = clickedAppointment;
+
+                using var dbContext = new AppDbContext();
+
+                var clickAppointment = dbContext.MaintenanceAppointments.Find(clickedAppointment.Id);
+                var comboboxSelectedCompany = AppointmentCompanyCombobox.SelectedItem as Company;
+                
+                clickAppointment.Remark = TbRemark.Text;
+                clickAppointment.CompanyId = comboboxSelectedCompany.Id;
+                clickAppointment.DateAdded = DatePickerDateAdded.Date.Date;
+
+                dbContext.SaveChanges();
+
+                this.Close();
 
             }
+            else
+            {
+
+            }
+            
         }
     }
 }

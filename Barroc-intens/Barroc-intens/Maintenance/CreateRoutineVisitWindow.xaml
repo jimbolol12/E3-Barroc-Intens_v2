@@ -14,7 +14,7 @@
 
             <TextBlock x:Name="MessageBox"></TextBlock>
 
-            <TextBox x:Name="tbProductid"
+            <TextBox x:Name="tbRequestId"
                      Header="Id"
                      Margin="0,5,0,0" />
 
@@ -35,10 +35,10 @@
                      Margin="0,10,0,0" />
         </StackPanel>
 
-        <Button x:Name="Bcreate"
+        <Button x:Name="bCreate"
                 Content="Create"
                 VerticalAlignment="Bottom"
                 Margin="20"
-                Click="Bcreate_Click" />
+                Click="bCreate_Click" />
     </Grid>
 </Window>

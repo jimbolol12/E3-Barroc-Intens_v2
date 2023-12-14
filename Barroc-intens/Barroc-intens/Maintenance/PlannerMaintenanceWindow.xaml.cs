@@ -1,4 +1,6 @@
+using ABI.Windows.UI;
 using Barroc_intens.Data;
+using Barroc_intens.Maintenance;
 using Barroc_intens.Model;
 using Microsoft.UI;
 using Microsoft.UI.Xaml;
@@ -47,6 +49,7 @@ namespace Barroc_intens
         private void lvApointements_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             var clickedRequest = (FaultyRequest)lvApointements.SelectedItem;
+            using var db = new AppDbContext();
             var newCalendarItem = new FaultyRequest()
             {
                 ProductId = clickedRequest.ProductId,
@@ -79,13 +82,20 @@ namespace Barroc_intens
 
             var dialog = new ContentDialog()
             {
-                Title = clickedCalendarItem.ProductId,
+                Title = "!",
                 Content = $"Start: {clickedCalendarItem.ScheduledAt}\nLocation: {clickedCalendarItem.Location}\nDetails: {clickedCalendarItem.Description}",
                 CloseButtonText = "Close",
                 XamlRoot = this.Content.XamlRoot,
             };
 
             await dialog.ShowAsync();
+        }
+
+        private void bCreateRoutineVisit_Click(object sender, RoutedEventArgs e)
+        {
+            var createWindow = new CreateRoutineVisitWindow();
+            createWindow.Activate();
+            this.Close();
         }
     }
 }

@@ -1,3 +1,5 @@
+using Barroc_intens.Data;
+using Barroc_intens.Model;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +28,62 @@ namespace Barroc_intens.Maintenance
         public CreateRoutineVisitWindow()
         {
             this.InitializeComponent();
+        }
+
+        private void bCreate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SaveFaultyRequestToDatabase();
+                CloseCurrentWindow();
+            }
+            catch (FormatException ex)
+            {
+                HandleInvalidData("Incorrecte gegevens ingevuld");
+            }
+            catch (Exception ex)
+            {
+                HandleGeneralException($"Er is een fout opgetreden: {ex.Message}");
+            }
+        }
+
+        private void SaveFaultyRequestToDatabase()
+        {
+            using (var db = new AppDbContext())
+            {
+                var newFaultyRequest = CreateFaultyRequestFromInputs();
+                db.FaultyRequests.Add(newFaultyRequest);
+                db.SaveChanges();
+            }
+        }
+
+        private FaultyRequest CreateFaultyRequestFromInputs()
+        {
+            return new FaultyRequest
+            {
+                Id = int.Parse(tbRequestId.Text),
+                Location = tbUserlocation.Text,
+                //ScheduledAt = cdpVisitDate.DateFormat,
+                EmployeeId = int.Parse(tbEmployeeid.Text),
+                Description = tbDescription.Text,
+            };
+        }
+
+        private void CloseCurrentWindow()
+        {
+            var productWindow = new ProductenWindow();
+            productWindow.Activate();
+            this.Close();
+        }
+
+        private void HandleInvalidData(string errorMessage)
+        {
+            MessageBox.Text = errorMessage;
+        }
+
+        private void HandleGeneralException(string errorMessage)
+        {
+            MessageBox.Text = errorMessage;
         }
     }
 }

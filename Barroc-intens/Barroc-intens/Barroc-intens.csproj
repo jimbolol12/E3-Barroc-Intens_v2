@@ -18,6 +18,7 @@
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
     <None Remove="Maintenance\CreateRoutineVisitWindow.xaml" />
+    <None Remove="Maintenance\ScheduleFaultyRequestWindow.xaml" />
     <None Remove="ProductenWindow.xaml" />
     <None Remove="StoringsWindow.xaml" />
   </ItemGroup>
@@ -98,6 +99,11 @@
     <Folder Include="Finance\" />
     <Folder Include="Login\" />
     <Folder Include="Sales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Maintenance\ScheduleFaultyRequestWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Maintenance\CreateRoutineVisitWindow.xaml">

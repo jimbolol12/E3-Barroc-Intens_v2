@@ -28,6 +28,11 @@ namespace Barroc_intens.Maintenance
         public CreateRoutineVisitWindow()
         {
             this.InitializeComponent();
+
+            using var db = new AppDbContext();
+
+            var userList = db.Users.Where(user => user.JobFunctionId == 5 || user.JobFunctionId == 6).ToList();
+            cbEmployee.ItemsSource = userList;
         }
 
         private void bCreate_Click(object sender, RoutedEventArgs e)
@@ -51,28 +56,44 @@ namespace Barroc_intens.Maintenance
         {
             using (var db = new AppDbContext())
             {
-                var newFaultyRequest = CreateFaultyRequestFromInputs();
-                db.FaultyRequests.Add(newFaultyRequest);
+                var newMaintenanceApointement = CreateMaintenanceApointementFromInputs();
+                db.MaintenanceAppointments.Add(newMaintenanceApointement);
                 db.SaveChanges();
             }
         }
 
-        private FaultyRequest CreateFaultyRequestFromInputs()
+        private MaintenanceAppointment CreateMaintenanceApointementFromInputs()
         {
-            return new FaultyRequest
+            // Haal de geselecteerde gebruiker uit de combobox
+            User selectedUser = (User)cbEmployee.SelectedItem;
+
+            // controleer of de user geselecteerd is
+            if (selectedUser != null)
             {
-                Id = int.Parse(tbRequestId.Text),
-                Location = tbUserlocation.Text,
-                //ScheduledAt = cdpVisitDate.DateFormat,
-                EmployeeId = int.Parse(tbEmployeeid.Text),
-                Description = tbDescription.Text,
-            };
+                // Convert DateTimeOffset? naar DateTime
+                DateTime scheduledAt = cdpVisitDate.Date.HasValue
+                    ? cdpVisitDate.Date.Value.DateTime
+                    : DateTime.MinValue;
+
+                return new MaintenanceAppointment
+                {
+                    Id = int.Parse(tbRequestId.Text),
+                    Location = tbUserlocation.Text,
+                    ScheduledAt = scheduledAt,
+                    EmployeeId = selectedUser.Id,
+                    Description = tbDescription.Text,
+                };
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private void CloseCurrentWindow()
         {
-            var productWindow = new ProductenWindow();
-            productWindow.Activate();
+            var plannerWindow = new PlannerMaintenanceWindow();
+            plannerWindow.Activate();
             this.Close();
         }
 

@@ -97,5 +97,15 @@ namespace Barroc_intens
             createWindow.Activate();
             this.Close();
         }
+
+        private void lvApointements_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is FaultyRequest clickedRequest)
+            {
+                var scheduleTime = new ScheduleFaultyRequestWindow(clickedRequest);
+                scheduleTime.Activate();
+                this.Close();
+            }
+        }
     }
 }

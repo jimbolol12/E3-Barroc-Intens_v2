@@ -34,11 +34,11 @@ namespace Barroc_intens
                 db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
 
-                var note = db.FaultyRequests
+                var request = db.FaultyRequests
                      /* .Include(m => m.Id)*/
                      .ToList();
 
-                NoteListview.ItemsSource = note;
+                lvFaultyRequests.ItemsSource = request;
             }
         }
     }

@@ -28,18 +28,14 @@ namespace Barroc_intens
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MaintenanceWindow : Window
-    {
-        private FaultyRequest _clickedRequest;
-
-        public static User LoggedInUser { get; private set; }
-
+    { 
         static ObservableCollection<FaultyRequest> AllCalendarItems = new ObservableCollection<FaultyRequest>();
         public MaintenanceWindow()
         {
             this.InitializeComponent();
             using var db = new AppDbContext();
             var appointments = db.FaultyRequests
-                    .Where(appointment => appointment.EmployeeId == LoggedInUser.Id)
+                    .Where(appointment => appointment.EmployeeId == LoginWindow.LoggedInUser.Id)
                     .ToList();
             lvApointements.ItemsSource = appointments;
         }
@@ -65,8 +61,8 @@ namespace Barroc_intens
             AllCalendarItems.Add(newCalendarItem);
 
             // Refresh page to update calendar view
-            var plannerWindowRefresh = new PlannerMaintenanceWindow();
-            plannerWindowRefresh.Activate();
+            var maintenanceWindow = new MaintenanceWindow();
+            maintenanceWindow.Activate();
             this.Close();
         }
 

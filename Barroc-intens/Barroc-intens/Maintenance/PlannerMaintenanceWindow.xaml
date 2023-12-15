@@ -16,6 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <Button Grid.Column="0"
+                Margin="30,0,0,0"
                 x:Name="bCreateRoutineVisit"
                 VerticalAlignment="Top"
                 Content="Routine matig bezoek inplannen"
@@ -65,6 +66,8 @@
 
         <ListView x:Name="lvApointements"
                   Grid.Column="1"
+                  IsItemClickEnabled="True"
+                  ItemClick="lvApointements_ItemClick"
                   IsDoubleTapEnabled="True"
                   DoubleTapped="lvApointements_DoubleTapped">
             <ListView.ItemTemplate>

@@ -98,7 +98,7 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 8,
-                    Username = "Paul",
+                    Username = "Poul",
                     Password = "wachtwoord321",
                     JobFunctionId = 6,
                 },
@@ -118,7 +118,7 @@ namespace Barroc_intens.Data
                   Id = 1,
                   ProductId = "S234FREKT",
                   UserId = 1,
-                  EmployeeId = 2,
+                  EmployeeId = 9,
                   Location = "Terheidenseweg 350",
                   ScheduledAt = DateTime.UtcNow,
                   Description = "dfdfdfdf",

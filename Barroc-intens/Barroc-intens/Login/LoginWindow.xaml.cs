@@ -30,12 +30,6 @@ namespace Barroc_intens
         public LoginWindow()
         {
             this.InitializeComponent();
-
-            using (var db = new AppDbContext())
-            {
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-            }
         }
         private void Login_Click(object sender, RoutedEventArgs e)
         {
@@ -43,6 +37,7 @@ namespace Barroc_intens
             string enteredPassword = PasswordBox.Password;
 
             var user = AuthenticateUser(enteredUsername, enteredPassword);
+            LoggedInUser = user;
 
             if (user != null)
             {

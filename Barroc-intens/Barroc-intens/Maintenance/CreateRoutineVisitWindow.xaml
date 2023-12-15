@@ -6,7 +6,8 @@
     xmlns:local="using:Barroc_intens.Maintenance"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+        xmlns:model="using:Barroc_intens.Model"
+        mc:Ignorable="d">
 
     <Grid>
         <StackPanel Orientation="Vertical"
@@ -22,9 +23,15 @@
                      Header="Location"
                      Margin="0,10,0,0" />
 
-            <TextBox x:Name="tbEmployeeid"
-                     Header="Employee"
-                     Margin="0,10,0,0" />
+            <ComboBox x:Name="cbEmployee"
+                      Header="Employee"
+                      Margin="0,10,0,0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="model:User">
+                        <TextBlock Text="{x:Bind Username}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
 
             <CalendarDatePicker x:Name="cdpVisitDate"
                                 Header="Date"

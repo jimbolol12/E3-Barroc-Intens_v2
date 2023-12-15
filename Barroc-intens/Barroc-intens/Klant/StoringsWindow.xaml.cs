@@ -49,6 +49,7 @@ namespace Barroc_intens
                     ProductId = tbFaultyRequestproduct.Text,
                     UserId = LoginWindow.LoggedInUser.Id,
                     Employee = randomEmployee,
+                    ScheduledAt = DateTime.Now,
                     Location = tbFaultyRequestlocation.Text,
                     Description = tbFaultyRequestdescription.Text,
                     Done = false,

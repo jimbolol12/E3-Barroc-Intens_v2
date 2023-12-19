@@ -1,4 +1,5 @@
 using Barroc_intens.Data;
+using Barroc_intens.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -29,9 +30,22 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
 
-           
+            using (var db = new AppDbContext())
+            {
+                // Database aan maken en verwijderen //
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+                // Model product en company in laden//
+                var Faulty = db.FaultyRequests
+                     .Include(g => g.Product).Include(g => g.User)
+                     .ToList();
+
+                FaultyRequestListView.ItemsSource = Faulty;
+            }
         }
 
+        // Niewe window openen //
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var window = new MaintenanceWerkbonnen();

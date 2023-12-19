@@ -27,25 +27,53 @@ namespace Barroc_intens
     /// </summary>
     public sealed partial class MaintenancePlanner : Window
     {
+        private List<Company> companies;
+
+        private List<Product> products;
         public MaintenancePlanner()
         {
             this.InitializeComponent();
             using var db = new AppDbContext();
+
+            // listbox met companies die beschikbaar zijn laten zien //
+            using (var dbContext = new AppDbContext())
+            {
+                companies = dbContext.Companies.ToList();
+                CompanyListBox.ItemsSource = companies;
+
+                products = dbContext.Products.ToList();
+                ProductListBox.ItemsSource = products;
+            }
         }
 
         private void Bcreate_Click(object sender, RoutedEventArgs e)
         {
-            using var db = new AppDbContext();
-            db.MaintenanceAppointments.Add(new MaintenanceAppointment
+            if (tbRemark == null)
             {
-                CompanyId = int.Parse(tbCompany.Text),
-                Remark = tbRemark.Text,
-                DateAdded = tbDateAdded.Date.Date
-            });
-            
-            db.SaveChanges();
-            
-            this.Close();
+                MessageBox.Text = "Ongeldige gegevens";
+            }
+            else
+            {
+                var selectedCompany = (Company)CompanyListBox.SelectedItem;
+                var companyId = selectedCompany.Id;
+
+                var selectedProduct = (Product)ProductListBox.SelectedItem;
+                var productId = selectedProduct.Id;
+
+
+                // Opslaan van ingevulde gegevens //
+                using var db = new AppDbContext();
+                db.MaintenanceAppointments.Add(new MaintenanceAppointment
+                {
+                    ProductId = productId,
+                    CompanyId = companyId,
+                    Remark = tbRemark.Text,
+                    DateAdded = tbDateAdded.Date.Date
+                });
+
+                db.SaveChanges();
+                this.Close();
+            }
 
         }
     }

@@ -100,10 +100,28 @@ namespace Barroc_intens.Data
               new FaultyRequest
               {
                   Id = 1,
-                  ProductId = 1,
+                  ProductId = "1",
                   UserId = 1,
                   ScheduledAt = DateTime.UtcNow,
-                  Description = "dfdfdfdf",
+                  Description = "Printer stuk, moet voor vrijdg gemaakt zijn",
+                  Done = false,
+              },
+              new FaultyRequest
+              {
+                  Id = 2,
+                  ProductId = "2",
+                  UserId = 2,
+                  ScheduledAt = DateTime.UtcNow,
+                  Description = "airco gemaakt op 2 de verdieping ",
+                  Done = true,
+              },
+              new FaultyRequest
+              {
+                  Id = 3,
+                  ProductId = "3",
+                  UserId = 3,
+                  ScheduledAt = DateTime.UtcNow,
+                  Description = "Printer stuk, moet voor vrijdg gemaakt zijn",
                   Done = false,
               });
 
@@ -207,14 +225,16 @@ namespace Barroc_intens.Data
               {
                   Id = 1,
                   CompanyId = 1,
-                  Remark = "yahhhh",
+                  ProductId = "1",
+                  Remark = "Printer stuk, moet voor vrijdg gemaakt zijn",
                   DateAdded = DateTime.Now,
               },
               new MaintenanceAppointment
               {
                   Id = 2,
                   CompanyId = 2,
-                  Remark = "yuhhhh",
+                  ProductId = "1",
+                  Remark = "airco gemaakt op 2 de verdieping",
                   DateAdded = DateTime.Now,
               }
               );

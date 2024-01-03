@@ -31,26 +31,11 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
 
-            using (var db = new AppDbContext())
-            {
-                var maintenance = db.MaintenanceAppointments.ToList();
-                AppointmentListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
-                    
-            }
+            LoadAppointments();
         }
-
-        
-
         private void Window_Closed(object sender, WindowEventArgs args)
         {
-        
-            using (var db = new AppDbContext())
-            {
-                var maintenance = db.MaintenanceAppointments.ToList();
-                AppointmentListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
-
-            }
-
+            LoadAppointments();
         }
 
         private void BRedirectToPlannerWindow_Click(object sender, RoutedEventArgs e)
@@ -62,14 +47,41 @@ namespace Barroc_intens
         }
         private void SPWerkbon_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
+            // Ga naar edit pagina van de appointment waar 2 keer op is gedrukt
             if (e.OriginalSource is FrameworkElement element && element.DataContext is MaintenanceAppointment selectedAppointment)
             {
                 var SelectedWerkbonWindow = new MaintenanceEditWerkbonWindow(selectedAppointment);
                 SelectedWerkbonWindow.Activate();
                 this.Close();
             }
+        }
 
-            
+        private void BDeleteSelectedAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            if (AppointmentListview.SelectedItem is MaintenanceAppointment selectedAppointment && AppointmentListview.SelectedItem != null)
+            {
+                using (var db = new AppDbContext())
+                {
+                    db.MaintenanceAppointments.Remove(selectedAppointment);
+                    db.SaveChanges();
+
+                    var maintenance = db.MaintenanceAppointments.ToList();
+                    AppointmentListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
+                }
+            }
+            else
+            {
+                MessageBox.Text = "Selecteer een afspraak";
+            }
+        }
+        public void LoadAppointments()
+        {
+            using (var db = new AppDbContext())
+            {
+                var maintenance = db.MaintenanceAppointments.ToList();
+                AppointmentListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
+
+            }
         }
     }
 }

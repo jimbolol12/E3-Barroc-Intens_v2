@@ -10,6 +10,7 @@
     mc:Ignorable="d">
 
     <Grid Grid.Column="1">
+        <TextBlock x:Name="MessageBox" Foreground="Orange" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <ListView x:Name="AppointmentListview"
             Grid.Column="1"
             Background="Black" 
@@ -49,5 +50,7 @@
 
 
         <Button x:Name="BRedirectToPlannerWindow" Content="Inplannen" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20" Click="BRedirectToPlannerWindow_Click"/>
+        
+        <Button Name="BDeleteSelectedAppointment" Content="Verwijder Geselecteerde Afspraak" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="BDeleteSelectedAppointment_Click"/>
     </Grid>
 </Window>

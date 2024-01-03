@@ -37,21 +37,19 @@ namespace Barroc_intens.Maintenance
             {
                 var selectedAppointmentCompany = db.Companies
                     .Where(sac => sac.Id == selectedAppointment.Company.Id)
-                    .FirstOrDefault(); 
+                    .FirstOrDefault();
 
                 var companies = db.Companies.ToList();
 
                 TbRemark.Text = selectedAppointment.Remark;
                 AppointmentCompanyCombobox.ItemsSource = companies;
                 AppointmentCompanyCombobox.SelectedValue = selectedAppointmentCompany;
-
-                
-                DatePickerDateAdded.Date = selectedAppointment.DateAdded.Date; 
+                DatePickerDateAdded.Date = selectedAppointment.DateAdded.Date;
             }
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            if (clickedAppointment != null)
+            if (clickedAppointment != null && TbRemark.Text != "" && AppointmentCompanyCombobox.SelectedItem as Company != null)
             {
                 var appointment = clickedAppointment;
 
@@ -59,21 +57,24 @@ namespace Barroc_intens.Maintenance
 
                 var clickAppointment = dbContext.MaintenanceAppointments.Find(clickedAppointment.Id);
                 var comboboxSelectedCompany = AppointmentCompanyCombobox.SelectedItem as Company;
-                
+
                 clickAppointment.Remark = TbRemark.Text;
                 clickAppointment.CompanyId = comboboxSelectedCompany.Id;
                 clickAppointment.DateAdded = DatePickerDateAdded.Date.Date;
 
                 dbContext.SaveChanges();
-
+                var werkbonnenWindow = new MaintenanceWerkbonnen();
+                werkbonnenWindow.Activate();
                 this.Close();
+
 
             }
             else
             {
-
+                MessageBox.Text = "Ongeldige gegevens ingevuld!";
             }
-            
+
+
         }
     }
 }

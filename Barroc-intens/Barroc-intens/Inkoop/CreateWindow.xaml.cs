@@ -43,8 +43,7 @@ namespace Barroc_intens
                     Description = tbProductdescription.Text,
                     Price = decimal.Parse(tbProductprice.Text),
                     Storage = int.Parse(tbProductstorage.Text),
-                }
-                    );
+                });
                 db.SaveChanges();
 
                 var productWindow = new ProductenWindow();
@@ -64,6 +63,6 @@ namespace Barroc_intens
                 MessageBox.Text = "Incorecte gegevens ingevuld";
             }
         }
-        
+
     }
 }

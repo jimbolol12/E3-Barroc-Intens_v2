@@ -66,7 +66,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 4,
                     Username = "Jan",
-                    Password = "wachtwoord321",
+                    Password = "a",
                     JobFunctionId = 3,
                 },
 

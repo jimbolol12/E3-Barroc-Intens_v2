@@ -14,6 +14,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Barroc_intens.Sales;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -38,14 +39,14 @@ namespace Barroc_intens
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RedirectCreateOfferte_Click(object sender, RoutedEventArgs e)
         {
             var Offertewindow = new offerteWindow();
             Offertewindow.Activate();
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void RedirectCreateNote_Click(object sender, RoutedEventArgs e)
         {
             var notewindow = new Notes();
             notewindow.Activate();
@@ -66,6 +67,13 @@ namespace Barroc_intens
                 this.Close();
             }
 
+        }
+
+        private void RedirectCreateCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            var createUserWindow = new CreateUserWindow();
+            createUserWindow.Activate();
+            this.Close();
         }
     }
 }

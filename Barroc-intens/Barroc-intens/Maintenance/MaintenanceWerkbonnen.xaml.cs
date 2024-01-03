@@ -55,7 +55,7 @@ namespace Barroc_intens
                 this.Close();
             }
         }
-
+        
         private void BDeleteSelectedAppointment_Click(object sender, RoutedEventArgs e)
         {
             if (AppointmentListview.SelectedItem is MaintenanceAppointment selectedAppointment && AppointmentListview.SelectedItem != null)

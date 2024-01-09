@@ -38,6 +38,8 @@ namespace Barroc_intens
             using var db = new AppDbContext();
             var apointements = db.FaultyRequests.ToList();
             lvApointements.ItemsSource = apointements;
+            var apointements2 = db.MaintenanceAppointments.ToList();
+            lvApointements2.ItemsSource = apointements2;
         }
 
         private void CalendarView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
@@ -98,12 +100,44 @@ namespace Barroc_intens
             this.Close();
         }
 
-        private void lvApointements_ItemClick(object sender, ItemClickEventArgs e)
+        private void lvApointements_RightTapped(object sender, RightTappedRoutedEventArgs e)
         {
-            var selectedRequest = (FaultyRequest)e.ClickedItem;
-            var scheduleTime = new ScheduleFaultyRequestWindow(selectedRequest);
-            scheduleTime.Activate();
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is FaultyRequest clickedRequest)
+            {
+                var scheduleTime = new ScheduleFaultyRequestWindow(clickedRequest);
+                scheduleTime.Activate();
+                this.Close();
+            }
+        }
+
+        private void lvApointements2_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            var clickedApointement = (MaintenanceAppointment)lvApointements2.SelectedItem;
+            using var db = new AppDbContext();
+            var newCalendarItem = new FaultyRequest()
+            {
+                ProductId = clickedApointement.ProductId,
+                ScheduledAt = clickedApointement.ScheduledAt,
+                Location = clickedApointement.Location,
+                Description = clickedApointement.Description,
+            };
+
+            AllCalendarItems.Add(newCalendarItem);
+
+            // Refresh page to update calendar view
+            var plannerWindowRefresh = new PlannerMaintenanceWindow();
+            plannerWindowRefresh.Activate();
             this.Close();
+        }
+
+        private void lvApointements2_RightTapped(object sender, RightTappedRoutedEventArgs e)
+        {
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is FaultyRequest clickedRequest)
+            {
+                var scheduleTime = new ScheduleFaultyRequestWindow(clickedRequest);
+                scheduleTime.Activate();
+                this.Close();
+            }
         }
     }
 }

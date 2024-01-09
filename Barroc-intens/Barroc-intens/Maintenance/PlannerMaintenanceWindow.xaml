@@ -22,7 +22,7 @@
                 Content="Routine matig bezoek inplannen"
                 Click="bCreateRoutineVisit_Click">
         </Button>
-        
+
         <!--Zorg dat het in de kalender komt-->
         <CalendarView Grid.Column="0"
                       Margin="30,0,0,0"
@@ -64,24 +64,54 @@
             </CalendarView.CalendarViewDayItemStyle>
         </CalendarView>
 
-        <ListView x:Name="lvApointements"
-                  Grid.Column="1"
-                  IsItemClickEnabled="True"
-                  ItemClick="lvApointements_ItemClick"
-                  IsDoubleTapEnabled="True"
-                  DoubleTapped="lvApointements_DoubleTapped">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="model:FaultyRequest">
-                    <StackPanel>
-                        <TextBlock>
-                            <Run Text="{x:Bind ProductId }"/>
-                            <Run Text="{x:Bind Location }" />
-                            <Run Text="{x:Bind EmployeeId }" />
-                            <Run Text="{x:Bind Description }" />
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView> 
+        <Grid Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ListView x:Name="lvApointements"
+                          Grid.Column="1"
+                          Grid.Row="0"
+                          IsRightTapEnabled="True"
+                          RightTapped="lvApointements_RightTapped"
+                          IsDoubleTapEnabled="True"
+                          DoubleTapped="lvApointements_DoubleTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:FaultyRequest">
+                            <StackPanel>
+                                <TextBlock>
+                                    <Run Text="{x:Bind ProductId }" />
+                                    <Run Text="{x:Bind Location }" />
+                                    <Run Text="{x:Bind EmployeeId }" />
+                                    <Run Text="{x:Bind Description }" />
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            <ListView x:Name="lvApointements2"
+                      Grid.Column="1"
+                      Grid.Row="1"
+                      IsRightTapEnabled="True"
+                      RightTapped="lvApointements2_RightTapped"
+                      IsDoubleTapEnabled="True"
+                      DoubleTapped="lvApointements2_DoubleTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:MaintenanceAppointment">
+                        <StackPanel>
+                            <TextBlock>
+                                    <Run Text="{x:Bind ProductId }" />
+                                    <Run Text="{x:Bind Location }" />
+                                    <Run Text="{x:Bind EmployeeId }" />
+                                    <Run Text="{x:Bind Description }" />
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>

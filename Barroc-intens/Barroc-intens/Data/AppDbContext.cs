@@ -113,17 +113,53 @@ namespace Barroc_intens.Data
             );
 
             modelBuilder.Entity<FaultyRequest>().HasData(
-              new FaultyRequest
-              {
-                  Id = 1,
-                  ProductId = "S234FREKT",
-                  UserId = 1,
-                  EmployeeId = 9,
-                  Location = "Terheidenseweg 350",
-                  ScheduledAt = DateTime.UtcNow,
-                  Description = "dfdfdfdf",
-                  Done = false,
-              });
+                new FaultyRequest
+                {
+                    Id = 1,
+                    ProductId = "S234FREKT",
+                    UserId = 1,
+                    EmployeeId = 9,
+                    Location = "Terheidenseweg 320",
+                    ScheduledAt = DateTime.UtcNow,
+                    Description = "Aanknop is moeilijk in te drukken",
+                    Done = false,
+                },
+
+                new FaultyRequest
+                {
+                    Id = 2,
+                    ProductId = "S234MMPLA",
+                    UserId = 1,
+                    EmployeeId = 5,
+                    Location = "Terheidenseweg 301",
+                    ScheduledAt = null,
+                    Description = "Blokkade in de slang",
+                    Done = false,
+                },
+
+                new FaultyRequest
+                {
+                    Id = 3,
+                    ProductId = "S234NNBMV",
+                    UserId = 1,
+                    EmployeeId = 8,
+                    Location = "Terheidenseweg 300",
+                    ScheduledAt = null,
+                    Description = "Melk klopper werkt niet meer",
+                    Done = false,
+                },
+
+                new FaultyRequest
+                {
+                    Id = 4,
+                    ProductId = "S234MMPLA",
+                    UserId = 1,
+                    EmployeeId = 6,
+                    Location = "Terheidenseweg 350",
+                    ScheduledAt = null,
+                    Description = "Machine lekt tijdens gebruik",
+                    Done = false,
+                });
 
             modelBuilder.Entity<Company>().HasData(
                new Company

@@ -68,5 +68,10 @@ namespace Barroc_intens
                 lvProducts.ItemsSource = db.Products.ToList();
             }
         }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

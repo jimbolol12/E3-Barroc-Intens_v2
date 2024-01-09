@@ -72,5 +72,10 @@ namespace Barroc_intens
             //    MessageBox.Text = "Incorecte gegevens ingevuld";
             //}
         }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+            //blub
+        }
     }
 }

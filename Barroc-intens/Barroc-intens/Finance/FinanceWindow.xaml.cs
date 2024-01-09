@@ -85,5 +85,9 @@ namespace Barroc_intens
             this.Close();
         }
 
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

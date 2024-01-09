@@ -28,6 +28,7 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -78,9 +79,11 @@
                     <TextBlock Text="Maintenance"
                                 FontSize="24"
                                 Margin="0 0 0 20" />
-                        <Button x:Name="BStoringRedirect" 
-                                Content="Storings Meldingen Beheren"
-                                Click="BStoringRedirect_Click"/>
+                    
+                    <Button x:Name="BStoringRedirect" 
+                            Content="Storings Meldingen Beheren"
+                            Click="BStoringRedirect_Click"/>
+                    
                     <Button x:Name="BProductenRedirect" 
                             Content="Producten"
                             Click="BProductenRedirect_Click"/>
@@ -88,7 +91,7 @@
             </Grid>
 
             <ListView x:Name="lvApointements"
-                      Grid.Column="1"
+                      Grid.Column="2"
                       IsDoubleTapEnabled="True"
                       DoubleTapped="lvApointements_DoubleTapped">
                 <ListView.ItemTemplate>

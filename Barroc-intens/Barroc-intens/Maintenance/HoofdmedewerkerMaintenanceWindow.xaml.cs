@@ -30,11 +30,15 @@ namespace Barroc_intens
 
             using (var db = new AppDbContext())
             {
-                var note = db.FaultyRequests
+
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+                var request = db.FaultyRequests
                      /* .Include(m => m.Id)*/
                      .ToList();
 
-                NoteListview.ItemsSource = note;
+                lvFaultyRequests.ItemsSource = request;
             }
         }
 

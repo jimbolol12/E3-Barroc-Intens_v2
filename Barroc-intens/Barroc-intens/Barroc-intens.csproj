@@ -21,6 +21,8 @@
     <None Remove="Maintenance\MaintenanceEditWerkbonWindow.xaml" />
     <None Remove="notedetailWindow.xaml" />
     <None Remove="Notes.xaml" />
+    <None Remove="Maintenance\CreateRoutineVisitWindow.xaml" />
+    <None Remove="Maintenance\ScheduleFaultyRequestWindow.xaml" />
     <None Remove="ProductenWindow.xaml" />
     <None Remove="StoringDetailsWindow.xaml" />
     <None Remove="StoringsWindow.xaml" />
@@ -123,7 +125,12 @@
     <Folder Include="Sales\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Maintenance\MaintenanceEditWerkbonWindow.xaml">
+    <Page Update="Maintenance\ScheduleFaultyRequestWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Maintenance\CreateRoutineVisitWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

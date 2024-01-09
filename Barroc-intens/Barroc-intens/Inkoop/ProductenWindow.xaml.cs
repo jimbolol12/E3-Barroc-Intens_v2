@@ -58,7 +58,6 @@ namespace Barroc_intens
 
         private void BDeleteProduct_Click(object sender, RoutedEventArgs e)
         {
-
             if (lvProducts.SelectedItem is Product selectedproduct)
                 using (var db = new AppDbContext())
                 {

@@ -15,6 +15,7 @@ using Windows.Foundation.Collections;
 using Barroc_intens.Model;
 using Barroc_intens.Data;
 using Microsoft.UI;
+using Barroc_intens.Login;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -31,11 +32,7 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
 
-            using (var db = new AppDbContext())
-            {
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-            }
+            
         }
         private void Login_Click(object sender, RoutedEventArgs e)
         {
@@ -102,6 +99,13 @@ namespace Barroc_intens
             {
                 ErrorTextBlock.Text = "Ongeldige inloggegevens";
             }
+        }
+
+        private void BRedirectBack_Click(object sender, RoutedEventArgs e)
+        {
+            var introWindow = new IntroWindow();
+            introWindow.Activate();
+            this.Close();
         }
     }
 }

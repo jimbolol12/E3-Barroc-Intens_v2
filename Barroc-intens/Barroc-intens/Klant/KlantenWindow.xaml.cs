@@ -33,11 +33,6 @@ namespace Barroc_intens
             lvProducts.ItemsSource = products;
         }
 
-        private void BFactuur_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BContactinformatie_Click(object sender, RoutedEventArgs e)
         {
 
@@ -61,6 +56,11 @@ namespace Barroc_intens
 
             using var db = new AppDbContext();
             lvProducts.ItemsSource = db.Products.Where(p => p.Name.Contains(searchInput) && p.Category.IsEmployeeOnly == false);
+        }
+
+        private void BViewOrders_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -29,9 +29,11 @@
                 <TextBlock x:Name="TbError" 
                            Foreground="Orange"/>
                 <TextBox x:Name="TbUsername" 
-                         Header="Username"/>
+                         Header="Gebruikersnaam"/>
                 <TextBox x:Name="TbEmail" 
                          Header="Email"/>
+                <PasswordBox x:Name="PbPassword"
+                             Header="Wachtwoord"/>
 
                 <Button x:Name="BCreateUser" 
                         Click="BCreateUser_Click" 

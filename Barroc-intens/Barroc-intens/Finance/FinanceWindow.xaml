@@ -108,7 +108,6 @@
                                 <Run Text="BKR Voldaan op: " />
                                 <Run Text="{x:Bind BkrCheckedAt}" />
                             </TextBlock>
-                            <TextBlock Text="{x:Bind Contact.Username}" />
                             <ToggleButton x:Name="TBBkrCheck" Content="Toggle BKR Check" Click="TBBkrCheck_Click" Tag="{x:Bind Id}" IsChecked="{x:Bind BkrChecked}"/>
 
                         </StackPanel>

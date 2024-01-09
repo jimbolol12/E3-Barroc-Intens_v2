@@ -34,8 +34,11 @@ namespace Barroc_intens.Sales
         {
             string username = TbUsername.Text;
             string email = TbEmail.Text;
+            string password = PbPassword.Password;
             using var db = new AppDbContext();
-            var users = db.Users.Where(u => u.Username == username).ToList();
+            var users = db.Users
+                .Where(u => u.Username == username && u.Email == email)
+                .ToList();
 
             if (users.Count > 0)
             {
@@ -47,10 +50,11 @@ namespace Barroc_intens.Sales
                 {
                     Email = email,
                     Username = username,
-                    JobFunctionId = 1
+                    JobFunctionId = 1,
+                    Password = password
                 });
                 db.SaveChanges();
-                TbError.Text = "Klant kan nu registreren en een wachtwoord aanmaken!";
+                TbError.Text = "Klant kan nu inloggen!";
             }
 
         }

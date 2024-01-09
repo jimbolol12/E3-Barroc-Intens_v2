@@ -14,25 +14,26 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+
         <StackPanel Background="#FDD716"
                     Orientation="Horizontal"
                     Padding="30" />
 
         <Button x:Name="BContactinformatie"
                 Content="Contact informatie"
-                Click="BContactinformatie_Click"
+                Click="BContactinformatie_Click" 
                 HorizontalAlignment="Left" />
 
-        <Button x:Name="BFactuur"
-                Content="Factuur historie"
-                Click="BFactuur_Click"
+        <Button x:Name="BViewOrders"
+                Content="Bekijk Bestellingen"
+                Click="BViewOrders_Click"
                 HorizontalAlignment="Center" />
 
         <Button x:Name="BStoring"
                 Content="Storing melden"
                 Click="BStoring_Click"
                 HorizontalAlignment="Right" />
-
+        
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

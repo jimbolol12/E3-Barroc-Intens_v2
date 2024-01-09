@@ -37,6 +37,10 @@ namespace Barroc_intens.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Companies);
+                
+
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
@@ -44,6 +48,7 @@ namespace Barroc_intens.Data
                     Username = "Alice",
                     Password = "test",
                     JobFunctionId = 1,
+                    CompanyId = 1
                 },
 
                 new User
@@ -134,6 +139,16 @@ namespace Barroc_intens.Data
 
 
             modelBuilder.Entity<Company>().HasData(
+               new Company {
+                   Id = 0,
+                   Name = "Test",
+                   Phone = 123123123,
+                   Street = "BarrocStraat",
+                   HouseNumber = 69,
+                   City = "Breda",
+                   CountryCode = "6969",
+                   ContactId = 3,
+               }
                new Company
                {
                    Id = 1,

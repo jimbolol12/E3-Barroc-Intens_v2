@@ -14,7 +14,15 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0"
-              Background="#FDD716" />
+              Background="#FDD716">
+
+            <StackPanel>
+                <Button Content="Back"
+                        Margin="10"
+                        x:Name="BRedirectBack"
+                        Click="BRedirectBack_Click"/>
+            </StackPanel>
+        </Grid>
 
 
         <Grid Grid.Column="1">

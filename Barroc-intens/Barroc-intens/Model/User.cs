@@ -28,6 +28,8 @@ namespace Barroc_intens.Model
         public string? Password { get; set; }
         public string Email { get; set; }
         public int JobFunctionId { get; set; }
+        public int? CompanyId { get; set; }
+        public ICollection<Company> Companies{ get; set; }
         public JobFunction JobFunction { get; set; }
     }
 }

@@ -24,5 +24,6 @@ namespace Barroc_intens.Model
         public bool BkrChecked => BkrCheckedAt != null;
 
 
+
     }
 }

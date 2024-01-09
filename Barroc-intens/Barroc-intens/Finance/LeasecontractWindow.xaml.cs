@@ -36,5 +36,10 @@ namespace Barroc_intens
             newLeaseWindow.Activate();
             this.Close();
         }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -169,6 +169,34 @@ namespace Barroc_intens.Data
                     Name = "Screw",
                     Price = 1,
                     Storage = 1000,
+                },
+                new MaintenanceProduct
+                {
+                    Id = 2,
+                    Name = "Filter Basket",
+                    Price = 5,
+                    Storage = 500,
+                },
+                new MaintenanceProduct
+                {
+                    Id = 3,
+                    Name = "Heating Element",
+                    Price = 15,
+                    Storage = 200,
+                },
+                new MaintenanceProduct
+                {
+                    Id = 4,
+                    Name = "Water Pump",
+                    Price = 10,
+                    Storage = 300,
+                },
+                new MaintenanceProduct
+                {
+                    Id = 5,
+                    Name = "Thermostat",
+                    Price = 8,
+                    Storage = 400,
                 });
 
             modelBuilder.Entity<Company>().HasData(

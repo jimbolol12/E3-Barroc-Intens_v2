@@ -12,7 +12,6 @@ namespace Barroc_intens.Model
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string PriceFormatted => string.Format("{0:N2}", Price);
-        public decimal Storage { get; set; }
-        public string StorageFormatted => string.Format("{0:F2}", Storage);
+        public int Storage { get; set; }
     }
 }

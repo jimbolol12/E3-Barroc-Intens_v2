@@ -5,6 +5,7 @@
         xmlns:local="using:Barroc_intens"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localData="using:Barroc_intens.Model"
         mc:Ignorable="d">
 
 
@@ -39,6 +40,20 @@
                     HorizontalAlignment="Left"
                     Margin="5"
                     Background="Black" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ListView x:Name="lvMaintenanceProducts">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="localData:MaintenanceProduct">
+                        <StackPanel Margin="20">
+                            <TextBlock Text="{x:Bind Name}" />
+                            <TextBlock Text="{x:Bind PriceFormatted}" />
+                            <TextBlock Text="{x:Bind Storage}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </Grid>
 </Window>

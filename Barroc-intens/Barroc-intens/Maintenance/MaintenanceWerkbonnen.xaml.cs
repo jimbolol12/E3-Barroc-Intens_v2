@@ -2,7 +2,6 @@ using Barroc_intens.Data;
 using Barroc_intens.Maintenance;
 using Barroc_intens.Model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -32,17 +31,11 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
 
-            using (var db = new AppDbContext())
-            {
-               // Database aan maken en verwijderen //
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-
-                // Model product en company in laden//
-                NoteListview.ItemsSource = db.MaintenanceAppointments
-                    .Include(g => g.Product)
-                    .Include(c => c.Company);
-            }
+            LoadAppointments();
+        }
+        private void Window_Closed(object sender, WindowEventArgs args)
+        {
+            LoadAppointments();
         }
 
         private void BRedirectToPlannerWindow_Click(object sender, RoutedEventArgs e)
@@ -82,13 +75,14 @@ namespace Barroc_intens
             }
         }
         public void LoadAppointments()
-        //window verversen//
-        private void Window_Closed(object sender, WindowEventArgs args)
         {
             using (var db = new AppDbContext())
             {
                 var maintenance = db.MaintenanceAppointments.ToList();
-                NoteListview.ItemsSource = db.MaintenanceAppointments.Include(g => g.Product).Include(c => c.Company);
+                AppointmentListview.ItemsSource = db.MaintenanceAppointments
+                                                    .Include(c => c.Company)
+                                                    .Include(p => p.Product)
+                                                    .ToList();
             }
         }
 

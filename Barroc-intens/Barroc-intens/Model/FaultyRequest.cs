@@ -16,7 +16,7 @@ namespace Barroc_intens.Model
         public string Location { get; set; }
         public int? EmployeeId { get; set; }
         public User Employee { get; set; }
-        public DateTime? ScheduledAt { get; set; }
+        public DateTime ScheduledAt { get; set; }
         public string Description { get; set; }
         public bool Done { get; set; }
     }

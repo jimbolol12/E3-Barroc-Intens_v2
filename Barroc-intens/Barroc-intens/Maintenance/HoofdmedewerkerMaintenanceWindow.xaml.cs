@@ -30,16 +30,19 @@ namespace Barroc_intens
 
             using (var db = new AppDbContext())
             {
-
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-
                 var request = db.FaultyRequests
-                     /* .Include(m => m.Id)*/
                      .ToList();
-
                 lvFaultyRequests.ItemsSource = request;
+
+                var products = db.MaintenanceProducts
+                    .ToList();
+                lvMaintenanceProducts.ItemsSource = products;
             }
+        }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

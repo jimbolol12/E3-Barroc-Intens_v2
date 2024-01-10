@@ -20,6 +20,7 @@ namespace Barroc_intens.Data
         public DbSet<FaultyRequest> FaultyRequests { get; set; }
         public DbSet<JobFunction> Functies { get; set; }
         public DbSet<MaintenanceAppointment> MaintenanceAppointments { get; set; }
+        public DbSet<MaintenanceProduct> MaintenanceProducts { get; set; }
         public DbSet<Note> Notes { get; set; }
         public DbSet<Product> Products { get; set; }
 
@@ -132,7 +133,7 @@ namespace Barroc_intens.Data
                     UserId = 1,
                     EmployeeId = 5,
                     Location = "Terheidenseweg 301",
-                    ScheduledAt = null,
+                    ScheduledAt = DateTime.UtcNow,
                     Description = "Blokkade in de slang",
                     Done = false,
                 },
@@ -144,7 +145,7 @@ namespace Barroc_intens.Data
                     UserId = 1,
                     EmployeeId = 8,
                     Location = "Terheidenseweg 300",
-                    ScheduledAt = null,
+                    ScheduledAt = DateTime.UtcNow,
                     Description = "Melk klopper werkt niet meer",
                     Done = false,
                 },
@@ -156,9 +157,18 @@ namespace Barroc_intens.Data
                     UserId = 1,
                     EmployeeId = 6,
                     Location = "Terheidenseweg 350",
-                    ScheduledAt = null,
+                    ScheduledAt = DateTime.UtcNow,
                     Description = "Machine lekt tijdens gebruik",
                     Done = false,
+                });
+
+            modelBuilder.Entity<MaintenanceProduct>().HasData(
+                new MaintenanceProduct
+                {
+                    Id = 1,
+                    Name = "Screw",
+                    Price = 1,
+                    Storage = 1000,
                 });
 
             modelBuilder.Entity<Company>().HasData(
@@ -183,8 +193,7 @@ namespace Barroc_intens.Data
                    City = "breda",
                    CountryCode = "133",
                    ContactId = 1
-               }
-           );
+               });
 
             modelBuilder.Entity<Product>().HasData(
                 new Product
@@ -256,10 +265,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 7,
                     Name = "Planner",
-                }
-                
-            );
-            
+                });
         }
     }
 }

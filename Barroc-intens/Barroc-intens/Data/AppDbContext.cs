@@ -29,7 +29,7 @@ namespace Barroc_intens.Data
                 "server=localhost;" +
                 "port=3306;" +
                 "user=root;" +
-                "password=18nlw;" +
+                "password=;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -114,9 +114,11 @@ namespace Barroc_intens.Data
                 new MaintenanceAppointment
                 {
                     Id = 1,
+                    EmployeeId = 1,
                     CompanyId = 1,
-                    Remark = "KoffiezetApparaat is hervuld",
-                    DateAdded = DateTime.Now,
+                    Location = "Breda",
+                    Description = "KoffiezetApparaat is hervuld",
+                    ScheduledAt = DateTime.Now,
                     
                 });
             modelBuilder.Entity<FaultyRequest>().HasData(

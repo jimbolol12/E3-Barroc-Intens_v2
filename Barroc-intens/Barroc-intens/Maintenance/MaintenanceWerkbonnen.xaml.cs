@@ -87,8 +87,7 @@ namespace Barroc_intens
             using (var db = new AppDbContext())
             {
                 // Database aan maken en verwijderen //
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
+              
 
                 // Model product en company in laden//
                 NoteListview.ItemsSource = db.MaintenanceAppointments

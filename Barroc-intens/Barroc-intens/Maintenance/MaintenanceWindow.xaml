@@ -16,9 +16,9 @@
         </Grid.ColumnDefinitions>
 
         <!--Zorg dat het in de kalender komt-->
-        <StackPanel HorizontalAlignment="Center"
- VerticalAlignment="Bottom">
-            <Button x:Name="link" Content="maintenanceeee" Click="link_Click"></Button>
+        <StackPanel HorizontalAlignment="left"
+ VerticalAlignment="top" Margin="50,50,0,0">
+            <Button x:Name="link" Content="Maintenance Apointmentes" Click="link_Click"></Button>
         </StackPanel>
         <CalendarView Grid.Column="0"
                       Margin="30,0,0,0"

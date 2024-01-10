@@ -15,7 +15,10 @@
             <TextBlock x:Name="MessageBox"></TextBlock>
             <TextBlock Text="Company Name"></TextBlock>
             <ListBox x:Name="CompanyListBox" SelectionMode="Single" DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
+            <TextBlock Text="Tool"></TextBlock>
             <ComboBox x:Name="ProductListBox"  DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
+            <TextBlock Text="Location"></TextBlock>
+            <TextBox x:Name="tbLocation" />
             <TextBlock Text="Description"></TextBlock>
             <TextBox x:Name="tbRemark" />
             <TextBlock Text="Date"></TextBlock>

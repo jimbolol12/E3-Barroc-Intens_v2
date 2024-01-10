@@ -41,6 +41,7 @@ namespace Barroc_intens.Maintenance
 
                 var companies = db.Companies.ToList();
 
+
                 TbRemark.Text = selectedAppointment.Description;
                 AppointmentCompanyCombobox.ItemsSource = companies;
               /*  AppointmentCompanyCombobox.SelectedValue = selectedAppointmentCompany;*/

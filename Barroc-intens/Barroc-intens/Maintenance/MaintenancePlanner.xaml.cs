@@ -67,6 +67,7 @@ namespace Barroc_intens
                     ProductId = productId,
                     CompanyId = companyId,
                     Description = tbRemark.Text,
+                    Location = tbLocation.Text,
                     EmployeeId = 2,
                     ScheduledAt = tbDateAdded.Date.Date
                 });

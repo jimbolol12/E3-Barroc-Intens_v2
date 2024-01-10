@@ -16,10 +16,6 @@
         </Grid.ColumnDefinitions>
 
         <!--Zorg dat het in de kalender komt-->
-        <StackPanel HorizontalAlignment="Center"
- VerticalAlignment="Bottom">
-            <Button x:Name="link" Content="maintenanceeee" Click="link_Click"></Button>
-        </StackPanel>
         <CalendarView Grid.Column="0"
                       Margin="30,0,0,0"
                       DisplayMode="Month"
@@ -30,7 +26,6 @@
                       DoubleTapped="CalendarView_DoubleTapped"
                       CalendarViewDayItemChanging="CalendarView_CalendarViewDayItemChanging"
                       CalendarItemHoverBackground="#FDD716">
-            
             <!--CalendarViewDayItemStyle-->
             <CalendarView.CalendarViewDayItemStyle>
                 <Style TargetType="CalendarViewDayItem">
@@ -75,7 +70,6 @@
                         Click="BProductenRedirect_Click"/>
 
             </StackPanel>
-           
         </Grid>
         
 

@@ -109,13 +109,6 @@ namespace Barroc_intens
             productenWindow.Activate();
             this.Close();
         }
-
-        private void link_Click(object sender, RoutedEventArgs e)
-        {
-            var productenWindow = new MaintenanceWerkbonnen();
-            productenWindow.Activate();
-            this.Close();
-        }
     }
 }
 

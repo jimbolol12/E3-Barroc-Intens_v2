@@ -39,8 +39,9 @@ namespace Barroc_intens
             db.MaintenanceAppointments.Add(new MaintenanceAppointment
             {
                 CompanyId = int.Parse(tbCompany.Text),
-                Remark = tbRemark.Text,
-                DateAdded = tbDateAdded.Date.Date
+                Location = tbLocation.Text,
+                Description = tbRemark.Text,
+                ScheduledAt = tbDateAdded.Date.Date
             });
             
             db.SaveChanges();

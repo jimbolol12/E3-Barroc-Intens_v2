@@ -13,6 +13,9 @@
         <StackPanel Orientation="Vertical"
              Margin="10">
             <TextBox x:Name="tbCompany" Header="Bedrijf:  "/>
+            <TextBox x:Name="tbProduct" Header="Product:  "/>
+            <TextBox x:Name="tbLocation" Header="Locatie:  "/>
+            <TextBox x:Name="tbEmploye" Header="Medewerker:  "/>
             <TextBox x:Name="tbRemark" Header="Opmerking: "/>
             <DatePicker x:Name="tbDateAdded"></DatePicker>
         </StackPanel>

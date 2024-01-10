@@ -35,16 +35,16 @@ namespace Barroc_intens.Maintenance
 
             using (var db = new AppDbContext())
             {
-                var selectedAppointmentCompany = db.Companies
-                    .Where(sac => sac.Id == selectedAppointment.Company.Id)
-                    .FirstOrDefault();
+                /*var selectedAppointmentCompany = db.Companies
+                    .Where(sac => sac.Id == selectedAppointment.Product.Id)
+                    .FirstOrDefault();*/
 
                 var companies = db.Companies.ToList();
 
-                TbRemark.Text = selectedAppointment.Remark;
+                TbRemark.Text = selectedAppointment.Description;
                 AppointmentCompanyCombobox.ItemsSource = companies;
-                AppointmentCompanyCombobox.SelectedValue = selectedAppointmentCompany;
-                DatePickerDateAdded.Date = selectedAppointment.DateAdded.Date;
+              /*  AppointmentCompanyCombobox.SelectedValue = selectedAppointmentCompany;*/
+                DatePickerDateAdded.Date = selectedAppointment.ScheduledAt.Date;
             }
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -58,9 +58,9 @@ namespace Barroc_intens.Maintenance
                 var clickAppointment = dbContext.MaintenanceAppointments.Find(clickedAppointment.Id);
                 var comboboxSelectedCompany = AppointmentCompanyCombobox.SelectedItem as Company;
 
-                clickAppointment.Remark = TbRemark.Text;
+                clickAppointment.Description = TbRemark.Text;
                 clickAppointment.CompanyId = comboboxSelectedCompany.Id;
-                clickAppointment.DateAdded = DatePickerDateAdded.Date.Date;
+                clickAppointment.ScheduledAt = DatePickerDateAdded.Date.Date;
 
                 dbContext.SaveChanges();
                 var werkbonnenWindow = new MaintenanceWerkbonnen();

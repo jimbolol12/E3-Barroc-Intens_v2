@@ -34,12 +34,23 @@
                                FontSize="16"
                                Foreground="White" />
 
-                        <TextBlock Text="{x:Bind Remark}"
+                        <TextBlock Text="{x:Bind Product.Name}"
                                FontStyle="Italic"
                                Foreground="LightGray"
                                FontSize="14" />
 
-                        <TextBlock Text="{x:Bind DateAdded}"
+                       
+                        <TextBlock Text="{x:Bind Location}"
+                               FontStyle="Italic"
+                               Foreground="LightGray"
+                               FontSize="14" />
+
+                        <TextBlock Text="{x:Bind Description}"
+                               FontStyle="Italic"
+                               Foreground="LightGray"
+                               FontSize="14" />
+
+                        <TextBlock Text="{x:Bind ScheduledAt}"
                                FontSize="12"
                                Foreground="Gray" />
 

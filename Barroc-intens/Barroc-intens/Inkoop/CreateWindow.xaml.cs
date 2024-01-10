@@ -86,10 +86,5 @@ namespace Barroc_intens
         {
             MessageBox.Text = errorMessage;
         }
-
-        private void bBack_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

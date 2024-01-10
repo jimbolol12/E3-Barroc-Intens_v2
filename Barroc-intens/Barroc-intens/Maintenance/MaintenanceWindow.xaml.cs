@@ -2,6 +2,8 @@ using Barroc_intens.Data;
 using Barroc_intens.Maintenance;
 using Barroc_intens.Model;
 using Microsoft.UI;
+using Barroc_intens.Model;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -44,6 +46,24 @@ namespace Barroc_intens
         }
 
         private void BStoringRedirect_Click(object sender, RoutedEventArgs e)
+
+            using (var db = new AppDbContext())
+            {
+                // Database aan maken en verwijderen //
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+
+                // Model product en company in laden//
+                var Faulty = db.FaultyRequests
+                     .Include(g => g.Product).Include(g => g.User)
+                     .ToList();
+
+                FaultyRequestListView.ItemsSource = Faulty;
+            }
+        }
+
+        // Niewe window openen //
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             var maintenanceStoringenWindow = new MaintenanceStoringenWindow();
             maintenanceStoringenWindow.Activate();

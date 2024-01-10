@@ -125,7 +125,7 @@ namespace Barroc_intens.Data
                 new FaultyRequest
                 {
                     Id = 1,
-                    ProductId = "S234FREKT",
+                    ProductId = "1",
                     UserId = 1,
                     EmployeeId = 9,
                     Location = "Terheidenseweg 320",
@@ -137,7 +137,7 @@ namespace Barroc_intens.Data
                 new FaultyRequest
                 {
                     Id = 2,
-                    ProductId = "S234MMPLA",
+                    ProductId = "2",
                     UserId = 1,
                     EmployeeId = 5,
                     Location = "Terheidenseweg 301",
@@ -149,7 +149,7 @@ namespace Barroc_intens.Data
                 new FaultyRequest
                 {
                     Id = 3,
-                    ProductId = "S234NNBMV",
+                    ProductId = "3",
                     UserId = 1,
                     EmployeeId = 8,
                     Location = "Terheidenseweg 300",
@@ -161,7 +161,7 @@ namespace Barroc_intens.Data
                 new FaultyRequest
                 {
                     Id = 4,
-                    ProductId = "S234MMPLA",
+                    ProductId = "4",
                     UserId = 1,
                     EmployeeId = 6,
                     Location = "Terheidenseweg 350",
@@ -310,7 +310,24 @@ namespace Barroc_intens.Data
                 }
                 
             );
-            
+            modelBuilder.Entity<MaintenanceAppointment>().HasData(
+              new MaintenanceAppointment
+              {
+                  Id = 1,
+                  CompanyId = 1,
+                  ProductId = "1",
+                  Remark = "Printer stuk, moet voor vrijdg gemaakt zijn",
+                  DateAdded = DateTime.Now,
+              },
+              new MaintenanceAppointment
+              {
+                  Id = 2,
+                  CompanyId = 2,
+                  ProductId = "1",
+                  Remark = "airco gemaakt op 2 de verdieping",
+                  DateAdded = DateTime.Now,
+              }
+              );
         }
     }
 }

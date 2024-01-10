@@ -9,6 +9,7 @@ namespace Barroc_intens.Model
     public class FaultyRequest
     {
         public int Id { get; set; }
+        // TODO: ProductId
         public string ProductId { get; set; }
         public Product Product { get; set; }
         public int UserId { get; set; }

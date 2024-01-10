@@ -18,5 +18,7 @@ namespace Barroc_intens.Model
         public User Employee { get; set; }
         public DateTime ScheduledAt { get; set; }
         public string Description { get; set; }
+        public string Remark { get; set; }
+        public DateTime DateAdded { get; set; }
     }
 }

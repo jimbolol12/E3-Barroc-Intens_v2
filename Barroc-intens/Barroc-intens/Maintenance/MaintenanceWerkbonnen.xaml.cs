@@ -69,32 +69,16 @@ namespace Barroc_intens
                     NoteListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
                 }
             }
-         /*   else
-            {
-                MessageBox.Text = "Selecteer een afspraak";
-            }*/
         }
         public void LoadAppointments()
         {
-            /* using (var db = new AppDbContext())
-             {
-                 var maintenance = db.MaintenanceAppointments.ToList();
-                 AppointmentListview.ItemsSource = db.MaintenanceAppointments
-                                                     .Include(c => c.Company)
-                                                     .Include(p => p.Product)
-                                                     .ToList();
-             }*/
             using (var db = new AppDbContext())
             {
-                // Database aan maken en verwijderen //
-              
-
                 // Model product en company in laden//
                 NoteListview.ItemsSource = db.MaintenanceAppointments
                     .Include(g => g.Product)
                     .Include(c => c.Company);
             }
         }
-
     }
 }

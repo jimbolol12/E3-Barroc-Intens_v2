@@ -115,7 +115,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 1,
                     EmployeeId = 1,
-                  /*  ProductId = "1",*/
+                    ProductId = "S234KNDPF",
                     CompanyId = 1,
                     Location = "Breda",
                     Description = "KoffiezetApparaat is hervuld",
@@ -126,7 +126,7 @@ namespace Barroc_intens.Data
                  {
                      Id = 2,
                      EmployeeId = 2,
-                     /*  ProductId = "1",*/
+                     ProductId = "S234NNBMV",
                      CompanyId = 2,
                      Location = "Etten-Leur",
                      Description = "Printer stuk",
@@ -163,6 +163,17 @@ namespace Barroc_intens.Data
                {
                    Id = 2,
                    Name = "kruidvat",
+                   Phone = 1234567890,
+                   Street = "LangeStraat",
+                   HouseNumber = 69,
+                   City = "breda",
+                   CountryCode = "133",
+                   ContactId = 1
+               },
+               new Company
+               {
+                   Id = 3,
+                   Name = "Lidl",
                    Phone = 1234567890,
                    Street = "LangeStraat",
                    HouseNumber = 69,

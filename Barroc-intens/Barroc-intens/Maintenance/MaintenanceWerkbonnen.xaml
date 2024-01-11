@@ -29,6 +29,8 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
 
+                            <TextBlock x:Name="MessageBox"></TextBlock>
+                            
                             <StackPanel Grid.Row="0" Margin="10">
                                 <TextBlock Text="Company" FontWeight="Bold" FontSize="14" Foreground="White"/>
                                 <TextBlock Text="{x:Bind Company.Name}" FontSize="16" Foreground="White"/>

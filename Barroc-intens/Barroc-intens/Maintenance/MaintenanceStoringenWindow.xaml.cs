@@ -34,23 +34,17 @@ namespace Barroc_intens
                 var storing = db.FaultyRequests
                     .Include(s => s.Product)
                     .ToList();
-                    
-
                 storingenListView.ItemsSource = storing;
             }
         }
         private void storingenListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-
             if (e.OriginalSource is FrameworkElement element && element.DataContext is FaultyRequest ClickedStoring)
             {
                 var storingDetailsWindow = new StoringDetailsWindow(ClickedStoring);
                 storingDetailsWindow.Activate();
                 this.Close();
-            }
-
-           
-            
+            } 
         }
     }
 }

@@ -10,53 +10,54 @@
     mc:Ignorable="d">
 
     <Grid Grid.Column="1">
-        <TextBlock x:Name="MessageBox" Foreground="Orange" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        <ListView x:Name="AppointmentListview"
-            Grid.Column="1"
-            Background="Black" 
-            BorderBrush="DarkGray"
-            BorderThickness="2"
-            IsDoubleTapEnabled="True"
-            DoubleTapped="SPWerkbon_DoubleTapped"
-            Margin="10">
+        <ListView x:Name="NoteListview"
+          Grid.Column="1"
+          Background="Black"
+             DoubleTapped="SPWerkbon_DoubleTapped"
+          BorderThickness="2"
+          Margin="10">
+            <!-- listview vanuit MaintenanceAppoitmens met relatie naar company en Product-->
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localData:MaintenanceAppointment">
-                    <StackPanel Margin="20"
-                        Background="DarkGray"
-                        x:Name="SPWerkbon"
-                        BorderBrush="Black"
-                        BorderThickness="1" 
-                        CornerRadius="5">
+                    <Border Background="DarkGray" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Margin="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
 
+                            <StackPanel Grid.Row="0" Margin="10">
+                                <TextBlock Text="Company" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                <TextBlock Text="{x:Bind Company.Name}" FontSize="16" Foreground="White"/>
+                            </StackPanel>
 
-                        <TextBlock Text="{x:Bind Company.Name}"
-                               FontWeight="Bold" 
-                               FontSize="16"
-                               Foreground="White" />
+                            <StackPanel Grid.Row="1" Margin="10">
+                                <TextBlock Text="Product" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                <TextBlock Text="{x:Bind Product.Name}" FontSize="16" Foreground="White"/>
+                            </StackPanel>
 
-                        <TextBlock Text="{x:Bind Product.Name}"
-                               FontStyle="Italic"
-                               Foreground="LightGray"
-                               FontSize="14" />
+                            <StackPanel Grid.Row="2" Margin="10">
+                                <TextBlock Text="Details" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                <TextBlock Text="{x:Bind Description}" FontStyle="Italic" Foreground="LightGray" FontSize="14"/>
+                            </StackPanel>
 
-                       
-                        <TextBlock Text="{x:Bind Location}"
-                               FontStyle="Italic"
-                               Foreground="LightGray"
-                               FontSize="14" />
+                            <StackPanel Grid.Row="3" Margin="10">
+                                <TextBlock Text="Location" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                <TextBlock Text="{x:Bind Location}" FontSize="12" Foreground="Gray"/>
+                            </StackPanel>
 
-                        <TextBlock Text="{x:Bind Description}"
-                               FontStyle="Italic"
-                               Foreground="LightGray"
-                               FontSize="14" />
-
-                        <TextBlock Text="{x:Bind ScheduledAt}"
-                               FontSize="12"
-                               Foreground="Gray" />
-
-                    </StackPanel>
+                            <StackPanel Grid.Row="4" Margin="10">
+                                <TextBlock Text="Date" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                <TextBlock Text="{x:Bind ScheduledAt}" FontSize="12" Foreground="Gray"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
         </ListView>
 
 

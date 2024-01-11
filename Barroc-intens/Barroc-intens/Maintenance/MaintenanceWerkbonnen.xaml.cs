@@ -58,7 +58,7 @@ namespace Barroc_intens
 
         private void BDeleteSelectedAppointment_Click(object sender, RoutedEventArgs e)
         {
-            if (AppointmentListview.SelectedItem is MaintenanceAppointment selectedAppointment && AppointmentListview.SelectedItem != null)
+            if (NoteListview.SelectedItem is MaintenanceAppointment selectedAppointment && NoteListview.SelectedItem != null)
             {
                 using (var db = new AppDbContext())
                 {
@@ -66,23 +66,33 @@ namespace Barroc_intens
                     db.SaveChanges();
 
                     var maintenance = db.MaintenanceAppointments.ToList();
-                    AppointmentListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
+                    NoteListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
                 }
             }
-            else
+         /*   else
             {
                 MessageBox.Text = "Selecteer een afspraak";
-            }
+            }*/
         }
         public void LoadAppointments()
         {
+            /* using (var db = new AppDbContext())
+             {
+                 var maintenance = db.MaintenanceAppointments.ToList();
+                 AppointmentListview.ItemsSource = db.MaintenanceAppointments
+                                                     .Include(c => c.Company)
+                                                     .Include(p => p.Product)
+                                                     .ToList();
+             }*/
             using (var db = new AppDbContext())
             {
-                var maintenance = db.MaintenanceAppointments.ToList();
-                AppointmentListview.ItemsSource = db.MaintenanceAppointments
-                                                    .Include(c => c.Company)
-                                                    .Include(p => p.Product)
-                                                    .ToList();
+                // Database aan maken en verwijderen //
+              
+
+                // Model product en company in laden//
+                NoteListview.ItemsSource = db.MaintenanceAppointments
+                    .Include(g => g.Product)
+                    .Include(c => c.Company);
             }
         }
 

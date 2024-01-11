@@ -6,48 +6,91 @@
     xmlns:local="using:Barroc_intens"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:localData="using:Barroc_intens.Model"
-    mc:Ignorable="d">
-
+        xmlns:model="using:Barroc_intens.Model"
+        mc:Ignorable="d">
 
     <Grid>
-        <Button Content="Inkomende Storingen" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" Click="Button_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Zorg dat het in de kalender komt-->
+        <StackPanel HorizontalAlignment="left"
+ VerticalAlignment="top" Margin="50,50,0,0">
+            <Button x:Name="link" Content="Maintenance Apointmentes" Click="link_Click"></Button>
+        </StackPanel>
+        <CalendarView Grid.Column="0"
+                      Margin="30,0,0,0"
+                      DisplayMode="Month"
+                      SelectionMode="Single"
+                      IsDoubleTapEnabled="True"
+                      Width="500"
+                      IsOutOfScopeEnabled="True"
+                      DoubleTapped="CalendarView_DoubleTapped"
+                      CalendarViewDayItemChanging="CalendarView_CalendarViewDayItemChanging"
+                      CalendarItemHoverBackground="#FDD716">
+            
+            <!--CalendarViewDayItemStyle-->
+            <CalendarView.CalendarViewDayItemStyle>
+                <Style TargetType="CalendarViewDayItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <!-- Omdat we niet vanuit C# bij de ListView kunnen (omdat het in een datatemplate zit)
+                             Benaderen we de data via de DataContext, met behulp van {Binding} die daar naar verwijst -->
+                                <ListView ItemsSource="{Binding}"
+                                          IsItemClickEnabled="True"
+                                          ItemClick="ListView_ItemClick">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate x:DataType="model:FaultyRequest">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{x:Bind ProductId}"
+                                                           FontWeight="Bold" />
+                                                <TextBlock Text="{x:Bind UserId}" />
+                                                <TextBlock Text="{x:Bind EmployeeId}"
+                                                           FontStyle="Italic" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </CalendarView.CalendarViewDayItemStyle>
+        </CalendarView>
+
+
+        <Grid Grid.Column="1">
+            <StackPanel HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+                <TextBlock Text="Maintenance"
+               FontSize="24"
+               Margin="0 0 0 20" />
+
+                <Button x:Name="BStoringRedirect" Content="Storings Meldingen Beheren"
+            Click="BStoringRedirect_Click"/>
+                <Button x:Name="BProductenRedirect" Content="Producten"
+                        Click="BProductenRedirect_Click"/>
+
+            </StackPanel>
+           
+        </Grid>
         
-        
-        
-        <!-- Rechterkant -->
-        <ListView x:Name="companieListView"
-              Grid.Column="1">
+
+        <ListView x:Name="lvApointements"
+                  Grid.Column="1"
+                  IsDoubleTapEnabled="True"
+                  DoubleTapped="lvApointements_DoubleTapped">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="localData:">
-                    <StackPanel Margin="20">
+                <DataTemplate x:DataType="model:FaultyRequest">
+                    <StackPanel>
                         <TextBlock>
-                        <Run FontWeight="Bold" Text="Naam:" ></Run>
-                        <Run Text="{x:Bind Name}"></Run>
-                        </TextBlock>
-                        <TextBlock>
-                        <Run FontWeight="Bold" Text="telefoon nummer:"></Run>
-                        <Run Text="{x:Bind Phone}"></Run>
-                        </TextBlock>
-                        <TextBlock>
-                        <Run FontWeight="Bold" Text="Straat:"></Run>
-                        <Run Text="{x:Bind Street}"></Run>
-                        </TextBlock>
-                        <TextBlock>
-                        <Run FontWeight="Bold" Text="huisnummer:"></Run>
-                        <Run Text="{x:Bind HouseNumber}"></Run>
-                        </TextBlock>
-                        <TextBlock>
-                        <Run FontWeight="Bold" Text="Stad:"></Run>
-                        <Run Text="{x:Bind City}"></Run>
-                        </TextBlock>
-                        <TextBlock>
-                        <Run FontWeight="Bold" Text="BKR Voldaan op: "/>
-                        <Run Text="{x:Bind BkrCheckedAt}"/>
-                        </TextBlock>
-                        <TextBlock>
-                        <Run FontWeight="Bold" Text="Username: "/>
-                        <Run Text="{x:Bind Contact.Username}"/>
+                            <Run Text="{x:Bind ProductId }" />
+                            <Run Text="{x:Bind Location }" />
+                            <Run Text="{x:Bind EmployeeId }" />
+                            <Run Text="{x:Bind Description }" />
                         </TextBlock>
                     </StackPanel>
                 </DataTemplate>

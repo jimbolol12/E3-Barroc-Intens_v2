@@ -46,7 +46,8 @@
                     <TextBox TextChanged="tbSearchbar_TextChanged"
                              x:Name="tbSearchbar"
                              PlaceholderText="Voer product in"
-                             Height="10" />
+                             Height="10"
+                             />
                     <Button x:Name="BContact"
                             Content="Contact"
                             Click="BContact_Click" />

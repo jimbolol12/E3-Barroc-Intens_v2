@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Barroc_intens.Model
 {
-    public class Category
+    public class MaintenanceProduct
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public bool IsEmployeeOnly { get; set; }
-        
+        public decimal Price { get; set; }
+        public string PriceFormatted => string.Format("{0:N2}", Price);
+        public int Storage { get; set; }
     }
 }

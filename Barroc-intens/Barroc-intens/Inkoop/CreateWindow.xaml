@@ -39,10 +39,10 @@
                      Margin="0,10,0,0" />
         </StackPanel>
 
-        <Button x:Name="Bcreate"
+        <Button x:Name="bCreate"
                 Content="Create"
                 VerticalAlignment="Bottom"
                 Margin="20"
-                Click="Bcreate_Click" />
+                Click="bCreate_Click_1" />
     </Grid>
 </Window>

@@ -10,10 +10,15 @@
 
 
     <Grid>
-        <StackPanel Orientation="Vertical"
-             Margin="10">
-            <TextBlock Text="Company Id"></TextBlock>
-            <TextBox x:Name="tbCompany" />
+        <!-- invul velden -->
+        <StackPanel Orientation="Vertical" Margin="10">
+            <TextBlock x:Name="MessageBox"></TextBlock>
+            <TextBlock Text="Company Name"></TextBlock>
+            <ListBox x:Name="CompanyListBox" SelectionMode="Single" DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
+            <TextBlock Text="Tool"></TextBlock>
+            <ComboBox x:Name="ProductListBox"  DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
+            <TextBlock Text="Location"></TextBlock>
+            <TextBox x:Name="tbLocation" />
             <TextBlock Text="Description"></TextBlock>
             <TextBox x:Name="tbRemark" />
             <TextBlock Text="Date"></TextBlock>
@@ -21,7 +26,7 @@
         </StackPanel>
 
 
-        
+        <!-- aan maak knop -->
         <Button x:Name="Bcreate"
                 Content="Create"
                 VerticalAlignment="Bottom"

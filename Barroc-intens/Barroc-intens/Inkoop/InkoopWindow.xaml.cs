@@ -1,3 +1,4 @@
+using Barroc_intens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,13 @@ namespace Barroc_intens
         public InkoopWindow()
         {
             this.InitializeComponent();
+
+            using (var db = new AppDbContext())
+            {
+                var products = db.MaintenanceProducts
+                    .ToList();
+                lvMaintenanceProducts.ItemsSource = products;
+            }
         }
 
         private void BStorage_Click(object sender, RoutedEventArgs e)

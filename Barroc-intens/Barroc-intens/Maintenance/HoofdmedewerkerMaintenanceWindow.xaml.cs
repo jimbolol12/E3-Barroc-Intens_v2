@@ -30,16 +30,24 @@ namespace Barroc_intens
 
             using (var db = new AppDbContext())
             {
-
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-
-                var note = db.FaultyRequests
-                     /* .Include(m => m.Id)*/
+                var request = db.FaultyRequests
                      .ToList();
+                lvFaultyRequests.ItemsSource = request;
 
-                NoteListview.ItemsSource = note;
+                var products = db.MaintenanceProducts
+                    .ToList();
+                lvMaintenanceProducts.ItemsSource = products;
             }
+        }
+
+        private void BRedirectWerkbonnenWindow_Click(object sender, RoutedEventArgs e)
+        {
+            var werkbonnenWindow = new MaintenanceWerkbonnen();
+            werkbonnenWindow.Activate();
+            this.Close();
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

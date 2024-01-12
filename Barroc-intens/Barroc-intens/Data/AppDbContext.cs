@@ -293,7 +293,26 @@ namespace Barroc_intens.Data
                 {
                     Id = 7,
                     Name = "Planner",
-                });
+                }
+            );
+            modelBuilder.Entity<MaintenanceAppointment>().HasData(
+              new MaintenanceAppointment
+              {
+                  Id = 1,
+                  CompanyId = 1,
+                  ProductId = "1",
+                  Remark = "Printer stuk, moet voor vrijdg gemaakt zijn",
+                  DateAdded = DateTime.Now,
+              },
+              new MaintenanceAppointment
+              {
+                  Id = 2,
+                  CompanyId = 2,
+                  ProductId = "1",
+                  Remark = "airco gemaakt op 2 de verdieping",
+                  DateAdded = DateTime.Now,
+              }
+              );
         }
     }
 }

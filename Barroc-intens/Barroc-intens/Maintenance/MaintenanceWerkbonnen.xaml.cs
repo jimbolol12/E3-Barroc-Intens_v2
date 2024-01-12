@@ -1,6 +1,6 @@
 using Barroc_intens.Data;
-using Barroc_intens.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -24,47 +24,40 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LeasecontractWindow : Window
+    public sealed partial class MaintenanceWerkbonnen : Window
     {
-        public ImageSource Source { get; set; }
-        public LeasecontractWindow()
+        public MaintenanceWerkbonnen()
         {
             this.InitializeComponent();
-        }
 
-        private void BNieuwLeaseContract_Click(object sender, RoutedEventArgs e)
-        {
-            var newLeaseWindow = new CreateNewLeaseWindow();
-            newLeaseWindow.Activate();
-            this.Close();
-        }
-
-        private void bBack_Click(object sender, RoutedEventArgs e)
-        {
-
-<<<<<<<< HEAD:Barroc-intens/Barroc-intens/Finance/LeasecontractWindow.xaml.cs
-========
             using (var db = new AppDbContext())
             {
-                // Database aan maken en verwijderen //
+               // Database aan maken en verwijderen //
                 db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
 
                 // Model product en company in laden//
-                var Faulty = db.FaultyRequests
-                     .Include(g => g.Product).Include(g => g.User)
-                     .ToList();
-
-                FaultyRequestListView.ItemsSource = Faulty;
+                NoteListview.ItemsSource = db.MaintenanceAppointments
+                    .Include(g => g.Product)
+                    .Include(c => c.Company);
             }
         }
 
-        // Niewe window openen //
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var window = new MaintenanceWerkbonnen();
-            window.Activate();
->>>>>>>> origin/MaintanenceWerkbronnenWindow:Barroc-intens/Barroc-intens/Maintenance/MaintenanceWindow.xaml.cs
+            var windowPlanner = new MaintenancePlanner();
+            windowPlanner.Activate();
+            windowPlanner.Closed += Window_Closed;
+        }
+
+        //window verversen//
+        private void Window_Closed(object sender, WindowEventArgs args)
+        {
+            using (var db = new AppDbContext())
+            {
+                var maintenance = db.MaintenanceAppointments.ToList();
+                NoteListview.ItemsSource = db.MaintenanceAppointments.Include(g => g.Product).Include(c => c.Company);
+            }
         }
     }
 }

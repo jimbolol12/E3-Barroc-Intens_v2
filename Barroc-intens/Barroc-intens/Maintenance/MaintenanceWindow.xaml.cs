@@ -27,6 +27,7 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
+
     public sealed partial class MaintenanceWindow : Window
     { 
         static ObservableCollection<FaultyRequest> AllCalendarItems = new ObservableCollection<FaultyRequest>();
@@ -94,6 +95,13 @@ namespace Barroc_intens
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        
+        // Niewe window openen //
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new MaintenanceWerkbonnen();
+            window.Activate();
         }
     }
 }

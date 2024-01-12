@@ -50,11 +50,6 @@ namespace Barroc_intens
             this.Close();
         }
 
-        private void BContact_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void tbSearchbar_TextChanged(object sender, TextChangedEventArgs e)
         {
             var searchInput = tbSearchbar.Text;

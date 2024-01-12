@@ -30,8 +30,6 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
             LoadCompanyDb();
-
-
         }
         private void LoadCompanyDb () {
             using (var db = new AppDbContext())

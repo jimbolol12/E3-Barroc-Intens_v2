@@ -92,7 +92,10 @@
     <Folder Include="Img\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="StoringDetailsWindow.xaml">
+
+    <Page Update="StoringDetailsWindow.xaml"/>
+
+    <Page Update="klantaanmakenWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Update="notedetailWindow.xaml">

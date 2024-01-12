@@ -38,7 +38,7 @@ namespace Barroc_intens
             using var db = new AppDbContext();
             db.Notes.Add(new Note
             {
-                Titlel = titel.Text,
+                Title = titel.Text,
                 AuthorId = LoginWindow.LoggedInUser.Id,
                 /*Author = ar.*/
                 Description = beschrijving.Text,

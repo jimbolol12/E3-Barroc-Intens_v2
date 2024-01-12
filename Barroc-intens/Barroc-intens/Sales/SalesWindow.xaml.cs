@@ -35,7 +35,6 @@ namespace Barroc_intens
             lvProducts.ItemsSource = products;
             lvbedrijf.ItemsSource = companies;
             lvnote.ItemsSource = notes;
-            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -52,7 +51,6 @@ namespace Barroc_intens
             this.Close();
         }
 
-        
         private void lvnote_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             if(lvnote.SelectedItems.Count > 0)
@@ -73,7 +71,6 @@ namespace Barroc_intens
             var klantaanmaakwindow = new klantaanmakenWindow();
             klantaanmaakwindow.Activate();
             this.Close();
-
         }
     }
 }

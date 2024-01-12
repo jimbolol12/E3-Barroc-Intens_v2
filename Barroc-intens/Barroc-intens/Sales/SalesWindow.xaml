@@ -111,7 +111,7 @@
 
                                     <TextBlock FontSize="15"
                         Text="titlel: ">
-                 <Run Text="{x:Bind Titlel}" />
+                 <Run Text="{x:Bind Title}" />
                                     </TextBlock>
                                     <TextBlock FontSize="15"
                        Text="gemaakt  : ">

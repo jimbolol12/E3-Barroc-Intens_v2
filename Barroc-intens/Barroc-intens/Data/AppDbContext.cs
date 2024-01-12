@@ -161,7 +161,6 @@ namespace Barroc_intens.Data
                     IsCompanyAdmin = true,
                 }
             );
-            // S234UUQRF
 
             modelBuilder.Entity<CustomInvoiceProduct>().HasData(
                 new CustomInvoiceProduct
@@ -170,15 +169,45 @@ namespace Barroc_intens.Data
                     ProductId = "S234UUQRF",
                     CustomInvoiceId = 1,
                     PricePerProduct = 0,
+                },
+                new CustomInvoiceProduct
+                {
+                    Id = 2,
+                    ProductId = "S234MMPLA",
+                    CustomInvoiceId = 2,
+                    PricePerProduct = 0,
+                },
+                new CustomInvoiceProduct
+                {
+                    Id = 3,
+                    ProductId = "S234KNDPF",
+                    CustomInvoiceId = 3,
+                    PricePerProduct = 0,
                 });
             modelBuilder.Entity<CustomInvoice>().HasData(
                 new CustomInvoice
                 {
                     Id = 1,
-                    Date = new DateTime(2023, 11, 30),
+                    Date = new DateTime(2023, 6, 12),
                     CompanyId = 1,
                     PaidAt = default( DateTime ),
+                },
+                new CustomInvoice
+                {
+                    Id = 2,
+                    Date = new DateTime(2024, 1, 5),
+                    CompanyId = 1,
+                    PaidAt = new DateTime(2024, 1, 6),
+                },
+                new CustomInvoice
+                {
+                    Id = 3,
+                    Date = new DateTime(2024, 1, 4),
+                    CompanyId = 2,
+                    PaidAt = default(DateTime),
                 });
+
+                
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
                 new MaintenanceAppointment
                 {

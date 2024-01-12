@@ -30,8 +30,6 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
             GetProductsWithJob();
-
-
         }
 
         private void lvProducts_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)

@@ -37,6 +37,7 @@ namespace Barroc_intens
                 storingenListView.ItemsSource = storing;
             }
         }
+
         private void storingenListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             if (e.OriginalSource is FrameworkElement element && element.DataContext is FaultyRequest ClickedStoring)

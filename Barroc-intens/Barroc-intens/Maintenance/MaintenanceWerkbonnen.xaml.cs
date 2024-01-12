@@ -33,6 +33,7 @@ namespace Barroc_intens
 
             LoadAppointments();
         }
+
         private void Window_Closed(object sender, WindowEventArgs args)
         {
             LoadAppointments();
@@ -45,6 +46,7 @@ namespace Barroc_intens
             windowPlanner.Closed += Window_Closed;
 
         }
+
         private void SPWerkbon_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             // Ga naar edit pagina van de appointment waar 2 keer op is gedrukt
@@ -70,6 +72,7 @@ namespace Barroc_intens
                 }
             }
         }
+
         public void LoadAppointments()
         {
             using (var db = new AppDbContext())

@@ -49,11 +49,16 @@ namespace Barroc_intens
                 Username = username,
                 Password = hashedPassword,
                 Email = email,
-                JobFunction = new JobFunction() { Id = 11 }
+                JobFunction = new JobFunction() { Id = 12 }
             };
 
             db.Users.Add(newUser);
             db.SaveChanges();
+
+            var saleswindow = new SalesWindow();
+            saleswindow.Activate();
+            this.Close();
+
         }
 
         private string HashPassword(string password)

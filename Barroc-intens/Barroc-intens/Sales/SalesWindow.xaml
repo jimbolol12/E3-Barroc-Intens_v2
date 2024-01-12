@@ -30,9 +30,9 @@
 
         <Button Grid.Column="0" Padding="60,45" x:Name="BRedirectBack" Click="BRedirectBack_Click" Content="Back"/>
         <Button Grid.Column="1" Padding="60,45" HorizontalAlignment="Center" Click="RedirectCreateOfferte_Click">Offerte Aanmaken</Button>
-        <Button Grid.Row="0" Grid.Column="2" Padding="60,45" x:Name="RedirectCreateCustomer" Click="RedirectCreateCustomer_Click">klant aanmaken </Button>
+        <Button Grid.Row="0" Grid.Column="2" Padding="60,45" x:Name="RedirectCreateCustomer" Click="RedirectCreateCustomer_Click">klant aanmaken</Button>
         <Button Grid.Row="0" Grid.Column="3" Padding="60,45" Click="RedirectCreateNote_Click">notes maken</Button>
-        
+
 
 
 
@@ -51,7 +51,7 @@
                                    Text="Name: ">
                             <Run Text="{x:Bind Name}" />
                                     </TextBlock>
-                                    
+
                                     <TextBlock FontSize="15"
                                    Text="Storage: ">
                             <Run Text="{x:Bind StorageFormatted}" />
@@ -73,20 +73,20 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Company">
                         <Border BorderThickness="1"
-         Margin="20"
-         Padding="30">
+                                 Margin="20"
+                                 Padding="30">
                             <StackPanel Orientation="Horizontal"
-                 Spacing="50">
+                                        Spacing="50">
                                 <StackPanel>
 
                                     <TextBlock FontSize="15"
-                        Text="Name: ">
-                 <Run Text="{x:Bind Name}" />
+                                               Text="Name: ">
+                                        <Run Text="{x:Bind Name}" />
                                     </TextBlock>
 
                                     <TextBlock FontSize="15"
-                        Text="adres: ">
-                 <Run Text="{x:Bind Street}" />
+                                               Text="adres: ">
+                                        <Run Text="{x:Bind Street}" />
                                     </TextBlock>
 
                                 </StackPanel>
@@ -103,19 +103,19 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Note">
                         <Border BorderThickness="1"
-         Margin="20"
-         Padding="30">
+                                Margin="20"
+                                Padding="30">
                             <StackPanel Orientation="Horizontal"
-                 Spacing="50">
+                                        Spacing="50">
                                 <StackPanel>
 
                                     <TextBlock FontSize="15"
-                        Text="titlel: ">
-                 <Run Text="{x:Bind Titlel}" />
+                                               Text="titlel: ">
+                                        <Run Text="{x:Bind Titlel}" />
                                     </TextBlock>
                                     <TextBlock FontSize="15"
-                       Text="gemaakt  : ">
-                <Run Text="{x:Bind Date}" />  
+                                               Text="gemaakt  : ">
+                                        <Run Text="{x:Bind Date}" />
                                     </TextBlock>
 
                                 </StackPanel>

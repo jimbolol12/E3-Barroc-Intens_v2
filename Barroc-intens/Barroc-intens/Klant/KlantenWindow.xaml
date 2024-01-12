@@ -27,7 +27,8 @@
         <Button x:Name="BViewOrders"
                 Content="Bekijk Bestellingen"
                 Click="BViewOrders_Click"
-                HorizontalAlignment="Center" />
+                HorizontalAlignment="Center" 
+                Tag="{x:Bind local:LoginWindow.LoggedInUser}"/>
 
         <Button x:Name="BStoring"
                 Content="Storing melden"

@@ -37,8 +37,6 @@ namespace Barroc_intens.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>()
-                .HasMany(u => u.Companies);
                 
 
             modelBuilder.Entity<User>().HasData(
@@ -48,15 +46,19 @@ namespace Barroc_intens.Data
                     Username = "Alice",
                     Password = "test",
                     JobFunctionId = 1,
-                    CompanyId = 1
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
                 },
+                
 
                 new User
                 {
                     Id = 2,
                     Username = "Jane",
-                    Password = "wachtwoord",
+                    Password = "a",
                     JobFunctionId = 2,
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
                 },
 
                 new User
@@ -65,6 +67,8 @@ namespace Barroc_intens.Data
                     Username = "Henk",
                     Password = "wachtwoord123",
                     JobFunctionId = 4,
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
                 },
 
                 new User
@@ -73,6 +77,8 @@ namespace Barroc_intens.Data
                     Username = "Jan",
                     Password = "a",
                     JobFunctionId = 3,
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
                 },
 
                 new User
@@ -81,6 +87,8 @@ namespace Barroc_intens.Data
                     Username = "Hanna",
                     Password = "a",
                     JobFunctionId = 5,
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
                 },
 
                 new User
@@ -89,6 +97,8 @@ namespace Barroc_intens.Data
                     Username = "Paul",
                     Password = "test",
                     JobFunctionId = 5,
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
                 },
 
                 new User
@@ -97,6 +107,8 @@ namespace Barroc_intens.Data
                     Username = "Jimmy",
                     Password = "wachtwoord321",
                     JobFunctionId = 7,
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
                 },
 
                 new User
@@ -105,6 +117,8 @@ namespace Barroc_intens.Data
                     Username = "Piet",
                     Password = "123",
                     JobFunctionId = 6,
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
                 },
 
                 new User
@@ -113,8 +127,58 @@ namespace Barroc_intens.Data
                     Username = "Jan",
                     Password = "test",
                     JobFunctionId = 5,
+                    CompanyId = 1,
+                    IsCompanyAdmin = false,
+                },
+
+                new User
+                {
+                    Id = 10,
+                    Username = "BarrocAdmin",
+                    Password = "admin",
+                    JobFunctionId = 1,
+                    CompanyId = 1,
+                    IsCompanyAdmin = true,
+                },
+
+                new User
+                {
+                    Id = 11,
+                    Username = "Action",
+                    Password = "admin",
+                    JobFunctionId = 1,
+                    CompanyId = 2,
+                    IsCompanyAdmin = true,
+                },
+
+                new User
+                {
+                    Id = 12,
+                    Username = "Kruidvat",
+                    Password = "admin",
+                    JobFunctionId = 1,
+                    CompanyId = 3,
+                    IsCompanyAdmin = true,
                 }
             );
+            // S234UUQRF
+
+            modelBuilder.Entity<CustomInvoiceProduct>().HasData(
+                new CustomInvoiceProduct
+                {
+                    Id = 1,
+                    ProductId = "S234UUQRF",
+                    CustomInvoiceId = 1,
+                    PricePerProduct = 0,
+                });
+            modelBuilder.Entity<CustomInvoice>().HasData(
+                new CustomInvoice
+                {
+                    Id = 1,
+                    Date = new DateTime(2023, 11, 30),
+                    CompanyId = 1,
+                    PaidAt = default( DateTime ),
+                });
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
                 new MaintenanceAppointment
                 {
@@ -140,36 +204,33 @@ namespace Barroc_intens.Data
 
             modelBuilder.Entity<Company>().HasData(
                new Company {
-                   Id = 0,
-                   Name = "Test",
+                   Id = 1,
+                   Name = "Barroc Intens",
                    Phone = 123123123,
                    Street = "BarrocStraat",
                    HouseNumber = 69,
                    City = "Breda",
                    CountryCode = "6969",
-                   ContactId = 3,
-               }
+               },
                new Company
                {
-                   Id = 1,
+                   Id = 2,
                    Name = "action",
                    Phone = 1234567890,
                    Street = "LangeStraat",
                    HouseNumber = 69,
                    City = "breda",
                    CountryCode = "133",
-                   ContactId = 1
                 },
                new Company
                {
-                   Id = 2,
+                   Id = 3,
                    Name = "kruidvat",
                    Phone = 1234567890,
                    Street = "LangeStraat",
                    HouseNumber = 69,
                    City = "breda",
                    CountryCode = "133",
-                   ContactId = 1
                }
            );
             

@@ -96,19 +96,19 @@
             <ListView x:Name="companieListView"
                       Grid.Column="1">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="localData:Company">
+                    <DataTemplate x:DataType="localData:User">
                         <StackPanel Margin="20">
-                            <TextBlock Text="{x:Bind Name}" />
-                            <TextBlock Text="{x:Bind Phone}" />
-                            <TextBlock Text="{x:Bind Street}" />
-                            <TextBlock Text="{x:Bind HouseNumber}" />
-                            <TextBlock Text="{x:Bind City}" />
-                            <TextBlock Text="{x:Bind CountryCode}" />
+                            <TextBlock Text="{x:Bind Company.Name}" />
+                            <TextBlock Text="{x:Bind Company.Phone}" />
+                            <TextBlock Text="{x:Bind Company.Street}" />
+                            <TextBlock Text="{x:Bind Company.HouseNumber}" />
+                            <TextBlock Text="{x:Bind Company.City}" />
+                            <TextBlock Text="{x:Bind Company.CountryCode}" />
                             <TextBlock>
                                 <Run Text="BKR Voldaan op: " />
-                                <Run Text="{x:Bind BkrCheckedAt}" />
+                                <Run Text="{x:Bind Company.BkrCheckedAt}" />
                             </TextBlock>
-                            <ToggleButton x:Name="TBBkrCheck" Content="Toggle BKR Check" Click="TBBkrCheck_Click" Tag="{x:Bind Id}" IsChecked="{x:Bind BkrChecked}"/>
+                            <ToggleButton x:Name="TBBkrCheck" Content="Toggle BKR Check" Click="TBBkrCheck_Click" Tag="{x:Bind Company.Id}" IsChecked="{x:Bind Company.BkrChecked}"/>
 
                         </StackPanel>
                     </DataTemplate>

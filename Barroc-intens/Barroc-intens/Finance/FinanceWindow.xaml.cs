@@ -36,8 +36,9 @@ namespace Barroc_intens
         private void LoadCompanyDb () {
             using (var db = new AppDbContext())
             {
-                var company = db.Companies
-                    .Include(c => c.Contact)
+                var company = db.Users
+                    .Include(c => c.Company)
+                    .Where(c => c.IsCompanyAdmin)
                     .ToList();
                      
                 
@@ -61,6 +62,7 @@ namespace Barroc_intens
                 using (var db = new AppDbContext())
                 {
                     var company = db.Companies.Single(c => c.Id == companyId);
+                    
                     var now = DateTime.Now;
                     company.BkrCheckedAt = DateOnly.FromDateTime(now);
                     db.SaveChanges();

@@ -11,6 +11,8 @@ namespace Barroc_intens.Model
         // Koppel tabel voor facturen en producten
         public int Id { get; set; }
         public decimal PricePerProduct { get; set; }
+        public string ProductId { get; set; } 
+        public int CustomInvoiceId { get; set; }
         public Product Product { get; set; }  
         public CustomInvoice CustomInvoice { get; set; }  
 

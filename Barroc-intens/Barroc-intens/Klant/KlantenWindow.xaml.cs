@@ -1,4 +1,6 @@
 using Barroc_intens.Data;
+using Barroc_intens.Klant;
+using Barroc_intens.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -25,12 +27,15 @@ namespace Barroc_intens
     /// </summary>
     public sealed partial class KlantenWindow : Window
     {
-        public KlantenWindow()
+        public static User LoggedInUser { get; private set; }
+
+        public KlantenWindow(User currentUser)
         {
             this.InitializeComponent();
             using var db = new AppDbContext();
             var products = db.Products.Where(p => p.Category.IsEmployeeOnly == false).ToList();
             lvProducts.ItemsSource = products;
+            LoggedInUser = currentUser;
         }
 
         private void BContactinformatie_Click(object sender, RoutedEventArgs e)
@@ -60,7 +65,9 @@ namespace Barroc_intens
 
         private void BViewOrders_Click(object sender, RoutedEventArgs e)
         {
-
+            var klantViewOrdersWindow = new KlantViewOrdersWindow(LoggedInUser);
+            klantViewOrdersWindow.Activate();
+            this.Close();
         }
     }
 }

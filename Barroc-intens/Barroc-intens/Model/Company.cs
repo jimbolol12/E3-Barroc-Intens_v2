@@ -12,8 +12,6 @@ namespace Barroc_intens.Model
     public class Company
     {
         public int Id { get; set; }
-        public int ContactId { get; set; }
-        public User Contact { get; set; }
         public string Name { get; set; }
         public int Phone { get; set; }
         public string Street { get; set; }

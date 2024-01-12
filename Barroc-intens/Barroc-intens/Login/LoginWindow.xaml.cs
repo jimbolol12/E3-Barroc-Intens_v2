@@ -47,7 +47,7 @@ namespace Barroc_intens
             {
                 if (user.JobFunctionId == 1)
                 {
-                    var klantWindow = new KlantenWindow();
+                    var klantWindow = new KlantenWindow(LoggedInUser);
                     klantWindow.Activate();
                     this.Close();
                 }

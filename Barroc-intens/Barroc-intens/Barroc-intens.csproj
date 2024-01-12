@@ -15,6 +15,7 @@
     <None Remove="CreateNewLeaseWindow.xaml" />
     <None Remove="CreateWindow.xaml" />
     <None Remove="EditWindow.xaml" />
+    <None Remove="Klant\KlantViewOrdersWindow.xaml" />
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
     <None Remove="Login\IntroWindow.xaml" />
@@ -119,8 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Inkoop\" />
-    <Folder Include="Klant\" />
     <Folder Include="Finance\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Klant\KlantViewOrdersWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Login\IntroWindow.xaml">

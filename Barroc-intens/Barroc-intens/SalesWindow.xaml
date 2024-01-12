@@ -6,6 +6,7 @@
     xmlns:local="using:Barroc_intens"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:Barroc_intens.Model"
     mc:Ignorable="d">
 
     <Grid HorizontalAlignment="Center">
@@ -28,8 +29,9 @@
 
 
         <Button Grid.Column="0" Padding="150,75" Click="Button_Click">Offerte Aanmaken</Button>
-        <Button Grid.Row="0" Grid.Column="1" Padding="150,75" >klant aanmaken </Button>
+        <Button Grid.Row="0" Grid.Column="1" Padding="150,75" Click="Button_Click_2" >klant aanmaken </Button>
         <Button Grid.Row="0" Grid.Column="2" Padding="150,75" Click="Button_Click_1">notes maken</Button>
+        
         
 
 

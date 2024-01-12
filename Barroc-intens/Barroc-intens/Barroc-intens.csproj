@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
@@ -15,10 +15,13 @@
     <None Remove="CreateNewLeaseWindow.xaml" />
     <None Remove="CreateWindow.xaml" />
     <None Remove="EditWindow.xaml" />
+    <None Remove="klantaanmakenWindow.xaml" />
     <None Remove="LeasecontractWindow.xaml" />
     <None Remove="LoginWindow.xaml" />
     <None Remove="Maintenance\CreateRoutineVisitWindow.xaml" />
     <None Remove="Maintenance\ScheduleFaultyRequestWindow.xaml" />
+    <None Remove="notedetailWindow.xaml" />
+    <None Remove="Notes.xaml" />
     <None Remove="ProductenWindow.xaml" />
     <None Remove="StoringsWindow.xaml" />
   </ItemGroup>
@@ -84,6 +87,22 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="klantaanmakenWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="notedetailWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Notes.xaml">
+    <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="StoringsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

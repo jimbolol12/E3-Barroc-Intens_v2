@@ -32,8 +32,6 @@ namespace Barroc_intens
 
             using (var db = new AppDbContext())
             {
-                
-
                 var storingDetail = db.FaultyRequests
                     .Include(sd => sd.Product)
                     .Include(sd => sd.Employee)

@@ -121,7 +121,7 @@ namespace Barroc_intens.Data
                     Location = "Breda",
                     Description = "KoffiezetApparaat is hervuld",
                     ScheduledAt = DateTime.Now,
-                    
+
                 },
                 new MaintenanceAppointment
                 {
@@ -132,31 +132,32 @@ namespace Barroc_intens.Data
                     Location = "Etten-Leur",
                     Description = "Printer stuk",
                     ScheduledAt = DateTime.Now,
-                    
-                },
-                new MaintenanceAppointment
-                {
-                    Id = 3,
-                    ProductId = "S234FREKT",
-                    UserId = 1,
-                    EmployeeId = 9,
-                    Location = "Terheidenseweg 320",
-                    ScheduledAt = DateTime.UtcNow,
-                    Description = "Aanknop is moeilijk in te drukken",
-                    Done = false,
-                }
 
-                new FaultyRequest
-                {
-                    Id = 2,
-                    ProductId = "S234MMPLA",
-                    UserId = 1,
-                    EmployeeId = 5,
-                    Location = "Terheidenseweg 301",
-                    ScheduledAt = DateTime.UtcNow,
-                    Description = "Blokkade in de slang",
-                    Done = false,
-                },
+                });
+
+               
+            modelBuilder.Entity<FaultyRequest>().HasData(
+              new FaultyRequest
+              {
+                  Id = 1,
+                  ProductId = "S234FREKT",
+                  UserId = 1,
+                  EmployeeId = 9,
+                  Location = "Terheidenseweg 350",
+                  ScheduledAt = DateTime.UtcNow,
+                  Description = "dfdfdfdf",
+                  Done = false,
+              }, new FaultyRequest
+              {
+                  Id = 2,
+                  ProductId = "S234MMPLA",
+                  UserId = 1,
+                  EmployeeId = 5,
+                  Location = "Terheidenseweg 301",
+                  ScheduledAt = DateTime.UtcNow,
+                  Description = "Blokkade in de slang",
+                  Done = false,
+              },
 
                 new FaultyRequest
                 {
@@ -181,18 +182,6 @@ namespace Barroc_intens.Data
                     Description = "Machine lekt tijdens gebruik",
                     Done = false,
                 });
-            modelBuilder.Entity<FaultyRequest>().HasData(
-              new FaultyRequest
-              {
-                  Id = 1,
-                  ProductId = "S234FREKT",
-                  UserId = 1,
-                  EmployeeId = 9,
-                  Location = "Terheidenseweg 350",
-                  ScheduledAt = DateTime.UtcNow,
-                  Description = "dfdfdfdf",
-                  Done = false,
-              });
 
 
             modelBuilder.Entity<MaintenanceProduct>().HasData(

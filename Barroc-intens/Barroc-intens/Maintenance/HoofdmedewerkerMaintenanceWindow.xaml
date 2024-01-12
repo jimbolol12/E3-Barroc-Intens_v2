@@ -21,62 +21,27 @@
                 Click="BRedirectWerkbonnenWindow_Click"
                 VerticalAlignment="Top" />
 
-        <Grid Grid.Column="1">
-            <ListView x:Name="NoteListview"
-                      Grid.Column="1">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="localData:FaultyRequest">
-                        <StackPanel Margin="20">
-                            <TextBlock Text="{x:Bind ProductId}" />
-                            <TextBlock Text="{x:Bind UserId}" />
-                            <TextBlock Text="{x:Bind ScheduledAt}" />
-                            <TextBlock Text="{x:Bind Description}" />
-                            <TextBlock Text="{x:Bind Done}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-
-        <Grid Grid.Column="2">
-            <ListView x:Name="lvFaultyRequests"
-                      Grid.Column="1">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="localData:FaultyRequest">
-                        <StackPanel Margin="20">
-                            <TextBlock Text="{x:Bind ProductId}" />
-                            <TextBlock Text="{x:Bind UserId}" />
-                            <TextBlock Text="{x:Bind EmployeeId}" />
-                            <TextBlock Text="{x:Bind ScheduledAt}" />
-                            <TextBlock Text="{x:Bind Description}" />
-                            <TextBlock Text="{x:Bind Done}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
         <Grid Grid.Row="0">
             <StackPanel Background="#FDD716"
-                        Orientation="Horizontal"
-                        Padding="20">
+                    Orientation="Horizontal"
+                    Padding="20">
+
                 <Button x:Name="bBack"
-                        Content="Back"
-                        Click="bBack_Click"
-                        VerticalAlignment="Top"
-                        Margin="5"
-                        Background="Black" />
+                    Content="Back"
+                    
+                    VerticalAlignment="Top"
+                    Margin="5"
+                    Background="Black" />
             </StackPanel>
         </Grid>
+
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
 
             <Grid Grid.Column="0"
                   Grid.Row="1">

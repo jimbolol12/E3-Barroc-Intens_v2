@@ -44,17 +44,22 @@ namespace Barroc_intens
             this.Close();
         }
 
-        private void BContact_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO : Is deze methode nodig???
-        }
-
         private void tbSearchbar_TextChanged(object sender, TextChangedEventArgs e)
         {
             var searchInput = tbSearchbar.Text;
 
             using var db = new AppDbContext();
             lvProducts.ItemsSource = db.Products.Where(p => p.Name.Contains(searchInput));
+        }
+
+        private void BContactinformatie_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO : voor contact functie die niet hoefde in de sprint
+        }
+
+        private void BContact_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO : voor contact functie die niet hoefde in de sprint
         }
     }
 }

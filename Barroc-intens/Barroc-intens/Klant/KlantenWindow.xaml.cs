@@ -34,12 +34,7 @@ namespace Barroc_intens
 
         private void BFactuur_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void BContactinformatie_Click(object sender, RoutedEventArgs e)
-        {
-
+            // TODO : Is deze methode nodig???
         }
 
         private void BStoring_Click(object sender, RoutedEventArgs e)
@@ -51,7 +46,7 @@ namespace Barroc_intens
 
         private void BContact_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO : Is deze methode nodig???
         }
 
         private void tbSearchbar_TextChanged(object sender, TextChangedEventArgs e)

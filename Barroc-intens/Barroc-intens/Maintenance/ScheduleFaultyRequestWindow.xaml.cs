@@ -82,17 +82,17 @@ namespace Barroc_intens.Maintenance
 
         private void HandleInvalidData(string errorMessage)
         {
-            //    MessageBox.Text = errorMessage;
+            //MessageBox.Text = errorMessage;
         }
 
         private void HandleGeneralException(string errorMessage)
         {
-            //    MessageBox.Text = errorMessage;
+            //MessageBox.Text = errorMessage;
         }
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO : Back button
         }
     }
 }

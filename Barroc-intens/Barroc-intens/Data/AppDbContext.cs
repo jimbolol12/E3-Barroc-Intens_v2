@@ -29,8 +29,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=root;" +
-                "password=;" +
+                "user=c_sharp;" +
+                "password=Krijnisleider;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -38,6 +38,7 @@ namespace Barroc_intens.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
@@ -75,7 +76,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 5,
                     Username = "Hanna",
-                    Password = "a",
+                    Password = "wachtwoord321",
                     JobFunctionId = 5,
                 },
 
@@ -111,53 +112,31 @@ namespace Barroc_intens.Data
                     JobFunctionId = 5,
                 }
             );
-            modelBuilder.Entity<MaintenanceAppointment>().HasData(
-                new MaintenanceAppointment
+
+            modelBuilder.Entity<FaultyRequest>().HasData(
+                new FaultyRequest
                 {
                     Id = 1,
-                    EmployeeId = 1,
-                    ProductId = "S234KNDPF",
-                    CompanyId = 1,
-                    Location = "Breda",
-                    Description = "KoffiezetApparaat is hervuld",
-                    ScheduledAt = DateTime.Now,
-
+                    ProductId = "S234FREKT",
+                    UserId = 1,
+                    EmployeeId = 9,
+                    Location = "Terheidenseweg 320",
+                    ScheduledAt = DateTime.UtcNow,
+                    Description = "Aanknop is moeilijk in te drukken",
+                    Done = false,
                 },
-                new MaintenanceAppointment
+
+                new FaultyRequest
                 {
                     Id = 2,
-                    EmployeeId = 2,
-                    ProductId = "S234NNBMV",
-                    CompanyId = 2,
-                    Location = "Etten-Leur",
-                    Description = "Printer stuk",
-                    ScheduledAt = DateTime.Now,
-
-                });
-
-               
-            modelBuilder.Entity<FaultyRequest>().HasData(
-              new FaultyRequest
-              {
-                  Id = 1,
-                  ProductId = "S234FREKT",
-                  UserId = 1,
-                  EmployeeId = 9,
-                  Location = "Terheidenseweg 350",
-                  ScheduledAt = DateTime.UtcNow,
-                  Description = "dfdfdfdf",
-                  Done = false,
-              }, new FaultyRequest
-              {
-                  Id = 2,
-                  ProductId = "S234MMPLA",
-                  UserId = 1,
-                  EmployeeId = 5,
-                  Location = "Terheidenseweg 301",
-                  ScheduledAt = DateTime.UtcNow,
-                  Description = "Blokkade in de slang",
-                  Done = false,
-              },
+                    ProductId = "S234MMPLA",
+                    UserId = 1,
+                    EmployeeId = 5,
+                    Location = "Terheidenseweg 301",
+                    ScheduledAt = DateTime.UtcNow,
+                    Description = "Blokkade in de slang",
+                    Done = false,
+                },
 
                 new FaultyRequest
                 {
@@ -182,7 +161,6 @@ namespace Barroc_intens.Data
                     Description = "Machine lekt tijdens gebruik",
                     Done = false,
                 });
-
 
             modelBuilder.Entity<MaintenanceProduct>().HasData(
                 new MaintenanceProduct
@@ -243,46 +221,7 @@ namespace Barroc_intens.Data
                    City = "breda",
                    CountryCode = "133",
                    ContactId = 1
-               },
-               new Company
-               {
-                   Id = 3,
-                   Name = "Lidl",
-                   Phone = 1234567890,
-                   Street = "LangeStraat",
-                   HouseNumber = 69,
-                   City = "breda",
-                   CountryCode = "133",
-                   ContactId = 1
-               }
-           );
-            
-            modelBuilder.Entity<Category>().HasData(
-                new Category
-                {
-                    Id = 1,
-                    Name = "Materiaal/Gereedschap",
-                    IsEmployeeOnly = true,
-                },
-                new Category
-                {
-                    Id = 2,
-                    Name = "Product",
-                    IsEmployeeOnly = false,
-                },
-                new Category
-                {
-                    Id = 3,
-                    Name = "Deluxe",
-                    IsEmployeeOnly = false,
-                },
-                new Category
-                {
-                    Id = 4,
-                    Name = "Special",
-                    IsEmployeeOnly = false,
-                }
-                );
+               });
 
             modelBuilder.Entity<Product>().HasData(
                 new Product
@@ -292,7 +231,6 @@ namespace Barroc_intens.Data
                     Description = "",
                     Price = 499,
                     Storage = 100,
-                    CategoryId = 2
                 },
                 new Product
                 {
@@ -301,25 +239,14 @@ namespace Barroc_intens.Data
                     Description = "",
                     Price = 599,
                     Storage = 100,
-                    CategoryId = 2
                 },
                 new Product
                 {
                     Id = "S234NNBMV",
-                    Name = "Stroom Kabel",
-                    Description = "",
-                    Price = 45,
-                    Storage = 50,
-                    CategoryId = 1
-                },
-                new Product
-                {
-                    Id = "S234UUQRF",
                     Name = "Barroc Intens Italian Deluxe",
                     Description = "",
                     Price = 799,
                     Storage = 100,
-                    CategoryId = 3
                 },
                 new Product
                 {
@@ -328,9 +255,7 @@ namespace Barroc_intens.Data
                     Description = "",
                     Price = 999,
                     Storage = 100,
-                    CategoryId = 4
                 }
-                
             );
 
             modelBuilder.Entity<JobFunction>().HasData(

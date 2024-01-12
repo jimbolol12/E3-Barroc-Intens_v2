@@ -1,6 +1,5 @@
 using Barroc_intens.Data;
 using Barroc_intens.Model;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -29,19 +28,25 @@ namespace Barroc_intens
         public FinanceWindow()
         {
             this.InitializeComponent();
-            LoadCompanyDb();
-        }
-        private void LoadCompanyDb () {
+
             using (var db = new AppDbContext())
             {
+
+                //db.Database.EnsureDeleted();
+                //db.Database.EnsureCreated();
+                
+
                 var company = db.Companies
-                    .Include(c => c.Contact)
-                    .ToList();
-                     
+                     /* .Include(m => m.Id)*/
+                     .ToList();
                 
                 companieListView.ItemsSource = company;
+
+
+                
             }
         }
+
         private void Bleasecontract_Click(object sender, RoutedEventArgs e)
         {
             var leasewindow = new LeasecontractWindow();
@@ -75,8 +80,14 @@ namespace Barroc_intens
                     db.SaveChanges();
                 }
             }
-            LoadCompanyDb();
+            var financeWindow = new FinanceWindow();
+            financeWindow.Activate();
+            this.Close();
         }
 
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

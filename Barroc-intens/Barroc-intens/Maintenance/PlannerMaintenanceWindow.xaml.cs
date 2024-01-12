@@ -84,7 +84,7 @@ namespace Barroc_intens
 
             var dialog = new ContentDialog()
             {
-                Title = "!",
+                Title = "Bezoek",
                 Content = $"Start: {clickedCalendarItem.ScheduledAt}\nLocation: {clickedCalendarItem.Location}\nDetails: {clickedCalendarItem.Description}",
                 CloseButtonText = "Close",
                 XamlRoot = this.Content.XamlRoot,
@@ -138,6 +138,11 @@ namespace Barroc_intens
                 scheduleTime.Activate();
                 this.Close();
             }
+        }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

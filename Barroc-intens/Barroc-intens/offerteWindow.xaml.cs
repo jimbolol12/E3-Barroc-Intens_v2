@@ -15,8 +15,6 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Aspose.Foundation;
 using Aspose.Pdf;
-using System.Net;
-using System.Net.Mail;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -52,40 +50,6 @@ namespace Barroc_intens
             page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment($"Klantnaam: {klantNaam}\nKlantadres: {klantAdres}\nPostcode: {postcode}\nPeriode: {periode}"));
             // Save updated PDF
             document.Save(dataDir + "offerte.pdf");
-
-
-            // Afzender en ontvanger e-mailadressen
-            string afzender = "";
-            string ontvanger = "thomasbouman1505@gmail.com";
-
-            // SMTP-server en poort
-            string smtpServer = "smtp.gmail.com";
-            int smtpPort = 587;
-
-            // Gebruikersnaam en wachtwoord voor authenticatie
-            string gebruikersnaam = "D290249@edu.curio.nl";
-            string wachtwoord = "";
-
-            // Onderwerp van de e-mail
-            string onderwerp = "Aangepaste mail met variabelen";
-
-            // Aangepaste gegevens voor de inhoud van de e-mail
-            string naam = "John Doe";
-            int leeftijd = 30;
-
-            // Inhoud van de e-mail met variabelen
-            string inhoud = $"Beste {naam},\n\nDit is een aangepaste e-mail vanuit C#. Je bent {leeftijd} jaar oud.";
-
-            MailMessage mail = new MailMessage(afzender, ontvanger, onderwerp, inhoud);
-
-            // Maak een SmtpClient-object en configureer het
-            SmtpClient smtpClient = new SmtpClient(smtpServer);
-            smtpClient.Port = smtpPort;
-            smtpClient.Credentials = new NetworkCredential(gebruikersnaam, wachtwoord);
-            smtpClient.EnableSsl = true; // Schakel SSL in als de SMTP-server dit vereist
-
-
-
         }
     }
 }

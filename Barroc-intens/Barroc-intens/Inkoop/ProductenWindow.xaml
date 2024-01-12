@@ -10,63 +10,82 @@
 
     <Grid>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0">
-            <ListView x:Name="lvProducts"
-                      IsItemClickEnabled="True"
-                      IsDoubleTapEnabled="True"
-                      DoubleTapped="lvProducts_DoubleTapped"
-                      AllowFocusOnInteraction="False">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Product">
-                        <Border BorderThickness="1"
-                                Margin="20"
-                                Padding="30">
-                            <StackPanel Orientation="Horizontal"
-                                        Spacing="50">
-                                <StackPanel>
-                                    <TextBlock FontSize="15"
-                                               Text="Name: ">
-                                        <Run Text="{x:Bind Name}" />
-                                    </TextBlock>
-                                    <TextBlock FontSize="15"
-                                               Text="Description: ">
-                                    <Run Text="{x:Bind Description}" />
-                                    </TextBlock>
-                                    <TextBlock FontSize="15"
-                                               Text="Price: ">
-                                        <Run Text="{x:Bind PriceFormatted}" />
-                                    </TextBlock>
-                                    <TextBlock FontSize="15"
-                                               Text="Storage: ">
-                                        <Run Text="{x:Bind StorageFormatted}" />
-                                    </TextBlock>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+        <Grid Grid.Column="0"
+              Background="#FDD716">
+            <Button x:Name="bBack"
+                    Content="Back"
+                    Click="bBack_Click"
+                    VerticalAlignment="Top"
+                    Margin="5"
+                    Background="Black" />
         </Grid>
 
-        <Grid Grid.Row="1">
-            <Button x:Name="BCreateProduct"
-                    Content="Aanmaken"
-                    Margin="20"
-                    VerticalAlignment="Bottom"
-                    HorizontalAlignment="Left"
-                    Click="BCreateProduct_Click"></Button>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <Button x:Name="BDeleteProduct"
-                    Content="Verwijderen"
-                    Margin="20"
-                    VerticalAlignment="Bottom"
-                    HorizontalAlignment="Right"
-                    Click="BDeleteProduct_Click"></Button>
+            <Grid Grid.Row="0">
+                <ListView x:Name="lvProducts"
+                          IsItemClickEnabled="True"
+                          IsDoubleTapEnabled="True"
+                          DoubleTapped="lvProducts_DoubleTapped"
+                          AllowFocusOnInteraction="False">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Product">
+                            <Border BorderThickness="1"
+                                    Margin="20"
+                                    Padding="30">
+                                <StackPanel Orientation="Horizontal"
+                                            Spacing="50">
+                                    <StackPanel>
+                                        <TextBlock FontSize="15"
+                                                   Text="Name: ">
+                                <Run Text="{x:Bind Name}" />
+                                        </TextBlock>
+                                        <TextBlock FontSize="15"
+                                                   Text="Description: ">
+                            <Run Text="{x:Bind Description}" />
+                                        </TextBlock>
+                                        <TextBlock FontSize="15"
+                                                   Text="Price: ">
+                                <Run Text="{x:Bind PriceFormatted}" />
+                                        </TextBlock>
+                                        <TextBlock FontSize="15"
+                                                   Text="Storage: ">
+                                <Run Text="{x:Bind StorageFormatted}" />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Button x:Name="BCreateProduct"
+                        Content="Aanmaken"
+                        Margin="20"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left"
+                        Background="#FDD716"
+                        Click="BCreateProduct_Click"></Button>
+
+                <Button x:Name="BDeleteProduct"
+                        Content="Verwijderen"
+                        Margin="20"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Background="#FDD716"
+                        Click="BDeleteProduct_Click"></Button>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

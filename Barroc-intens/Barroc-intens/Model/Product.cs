@@ -14,12 +14,13 @@ namespace Barroc_intens.Model
         public string Description { get; set; }
         //public string ImagePath { get; set; }
         public decimal Price { get; set; }
-
-        //public Product_category category { get; set; }
-        //public int Product_catogory { get; set; }
+/*        public Category Category { get; set; }*/
         public string PriceFormatted => string.Format("{0:N2}", Price);
         public decimal Storage {  get; set; }
 
         public string StorageFormatted => string.Format("{0:F2}", Storage);
+        public int CategoryProductId { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set;}
     }
 }

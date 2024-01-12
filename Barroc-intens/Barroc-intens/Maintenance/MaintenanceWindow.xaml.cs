@@ -24,11 +24,14 @@ using Windows.Foundation.Collections;
 
 namespace Barroc_intens
 {
+
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MaintenanceWindow : Window
-    { 
+    {
+        public static User LoggedInUser { get; }
+
         static ObservableCollection<FaultyRequest> AllCalendarItems = new ObservableCollection<FaultyRequest>();
         public MaintenanceWindow()
         {
@@ -40,6 +43,15 @@ namespace Barroc_intens
             lvApointements.ItemsSource = appointments;
         }
 
+        private void BStoringRedirect_Click(object sender, RoutedEventArgs e)
+        {
+            var maintenanceStoringenWindow = new MaintenanceStoringenWindow();
+            maintenanceStoringenWindow.Activate();
+            this.Close();
+
+
+
+        }
         private void CalendarView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
 
@@ -82,7 +94,7 @@ namespace Barroc_intens
 
             var dialog = new ContentDialog()
             {
-                Title = "Bezoek",
+                Title = "!",
                 Content = $"Start: {clickedCalendarItem.ScheduledAt}\nLocation: {clickedCalendarItem.Location}\nDetails: {clickedCalendarItem.Description}",
                 CloseButtonText = "Close",
                 XamlRoot = this.Content.XamlRoot,
@@ -91,9 +103,19 @@ namespace Barroc_intens
             await dialog.ShowAsync();
         }
 
-        private void bBack_Click(object sender, RoutedEventArgs e)
+        private void BProductenRedirect_Click(object sender, RoutedEventArgs e)
         {
+            var productenWindow = new ProductenWindow();
+            productenWindow.Activate();
+            this.Close();
+        }
 
+        private void link_Click(object sender, RoutedEventArgs e)
+        {
+            var productenWindow = new MaintenanceWerkbonnen();
+            productenWindow.Activate();
+            this.Close();
         }
     }
 }
+

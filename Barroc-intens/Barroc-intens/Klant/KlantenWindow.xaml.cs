@@ -1,4 +1,5 @@
 using Barroc_intens.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -28,7 +29,7 @@ namespace Barroc_intens
         {
             this.InitializeComponent();
             using var db = new AppDbContext();
-            var products = db.Products.ToList();
+            var products = db.Products.Where(p => p.Category.IsEmployeeOnly == false).ToList();
             lvProducts.ItemsSource = products;
         }
 
@@ -49,7 +50,7 @@ namespace Barroc_intens
             var searchInput = tbSearchbar.Text;
 
             using var db = new AppDbContext();
-            lvProducts.ItemsSource = db.Products.Where(p => p.Name.Contains(searchInput));
+            lvProducts.ItemsSource = db.Products.Where(p => p.Name.Contains(searchInput) && p.Category.IsEmployeeOnly == false);
         }
 
         private void BContactinformatie_Click(object sender, RoutedEventArgs e)

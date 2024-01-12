@@ -47,10 +47,5 @@ namespace Barroc_intens
             productWindow.Activate();
             this.Close();
         }
-
-        private void bBack_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

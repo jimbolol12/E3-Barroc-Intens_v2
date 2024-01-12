@@ -10,36 +10,32 @@
 
 
     <Grid>
-        <Grid Grid.Row="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
 
-            <StackPanel Background="#FDD716"
-                        Orientation="Horizontal"
-                        Padding="30" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel>
             <Button x:Name="BStorage"
                     Content="Naar magazijn"
                     Click="BStorage_Click"
-                    Background="#fee35e"
-                    Margin="150,5,5,5"
-                    HorizontalAlignment="Center" />
+                    HorizontalAlignment="Left" />
 
             <Button x:Name="BProduct"
                     Content="Naar producten"
                     Click="BProduct_Click"
-                    Background="#fee35e"
-                    Margin="5,5,150,5"
-                    HorizontalAlignment="Center" />
+                    HorizontalAlignment="Right" />
+        </StackPanel>
 
-            <Button x:Name="bBack"
-                    Content="Back"
-                    Click="bBack_Click"
-                    HorizontalAlignment="Left"
-                    Margin="5"
-                    Background="Black" />
+        <Grid Grid.Column="1">
+
         </Grid>
 
         <Grid Grid.Row="1">

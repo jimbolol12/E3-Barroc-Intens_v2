@@ -8,48 +8,22 @@
         mc:Ignorable="d">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="3*" />
-        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0"
-              Background="#FDD716">
-            <Button x:Name="bBack"
-                    Content="Back"
-                    Click="bBack_Click"
-                    VerticalAlignment="Top"
-                    Margin="5"
-                    Background="Black" />
-        </Grid>
+        <StackPanel Orientation="Vertical"
+                    Margin="10">
+            <TextBlock x:Name="MessageBox"></TextBlock>
+            <TextBox x:Name="tbProductname" />
+            <TextBox x:Name="tbProductdimensions" />
+            <TextBox x:Name="tbProductdescription" />
+            <TextBox x:Name="tbProductprice" />
 
-        <Grid Grid.Column="1">
-            <StackPanel Orientation="Vertical"
-                        Margin="10">
+        </StackPanel>
 
-                <TextBlock x:Name="MessageBox" />
-
-                <TextBox x:Name="tbProductname"
-                         Header="Name"
-                         Margin="5" />
-                <TextBox x:Name="tbProductdimensions"
-                         Header="Dimensions"
-                         Margin="5" />
-                <TextBox x:Name="tbProductdescription"
-                         Header="Description"
-                         Margin="5" />
-                <TextBox x:Name="tbProductprice"
-                         Header="Price"
-                         Margin="5" />
-
-            </StackPanel>
-
-            <Button x:Name="BSave"
-                    Content="Save"
-                    VerticalAlignment="Bottom"
-                    Margin="10,20,20,20"
-                    Background="#FDD716"
-                    Click="BSave_Click" />
-        </Grid>
+        <Button x:Name="BSave"
+                Content="Save"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                Click="BSave_Click" />
     </Grid>
+
 </Window>

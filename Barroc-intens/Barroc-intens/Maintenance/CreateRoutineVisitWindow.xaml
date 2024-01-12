@@ -10,59 +10,42 @@
         mc:Ignorable="d">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="3*" />
-        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical"
+                    Margin="10">
 
-        <Grid Grid.Column="0"
-              Background="#FDD716">
-            <Button x:Name="bBack"
-                    Content="Back"
-                    Click="bBack_Click"
-                    VerticalAlignment="Top"
-                    Margin="5"
-                    Background="Black" />
-        </Grid>
+            <TextBlock x:Name="MessageBox"></TextBlock>
 
-        <Grid Grid.Column="1">
+            <TextBox x:Name="tbRequestId"
+                     Header="Id"
+                     Margin="0,5,0,0" />
 
-            <TextBlock x:Name="MessageBox" />
+            <TextBox x:Name="tbUserlocation"
+                     Header="Location"
+                     Margin="0,10,0,0" />
 
-            <StackPanel Margin="10,5,5,5">
-                <TextBox x:Name="tbRequestId"
-                         Header="Id"
-                         Margin="0,5,0,0" />
+            <ComboBox x:Name="cbEmployee"
+                      Header="Employee"
+                      Margin="0,10,0,0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="model:User">
+                        <TextBlock Text="{x:Bind Username}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
 
-                <TextBox x:Name="tbUserlocation"
-                         Header="Location"
-                         Margin="0,10,0,0" />
+            <CalendarDatePicker x:Name="cdpVisitDate"
+                                Header="Date"
+                                Margin="0,10,0,0" />
 
-                <ComboBox x:Name="cbEmployee"
-                          Header="Employee"
-                          Margin="0,10,0,0">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate x:DataType="model:User">
-                            <TextBlock Text="{x:Bind Username}" />
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
+            <TextBox x:Name="tbDescription"
+                     Header="Description"
+                     Margin="0,10,0,0" />
+        </StackPanel>
 
-                <CalendarDatePicker x:Name="cdpVisitDate"
-                                    Header="Date"
-                                    Margin="0,10,0,0" />
-
-                <TextBox x:Name="tbDescription"
-                         Header="Description"
-                         Margin="0,10,0,0" />
-            </StackPanel>
-
-            <Button x:Name="bCreate"
-                    Content="Create"
-                    Background="#FDD716"
-                    VerticalAlignment="Bottom"
-                    Margin="20"
-                    Click="bCreate_Click" />
-        </Grid>
+        <Button x:Name="bCreate"
+                Content="Create"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                Click="bCreate_Click" />
     </Grid>
 </Window>

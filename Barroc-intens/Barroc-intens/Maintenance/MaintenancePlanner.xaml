@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Barroc_intens.MaintenancePlanner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Barroc_intens"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Grid>
+        <!-- invul velden -->
+        <StackPanel Orientation="Vertical" Margin="10">
+            <TextBlock x:Name="MessageBox"></TextBlock>
+            <TextBlock Text="Company Name"></TextBlock>
+            <ListBox x:Name="CompanyListBox" SelectionMode="Single" DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
+            <TextBlock Text="Tool"></TextBlock>
+            <ComboBox x:Name="ProductListBox"  DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
+            <TextBlock Text="Location"></TextBlock>
+            <TextBox x:Name="tbLocation" />
+            <TextBlock Text="Description"></TextBlock>
+            <TextBox x:Name="tbRemark" />
+            <TextBlock Text="Date"></TextBlock>
+            <DatePicker x:Name="tbDateAdded"></DatePicker>
+        </StackPanel>
+
+
+        <!-- aan maak knop -->
+        <Button x:Name="Bcreate"
+                Content="Create"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                Click="Bcreate_Click">
+        </Button>
+    </Grid>
+
+</Window>

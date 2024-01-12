@@ -11,6 +11,8 @@ namespace Barroc_intens.Model
         public int Id { get; set; }
         public string ProductId { get; set; }
         public Product Product { get; set; }
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
         public string Location { get; set; }
         public int EmployeeId { get; set; }
         public User Employee { get; set; }

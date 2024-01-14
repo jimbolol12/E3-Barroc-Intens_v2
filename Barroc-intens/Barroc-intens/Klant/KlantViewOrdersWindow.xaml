@@ -44,7 +44,6 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <ContentDialog x:Name="CdShowOrderDetails">
-        </ContentDialog>
+        <ContentDialog x:Name="CdShowOrderDetails"/>
     </Grid>
 </Window>

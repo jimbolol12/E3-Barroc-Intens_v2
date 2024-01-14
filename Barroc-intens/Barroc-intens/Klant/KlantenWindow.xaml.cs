@@ -38,21 +38,11 @@ namespace Barroc_intens
             LoggedInUser = currentUser;
         }
 
-        private void BContactinformatie_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BStoring_Click(object sender, RoutedEventArgs e)
         {
             var storingWindow = new StoringsWindow();
             storingWindow.Activate();
             this.Close();
-        }
-
-        private void BContact_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void tbSearchbar_TextChanged(object sender, TextChangedEventArgs e)
@@ -68,6 +58,52 @@ namespace Barroc_intens
             var klantViewOrdersWindow = new KlantViewOrdersWindow(LoggedInUser);
             klantViewOrdersWindow.Activate();
             this.Close();
+        }
+
+        private async void lvProducts_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var clickedProduct = e.ClickedItem as Product;
+            ContentDialog CdShowOrderConfirmation = new ContentDialog
+            {
+                Title = "Bestellen",
+                Content = $"Weet u zeker dat de {clickedProduct.Name} wilt bestellen",
+                IsPrimaryButtonEnabled = true,
+                IsSecondaryButtonEnabled = true,
+                PrimaryButtonText = "Ja",
+                SecondaryButtonText = "Nee",
+                XamlRoot = this.Content.XamlRoot,
+            };
+            CdShowOrderConfirmation.PrimaryButtonClick += (sender, e) =>
+            {
+                AddOrderedProduct(clickedProduct);
+            };
+            ContentDialogResult result = await CdShowOrderConfirmation.ShowAsync();
+            
+
+            
+
+
+            
+        }
+        public void AddOrderedProduct(Product clickedProduct)
+        {
+            using var db = new AppDbContext();
+            var customInvoices = db.CustomInvoices.ToList();
+
+            db.CustomInvoices.Add(new CustomInvoice
+            {
+                Id = customInvoices.Count() + 1,
+                Date = DateTime.Now,
+                PaidAt = DateTime.Now,
+                CompanyId = (int)LoggedInUser.CompanyId,
+            });
+            db.CustomInvoiceProducts.Add(new CustomInvoiceProduct
+            {
+                PricePerProduct = clickedProduct.Price,
+                ProductId = clickedProduct.Id,
+                CustomInvoiceId = customInvoices.Count() + 1,
+            });
+            db.SaveChanges();
         }
     }
 }

@@ -19,10 +19,7 @@
                     Orientation="Horizontal"
                     Padding="30" />
 
-        <Button x:Name="BContactinformatie"
-                Content="Contact informatie"
-                Click="BContactinformatie_Click" 
-                HorizontalAlignment="Left" />
+        
 
         <Button x:Name="BViewOrders"
                 Content="Bekijk Bestellingen"
@@ -48,16 +45,14 @@
                     <TextBox TextChanged="tbSearchbar_TextChanged"
                              x:Name="tbSearchbar"
                              PlaceholderText="Voer product in"
-                             Height="10"
-                             />
-                    <Button x:Name="BContact"
-                            Content="Contact"
-                            Click="BContact_Click" />
+                             Height="10"/>
                 </StackPanel>
             </Grid>
 
             <Grid Grid.Column="1">
-                <ListView x:Name="lvProducts">
+                <ListView x:Name="lvProducts"
+                          IsItemClickEnabled="True"
+                          ItemClick="lvProducts_ItemClick">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="model:Product">
                             <Border BorderThickness="1"
@@ -69,7 +64,7 @@
 
                                         <TextBlock FontSize="15">
                                         <Run Text="{x:Bind Name}" />
-                                        <Run Text="{x:Bind Dimensions}" />
+                                        <Run Text="{x:Bind Category.Name}" />
                                         <Run Text="{x:Bind Description}" />
                                         </TextBlock>
 
@@ -81,5 +76,6 @@
                 </ListView>
             </Grid>
         </Grid>
+        <ContentDialog x:Name="CdShowOrderConfirmation"/>
     </Grid>
 </Window>

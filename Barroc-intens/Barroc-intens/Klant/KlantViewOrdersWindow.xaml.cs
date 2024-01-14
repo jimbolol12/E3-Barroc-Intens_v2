@@ -92,5 +92,10 @@ namespace Barroc_intens.Klant
                 return;
             }
         }
+
+        public void LoadOrderPopup()
+        {
+
+        }
     }
 }

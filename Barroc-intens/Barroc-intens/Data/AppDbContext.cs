@@ -210,14 +210,28 @@ namespace Barroc_intens.Data
 
                 
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
-                new MaintenanceAppointment
-                {
-                    Id = 1,
-                    CompanyId = 1,
-                    Remark = "KoffiezetApparaat is hervuld",
-                    DateAdded = DateTime.Now,
-                    
-                });
+                 new MaintenanceAppointment
+                 {
+                     Id = 1,
+                     EmployeeId = 1,
+                     /*ProductId = "S234KNDPF",*/
+                     CompanyId = 1,
+                     Location = "Breda",
+                     Description = "KoffiezetApparaat is hervuld",
+                     ScheduledAt = DateTime.Now,
+
+                 },
+                 new MaintenanceAppointment
+                 {
+                     Id = 2,
+                     EmployeeId = 2,
+                    /* ProductId = "S234NNBMV",*/
+                     CompanyId = 2,
+                     Location = "Etten-Leur",
+                     Description = "Printer stuk",
+                     ScheduledAt = DateTime.Now,
+
+                 });
             modelBuilder.Entity<FaultyRequest>().HasData(
                 new FaultyRequest
                 {

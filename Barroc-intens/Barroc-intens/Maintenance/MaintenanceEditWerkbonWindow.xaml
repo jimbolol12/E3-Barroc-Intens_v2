@@ -19,12 +19,12 @@
                 <TextBlock x:Name="MessageBox" Foreground="Orange"/>
                 <TextBox x:Name="TbRemark" Header="Opmerking" Margin="10"/>
                 <ComboBox x:Name="AppointmentCompanyCombobox"
-                          Header="Bedrijf"
-                          Margin="10"
-                          BorderBrush="Yellow"
-                          BorderThickness="1"
-                          CornerRadius="10"
-                          SelectedValue="{Binding SelectedAppointment.Company.Name, Mode=TwoWay}">
+                      Header="Bedrijf"
+                      Margin="10"
+                      BorderBrush="Yellow"
+                      BorderThickness="1"
+                      CornerRadius="10"
+                      SelectedValue="{Binding SelectedAppointment.Company.Name, Mode=TwoWay}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate x:DataType="localData:Company">
                             <TextBlock Text="{x:Bind Name}" />

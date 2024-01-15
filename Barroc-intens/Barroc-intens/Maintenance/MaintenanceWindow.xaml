@@ -15,8 +15,11 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        
+        
         <Grid Grid.Row="0"
               Background="#FDD716">
+            <Button x:Name="werkbonnen" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,5,0,0" Content="Werkbonnen" Click="werkbonnen_Click"></Button>
             <Button x:Name="bBack"
                     Content="Back"
                     Click="bBack_Click"

@@ -55,12 +55,12 @@ namespace Barroc_intens.Klant
             var clickedOrder = e.ClickedItem as CustomInvoiceProduct;
             DateTime productPayDate;
             DateTime dateOrdered;
-            using (var db = new AppDbContext())
-            {
-                var customInvoice = db.CustomInvoices.Single(ci => ci.Id == clickedOrder.CustomInvoiceId);
-                productPayDate = (DateTime)customInvoice.PaidAt;
-                dateOrdered = customInvoice.Date;
-            }
+            using var db = new AppDbContext();
+            
+            var customInvoice = db.CustomInvoices.Single(ci => ci.Id == clickedOrder.CustomInvoiceId);
+            productPayDate = (DateTime)customInvoice.PaidAt;
+            dateOrdered = customInvoice.Date;
+            
 
             var productName = clickedOrder.Product.Name.ToString();
             var productDesc = clickedOrder.Product.Description.ToString(); 
@@ -76,8 +76,13 @@ namespace Barroc_intens.Klant
             {
                 productPaid = "Product is betaalt!";
             }
-            
 
+            LoadOrderPopup(productName, productDesc, productPrice, productPaid, productPayDate, dateOrdered, clickedOrder);
+            
+        }
+
+        public async void LoadOrderPopup(string productName, string productDesc, string productPrice, string productPaid, DateTime productPayDate, DateTime dateOrdered, CustomInvoiceProduct clickedOrder)
+        {
             if (clickedOrder != null && clickedOrder.Product != null)
             {
                 ContentDialog CdShowOrderDetails = new ContentDialog
@@ -91,11 +96,6 @@ namespace Barroc_intens.Klant
                 ContentDialogResult result = await CdShowOrderDetails.ShowAsync();
                 return;
             }
-        }
-
-        public void LoadOrderPopup()
-        {
-
         }
     }
 }

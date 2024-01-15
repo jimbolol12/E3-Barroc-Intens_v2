@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Barroc_intens.Sales"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:localData="using:Barroc_intens.Model"
     mc:Ignorable="d">
 
     <Grid>
@@ -32,6 +32,17 @@
                          Header="Gebruikersnaam"/>
                 <TextBox x:Name="TbEmail" 
                          Header="Email"/>
+                <ComboBox x:Name="CompanyCombobox"
+                          BorderBrush="Yellow"
+                          BorderThickness="1"
+                          CornerRadius="10"
+                          Header="Bedrijf:">        
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="localData:Company">
+                            <TextBlock Text="{x:Bind Name}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <PasswordBox x:Name="PbPassword"
                              Header="Wachtwoord"/>
 

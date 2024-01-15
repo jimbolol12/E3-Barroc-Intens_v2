@@ -86,7 +86,9 @@ namespace Barroc_intens
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-
+            var maintenanceWindow = new MaintenanceWindow();
+            maintenanceWindow.Activate();
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

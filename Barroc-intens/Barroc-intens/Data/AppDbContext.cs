@@ -214,7 +214,7 @@ namespace Barroc_intens.Data
                  {
                      Id = 1,
                      EmployeeId = 1,
-                     /*ProductId = "S234KNDPF",*/
+                     ProductId = "S234KNDPF",
                      CompanyId = 1,
                      Location = "Breda",
                      Description = "KoffiezetApparaat is hervuld",
@@ -225,7 +225,7 @@ namespace Barroc_intens.Data
                  {
                      Id = 2,
                      EmployeeId = 2,
-                    /* ProductId = "S234NNBMV",*/
+                     ProductId = "S234MMPLA",
                      CompanyId = 2,
                      Location = "Etten-Leur",
                      Description = "Printer stuk",

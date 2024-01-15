@@ -83,5 +83,10 @@ namespace Barroc_intens
                     .Include(c => c.Company);
             }
         }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -69,5 +69,10 @@ namespace Barroc_intens.Maintenance
 
 
         }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

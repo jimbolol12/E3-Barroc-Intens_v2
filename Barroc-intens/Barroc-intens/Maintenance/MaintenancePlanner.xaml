@@ -10,21 +10,53 @@
 
 
     <Grid>
-        <StackPanel Orientation="Vertical"
-             Margin="10">
-            <TextBox x:Name="tbCompany" Header="Bedrijf:  "/>
-            <TextBox x:Name="tbRemark" Header="Opmerking: "/>
-            <DatePicker x:Name="tbDateAdded"></DatePicker>
-        </StackPanel>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
 
-        
-        <Button x:Name="Bcreate"
-                Content="Create"
-                VerticalAlignment="Bottom"
-                Margin="20"
-                Click="Bcreate_Click">
-        </Button>
+
+        <Grid Grid.Row="0"
+Background="#FDD716">
+            <Button x:Name="bBack"
+      Content="Back"
+      Click="bBack_Click"
+      VerticalAlignment="Top"
+      Margin="5"
+      Background="Black" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+            <!-- invul velden -->
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock x:Name="MessageBox"></TextBlock>
+                <TextBlock Text="Company Name"></TextBlock>
+                <ListBox x:Name="CompanyListBox" SelectionMode="Single" DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
+                <TextBlock Text="Tool"></TextBlock>
+                <ComboBox x:Name="ProductListBox"  DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
+                <TextBlock Text="Location"></TextBlock>
+                <TextBox x:Name="tbLocation" />
+                <TextBlock Text="Description"></TextBlock>
+                <TextBox x:Name="tbRemark" />
+                <TextBlock Text="Date"></TextBlock>
+                <DatePicker x:Name="tbDateAdded"></DatePicker>
+            </StackPanel>
+
+
+            <!-- aan maak knop -->
+            <Button x:Name="Bcreate"
+             Content="Create"
+             VerticalAlignment="Bottom"
+             Margin="20"
+             Click="Bcreate_Click">
+            </Button>
+        </Grid>
     </Grid>
 
 </Window>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,7 +46,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 1,
                     Username = "Alice",
-                    Password = "test",
+                    Password = HashPassword("test"),
                     JobFunctionId = 1,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -56,7 +57,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 2,
                     Username = "Jane",
-                    Password = "a",
+                    Password = HashPassword("a"),
                     JobFunctionId = 2,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -66,7 +67,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 3,
                     Username = "Henk",
-                    Password = "wachtwoord123",
+                    Password = HashPassword("wachtwoord123"),
                     JobFunctionId = 4,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -76,7 +77,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 4,
                     Username = "Jan",
-                    Password = "a",
+                    Password = HashPassword("a"),
                     JobFunctionId = 3,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -86,7 +87,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 5,
                     Username = "Hanna",
-                    Password = "a",
+                    Password = HashPassword("a"),
                     JobFunctionId = 5,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -96,7 +97,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 6,
                     Username = "Paul",
-                    Password = "test",
+                    Password = HashPassword("test"),
                     JobFunctionId = 5,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -106,7 +107,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 7,
                     Username = "Jimmy",
-                    Password = "wachtwoord321",
+                    Password = HashPassword("wachtwoord321"),
                     JobFunctionId = 7,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -116,7 +117,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 8,
                     Username = "Poul",
-                    Password = "wachtwoord321",
+                    Password = HashPassword("wachtwoord321"),
                     JobFunctionId = 6,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -126,7 +127,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 9,
                     Username = "Jan",
-                    Password = "test",
+                    Password = HashPassword("test"),
                     JobFunctionId = 5,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -136,7 +137,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 10,
                     Username = "BarrocAdmin",
-                    Password = "admin",
+                    Password = HashPassword("admin"),
                     JobFunctionId = 1,
                     CompanyId = 1,
                     IsCompanyAdmin = true,
@@ -146,7 +147,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 11,
                     Username = "Action",
-                    Password = "admin",
+                    Password = HashPassword("admin"),
                     JobFunctionId = 1,
                     CompanyId = 2,
                     IsCompanyAdmin = true,
@@ -156,7 +157,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 12,
                     Username = "Kruidvat",
-                    Password = "admin",
+                    Password = HashPassword("admin"),
                     JobFunctionId = 1,
                     CompanyId = 3,
                     IsCompanyAdmin = true,
@@ -442,6 +443,14 @@ namespace Barroc_intens.Data
                     Id = 7,
                     Name = "Planner",
                 });
+        }
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
         }
     }
 }

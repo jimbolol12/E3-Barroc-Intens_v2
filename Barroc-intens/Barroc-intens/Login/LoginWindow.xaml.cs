@@ -16,6 +16,9 @@ using Barroc_intens.Model;
 using Barroc_intens.Data;
 using Microsoft.UI;
 using Barroc_intens.Login;
+using Barroc_intens.Sales;
+using System.Text;
+using System.Security.Cryptography;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -60,7 +63,7 @@ namespace Barroc_intens
         {
             using (var context = new AppDbContext())
             {
-                return context.Users.SingleOrDefault(u => u.Username == enteredUsername && u.Password == enteredPassword);
+                return context.Users.SingleOrDefault(u => u.Username == enteredUsername && u.Password == HashPassword(enteredPassword));
             }
         }
 
@@ -105,7 +108,14 @@ namespace Barroc_intens
                 this.Close();
             }
         }
-
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
         private void DisplayInvalidCredentialsError()
         {
             ErrorTextBlock.Text = "Ongeldige inloggegevens";

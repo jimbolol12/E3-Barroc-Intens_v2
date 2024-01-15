@@ -12,9 +12,10 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using Barroc_intens.Data;
 using Barroc_intens.Model;
-using Windows.System;
+using System.Text;
+using System.Security.Cryptography;
+using Barroc_intens.Data;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -24,34 +25,49 @@ namespace Barroc_intens
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Notes : Window
+    public sealed partial class klantaanmakenWindow : Window
     {
-        public Notes()
+        public klantaanmakenWindow()
         {
             this.InitializeComponent();
+            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var ar = LoginWindow.LoggedInUser;
 
             using var db = new AppDbContext();
-            db.Notes.Add(new Note
+            string username = txtUsername.Text;
+            string password = txtPassword.Password;
+            string email = txtEmail.Text;
+
+            string hashedPassword = HashPassword(password);
+
+            User newUser = new User
             {
-                Title = titel.Text,
-                AuthorId = LoginWindow.LoggedInUser.Id,
-                /*Author = ar.*/
-                Description = beschrijving.Text,
-                Date = DateTime.Now
-               
-            }
-                );
+                Username = username,
+                Password = hashedPassword,
+                Email = email,
+                JobFunction = new JobFunction() { Id = 12 }
+            };
+
+            db.Users.Add(newUser);
             db.SaveChanges();
 
             var saleswindow = new SalesWindow();
             saleswindow.Activate();
             this.Close();
 
+        }
+
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
         }
     }
 }

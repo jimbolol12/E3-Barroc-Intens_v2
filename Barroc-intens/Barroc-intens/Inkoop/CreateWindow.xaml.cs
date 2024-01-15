@@ -30,7 +30,7 @@ namespace Barroc_intens
             this.InitializeComponent();
         }
 
-        private void Bcreate_Click(object sender, RoutedEventArgs e)
+        private void bCreate_Click_1(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -52,17 +52,57 @@ namespace Barroc_intens
             }
             catch (FormatException)
             {
-                // Hier kun je de foutmelding weergeven voor ongeldige gegevens
-                /* MessageBox.Show("Ongeldige gegevens. Controleer of de ingevoerde waarden correct zijn.");*/
-                MessageBox.Text = "Incorecte gegevens ingevuld";
+                HandleInvalidData("Incorrecte gegevens ingevuld");
             }
             catch (Exception ex)
             {
-                // Hier kun je een algemene foutmelding weergeven voor andere uitzonderingen
-                /* MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");*/
-                MessageBox.Text = "Incorecte gegevens ingevuld";
+                HandleGeneralException($"Er is een fout opgetreden: {ex.Message}");
             }
         }
 
+        private void SaveProductToDatabase()
+        {
+            using (var db = new AppDbContext())
+            {
+                var newProduct = CreateProductFromInputs();
+                db.Products.Add(newProduct);
+                db.SaveChanges();
+            }
+        }
+
+        private Product CreateProductFromInputs()
+        {
+            return new Product
+            {
+                Id = tbProductid.Text,
+                Name = tbProductname.Text,
+                Dimensions = tbProductdimensions.Text,
+                Description = tbProductdescription.Text,
+                Price = decimal.Parse(tbProductprice.Text),
+                Storage = int.Parse(tbProductstorage.Text),
+            };
+        }
+
+        private void CloseCurrentWindow()
+        {
+            var productWindow = new ProductenWindow();
+            productWindow.Activate();
+            this.Close();
+        }
+
+        private void HandleInvalidData(string errorMessage)
+        {
+            MessageBox.Text = errorMessage;
+        }
+
+        private void HandleGeneralException(string errorMessage)
+        {
+            MessageBox.Text = errorMessage;
+        }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

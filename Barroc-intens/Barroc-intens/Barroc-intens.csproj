@@ -21,6 +21,10 @@
     <None Remove="Login\IntroWindow.xaml" />
     <None Remove="MaintenanceStoringenWindow.xaml" />
     <None Remove="Maintenance\MaintenanceEditWerkbonWindow.xaml" />
+    <None Remove="LeasecontractWindow.xaml" />
+    <None Remove="LoginWindow.xaml" />
+    <None Remove="Maintenance\CreateRoutineVisitWindow.xaml" />
+    <None Remove="Maintenance\ScheduleFaultyRequestWindow.xaml" />
     <None Remove="notedetailWindow.xaml" />
     <None Remove="Notes.xaml" />
     <None Remove="ProductenWindow.xaml" />
@@ -139,6 +143,16 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Maintenance\MaintenanceEditWerkbonWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Maintenance\ScheduleFaultyRequestWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Maintenance\CreateRoutineVisitWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

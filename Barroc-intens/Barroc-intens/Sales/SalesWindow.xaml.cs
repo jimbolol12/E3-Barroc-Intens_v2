@@ -37,7 +37,6 @@ namespace Barroc_intens
             lvProducts.ItemsSource = products;
             lvbedrijf.ItemsSource = companies;
             lvnote.ItemsSource = notes;
-            
         }
 
         private void RedirectCreateOfferte_Click(object sender, RoutedEventArgs e)
@@ -54,7 +53,6 @@ namespace Barroc_intens
             this.Close();
         }
 
-        
         private void lvnote_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             if(lvnote.SelectedItems.Count > 0)

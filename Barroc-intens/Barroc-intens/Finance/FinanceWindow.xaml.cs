@@ -82,5 +82,9 @@ namespace Barroc_intens
             LoadCompanyDb();
         }
 
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

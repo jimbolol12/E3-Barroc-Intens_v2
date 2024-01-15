@@ -49,6 +49,7 @@ namespace Barroc_intens
                     ProductId = tbFaultyRequestproduct.Text,
                     UserId = LoginWindow.LoggedInUser.Id,
                     Employee = randomEmployee,
+                    ScheduledAt = DateTime.Now,
                     Location = tbFaultyRequestlocation.Text,
                     Description = tbFaultyRequestdescription.Text,
                     Done = false,
@@ -70,6 +71,11 @@ namespace Barroc_intens
             //    /* MessageBox.Show($"Er is een fout opgetreden: {ex.Message}");*/
             //    MessageBox.Text = "Incorecte gegevens ingevuld";
             //}
+        }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+            //blub
         }
     }
 }

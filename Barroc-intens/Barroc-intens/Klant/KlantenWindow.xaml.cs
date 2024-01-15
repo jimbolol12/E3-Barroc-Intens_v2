@@ -105,5 +105,15 @@ namespace Barroc_intens
             });
             db.SaveChanges();
         }
+
+        private void BContactinformatie_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO : voor contact functie die niet hoefde in de sprint
+        }
+
+        private void BContact_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO : voor contact functie die niet hoefde in de sprint
+        }
     }
 }

@@ -1,6 +1,5 @@
 using Barroc_intens.Data;
 using Barroc_intens.Model;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -19,34 +18,25 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace Barroc_intens
+namespace Barroc_intens.Maintenance
 {
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class EditWindow : Window
+    public sealed partial class ScheduleFaultyRequestWindow : Window
     {
-        private Product clickedproduct;
-        public EditWindow(Product selectedProduct)
+        private FaultyRequest clickedRequest;
+        public ScheduleFaultyRequestWindow(FaultyRequest selectedRequest)
         {
             this.InitializeComponent();
-
-            this.clickedproduct = selectedProduct;
-
-            using (var dbContext = new AppDbContext())               
-            dbContext.Products.Attach(selectedProduct);
-            tbProductname.Text = selectedProduct.Name;
-            tbProductdimensions.Text = selectedProduct.Dimensions;
-            tbProductdescription.Text = selectedProduct.Description;
-            tbProductprice.Text = selectedProduct.PriceFormatted;
-
+            this.clickedRequest = selectedRequest;
         }
 
-        private void BSave_Click(object sender, RoutedEventArgs e)
+        private void bSave_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                UpdateProductAndSaveChanges();
+                UpdateRequestAndSaveChanges();
                 CloseCurrentWindow();
             }
             catch (FormatException)
@@ -59,28 +49,30 @@ namespace Barroc_intens
             }
         }
 
-        private void UpdateProductAndSaveChanges()
+        private void UpdateRequestAndSaveChanges()
         {
-            var product = clickedproduct;
+            var request = clickedRequest;
 
             using (var dbContext = new AppDbContext())
             {
-                var existingProduct = dbContext.Products.Find(clickedproduct.Id);
+                var existingRequest = dbContext.FaultyRequests.Find(clickedRequest.Id);
 
-                if (existingProduct != null)
+                if (existingRequest != null)
                 {
-                    UpdateProductDetails(existingProduct);
+                    UpdateRequestDetails(existingRequest);
                     dbContext.SaveChanges();
                 }
             }
         }
 
-        private void UpdateProductDetails(Product existingProduct)
+        private void UpdateRequestDetails(FaultyRequest excistingRequest)
         {
-            existingProduct.Name = tbProductname.Text;
-            existingProduct.Dimensions = tbProductdimensions.Text;
-            existingProduct.Description = tbProductdescription.Text;
-            existingProduct.Price = decimal.Parse(tbProductprice.Text);
+            // Convert DateTimeOffset? naar DateTime
+            DateTime scheduledAt = cdpScheduledDate.Date.HasValue
+                ? cdpScheduledDate.Date.Value.DateTime
+                : DateTime.MinValue;
+
+            excistingRequest.ScheduledAt = scheduledAt;
         }
 
         private void CloseCurrentWindow()
@@ -90,17 +82,17 @@ namespace Barroc_intens
 
         private void HandleInvalidData(string errorMessage)
         {
-            MessageBox.Text = errorMessage;
+            //MessageBox.Text = errorMessage;
         }
 
         private void HandleGeneralException(string errorMessage)
         {
-            MessageBox.Text = errorMessage;
+            //MessageBox.Text = errorMessage;
         }
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO : Back button
         }
     }
 }

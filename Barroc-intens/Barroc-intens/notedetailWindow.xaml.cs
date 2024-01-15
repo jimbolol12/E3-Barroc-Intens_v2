@@ -40,7 +40,7 @@ namespace Barroc_intens
                 var note = db.Notes
                     .FirstOrDefault(g => g.Id == currentnoteid);
 
-                titel.Text = note.Titlel;
+                titel.Text = note.Title;
                 inhoud.Text = note.Description;
 
 

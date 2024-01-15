@@ -6,41 +6,89 @@
     xmlns:local="using:Barroc_intens"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+        xmlns:model="using:Barroc_intens.Model"
+        mc:Ignorable="d">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-        <CalendarView Grid.Column="0"
-                      Margin="30,0,0,0"
-                      DisplayMode="Month"
-                      SelectionMode="Single"
-                      IsDoubleTapEnabled="True"
-                      Width="500"
-                      DoubleTapped="CalendarView_DoubleTapped"
-                      CalendarViewDayItemChanging="CalendarView_CalendarViewDayItemChanging"
-                      CalendarItemHoverBackground="#FDD716">
-        </CalendarView>
-
-
-        <Grid Grid.Column="1">
-            <StackPanel HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-                <TextBlock Text="Maintenance"
-               FontSize="24"
-               Margin="0 0 0 20" />
-
-                <Button x:Name="BStoringRedirect" Content="Storings Meldingen Beheren"
-            Click="BStoringRedirect_Click"/>
-                <Button x:Name="BProductenRedirect" Content="Producten"
-                        Click="BProductenRedirect_Click"/>
-
-            </StackPanel>
+        <Grid Grid.Row="0"
+              Background="#FDD716">
+            <Button x:Name="bBack"
+                    Content="Back"
+                    Click="bBack_Click"
+                    VerticalAlignment="Top"
+                    Margin="5"
+                    Background="Black" />
         </Grid>
-        
 
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--Zorg dat het in de kalender komt-->
+            <CalendarView Grid.Column="0"
+                          Margin="30,0,0,0"
+                          DisplayMode="Month"
+                          SelectionMode="Single"
+                          IsDoubleTapEnabled="True"
+                          Width="500"
+                          IsOutOfScopeEnabled="True"
+                          DoubleTapped="CalendarView_DoubleTapped"
+                          CalendarViewDayItemChanging="CalendarView_CalendarViewDayItemChanging"
+                          CalendarItemHoverBackground="#FDD716">
+                <!--CalendarViewDayItemStyle-->
+                <CalendarView.CalendarViewDayItemStyle>
+                    <Style TargetType="CalendarViewDayItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <!-- Omdat we niet vanuit C# bij de ListView kunnen (omdat het in een datatemplate zit)
+                     Benaderen we de data via de DataContext, met behulp van {Binding} die daar naar verwijst -->
+                                    <ListView ItemsSource="{Binding}"
+                                              IsItemClickEnabled="True"
+                                              ItemClick="ListView_ItemClick">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate x:DataType="model:FaultyRequest">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{x:Bind ProductId}"
+                                                               FontWeight="Bold" />
+                                                    <TextBlock Text="{x:Bind UserId}" />
+                                                    <TextBlock Text="{x:Bind EmployeeId}"
+                                                               FontStyle="Italic" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </CalendarView.CalendarViewDayItemStyle>
+            </CalendarView>
+
+            <ListView x:Name="lvApointements"
+                      Grid.Column="1"
+                      IsDoubleTapEnabled="True"
+                      DoubleTapped="lvApointements_DoubleTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:FaultyRequest">
+                        <StackPanel>
+                            <TextBlock>
+                    <Run Text="{x:Bind ProductId }" />
+                    <Run Text="{x:Bind Location }" />
+                    <Run Text="{x:Bind EmployeeId }" />
+                    <Run Text="{x:Bind Description }" />
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>

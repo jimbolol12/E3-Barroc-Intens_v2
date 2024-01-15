@@ -20,6 +20,7 @@ namespace Barroc_intens.Data
         public DbSet<FaultyRequest> FaultyRequests { get; set; }
         public DbSet<JobFunction> Functies { get; set; }
         public DbSet<MaintenanceAppointment> MaintenanceAppointments { get; set; }
+        public DbSet<MaintenanceProduct> MaintenanceProducts { get; set; }
         public DbSet<Note> Notes { get; set; }
         public DbSet<Product> Products { get; set; }
 
@@ -114,8 +115,8 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 8,
-                    Username = "Piet",
-                    Password = "123",
+                    Username = "Poul",
+                    Password = "wachtwoord321",
                     JobFunctionId = 6,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -218,17 +219,90 @@ namespace Barroc_intens.Data
                     
                 });
             modelBuilder.Entity<FaultyRequest>().HasData(
-              new FaultyRequest
-              {
-                  Id = 1,
-                  ProductId = "S234FREKT",
-                  UserId = 1,
-                  EmployeeId = 2,
-                  Location = "Terheidenseweg 350",
-                  ScheduledAt = DateTime.UtcNow,
-                  Description = "dfdfdfdf",
-                  Done = false,
-              });
+                new FaultyRequest
+                {
+                    Id = 1,
+                    ProductId = "S234FREKT",
+                    UserId = 1,
+                    EmployeeId = 9,
+                    Location = "Terheidenseweg 320",
+                    ScheduledAt = DateTime.UtcNow,
+                    Description = "Aanknop is moeilijk in te drukken",
+                    Done = false,
+                },
+
+                new FaultyRequest
+                {
+                    Id = 2,
+                    ProductId = "S234MMPLA",
+                    UserId = 1,
+                    EmployeeId = 5,
+                    Location = "Terheidenseweg 301",
+                    ScheduledAt = DateTime.UtcNow,
+                    Description = "Blokkade in de slang",
+                    Done = false,
+                },
+
+                new FaultyRequest
+                {
+                    Id = 3,
+                    ProductId = "S234NNBMV",
+                    UserId = 1,
+                    EmployeeId = 8,
+                    Location = "Terheidenseweg 300",
+                    ScheduledAt = DateTime.UtcNow,
+                    Description = "Melk klopper werkt niet meer",
+                    Done = false,
+                },
+
+                new FaultyRequest
+                {
+                    Id = 4,
+                    ProductId = "S234MMPLA",
+                    UserId = 1,
+                    EmployeeId = 6,
+                    Location = "Terheidenseweg 350",
+                    ScheduledAt = DateTime.UtcNow,
+                    Description = "Machine lekt tijdens gebruik",
+                    Done = false,
+                });
+
+            modelBuilder.Entity<MaintenanceProduct>().HasData(
+                new MaintenanceProduct
+                {
+                    Id = 1,
+                    Name = "Screw",
+                    Price = 1,
+                    Storage = 1000,
+                },
+                new MaintenanceProduct
+                {
+                    Id = 2,
+                    Name = "Filter Basket",
+                    Price = 5,
+                    Storage = 500,
+                },
+                new MaintenanceProduct
+                {
+                    Id = 3,
+                    Name = "Heating Element",
+                    Price = 15,
+                    Storage = 200,
+                },
+                new MaintenanceProduct
+                {
+                    Id = 4,
+                    Name = "Water Pump",
+                    Price = 10,
+                    Storage = 300,
+                },
+                new MaintenanceProduct
+                {
+                    Id = 5,
+                    Name = "Thermostat",
+                    Price = 8,
+                    Storage = 400,
+                });
 
 
             modelBuilder.Entity<Company>().HasData(
@@ -374,10 +448,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 7,
                     Name = "Planner",
-                }
-                
-            );
-            
+                });
         }
     }
 }

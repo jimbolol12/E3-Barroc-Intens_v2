@@ -30,11 +30,13 @@ namespace Barroc_intens
 
             using (var db = new AppDbContext())
             {
-                var note = db.FaultyRequests
-                     /* .Include(m => m.Id)*/
+                var request = db.FaultyRequests
                      .ToList();
+                lvFaultyRequests.ItemsSource = request;
 
-                NoteListview.ItemsSource = note;
+                var products = db.MaintenanceProducts
+                    .ToList();
+                lvMaintenanceProducts.ItemsSource = products;
             }
         }
 
@@ -43,6 +45,9 @@ namespace Barroc_intens
             var werkbonnenWindow = new MaintenanceWerkbonnen();
             werkbonnenWindow.Activate();
             this.Close();
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

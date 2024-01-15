@@ -126,7 +126,6 @@
                         <Run Text="BKR Voldaan op: " />
                         <Run Text="{x:Bind BkrCheckedAt}" />
                                 </TextBlock>
-                                <TextBlock Text="{x:Bind Contact.Username}" />
                                 <ToggleButton x:Name="TBBkrCheck"
                                               Background="#FDD716"
                                               Content="Toggle BKR Check"

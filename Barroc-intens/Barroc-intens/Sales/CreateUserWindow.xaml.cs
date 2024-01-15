@@ -15,6 +15,8 @@ using Microsoft.UI.Xaml.Navigation;
 using Barroc_intens.Model;
 using Barroc_intens.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
+using System.Security.Cryptography;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -45,13 +47,12 @@ namespace Barroc_intens.Sales
                     Email = TbEmail.Text,
                     Username = TbUsername.Text,
                     JobFunctionId = 1,
-                    Password = PbPassword.Password,
+                    Password = HashPassword(PbPassword.Password),
                     CompanyId = company.Id,
                 });
                 db.SaveChanges();
                 TbError.Text = "Klant kan nu inloggen!";
             }
-
         }
         private bool InputCheck()
         {
@@ -65,7 +66,7 @@ namespace Barroc_intens.Sales
             {
                 TbError.Text = "Deze gebruikersnaam is al in gebruik!";
             }
-            else if (!TbEmail.Text.Contains("@"))
+            else if (!TbEmail.Text.Contains('@'))
             {
                 TbError.Text = "Voer een geldige Email in!";
             }
@@ -93,6 +94,14 @@ namespace Barroc_intens.Sales
                 var company = db.Companies
                     .ToList();
                 CompanyCombobox.ItemsSource = company;
+            }
+        }
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
     }

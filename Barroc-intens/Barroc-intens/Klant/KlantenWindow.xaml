@@ -33,13 +33,6 @@
                 Margin="5"
                 HorizontalAlignment="Left" />
 
-        <Button x:Name="BFactuur"
-                Content="Factuur historie"
-                Click="BFactuur_Click"
-                Background="#fee35e"
-                Margin="5"
-                HorizontalAlignment="Center" />
-
         <Button x:Name="BStoring"
                 Content="Storing melden"
                 Click="BStoring_Click"

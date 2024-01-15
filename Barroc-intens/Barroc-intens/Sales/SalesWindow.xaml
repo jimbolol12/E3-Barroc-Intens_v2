@@ -25,9 +25,9 @@
         </Grid.RowDefinitions>
 
         <Button Grid.Column="0" Padding="60,45" x:Name="BRedirectBack" Click="BRedirectBack_Click" Content="Back"/>
-        <Button Grid.Column="0" Padding="150,75" Click="Button_Click">Offerte Aanmaken</Button>
+        <!--<Button Grid.Column="0" Padding="150,75" Click="Button_Click">Offerte Aanmaken</Button>-->
         <Button Grid.Row="0" Grid.Column="1" Padding="150,75" x:Name="RedirectCreateCustomer" Click="RedirectCreateCustomer_Click" >klant aanmaken </Button>
-        <Button Grid.Row="0" Grid.Column="2" Padding="150,75" Click="Button_Click_1">notes maken</Button>
+        <!--<Button Grid.Row="0" Grid.Column="2" Padding="150,75" Click="Button_Click_1">notes maken</Button>-->
         
         
 

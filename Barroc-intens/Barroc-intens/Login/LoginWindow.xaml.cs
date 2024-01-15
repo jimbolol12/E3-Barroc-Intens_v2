@@ -55,6 +55,7 @@ namespace Barroc_intens
             var introWindow = new IntroWindow();
             introWindow.Activate();
             this.Close();
+        }
         private User AuthenticateUser(string enteredUsername, string enteredPassword)
         {
             using (var context = new AppDbContext())
@@ -70,7 +71,7 @@ namespace Barroc_intens
             switch (user.JobFunctionId)
             {
                 case 1:
-                    window = new KlantenWindow();
+                    window = new KlantenWindow(LoggedInUser);
                     break;
 
                 case 2:

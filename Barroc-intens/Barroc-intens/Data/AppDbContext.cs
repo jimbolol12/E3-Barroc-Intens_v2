@@ -245,18 +245,6 @@ namespace Barroc_intens.Data
 
                 new FaultyRequest
                 {
-                    Id = 3,
-                    ProductId = "S234NNBMV",
-                    UserId = 1,
-                    EmployeeId = 8,
-                    Location = "Terheidenseweg 300",
-                    ScheduledAt = DateTime.UtcNow,
-                    Description = "Melk klopper werkt niet meer",
-                    Done = false,
-                },
-
-                new FaultyRequest
-                {
                     Id = 4,
                     ProductId = "S234MMPLA",
                     UserId = 1,
@@ -382,15 +370,6 @@ namespace Barroc_intens.Data
                     Price = 599,
                     Storage = 100,
                     CategoryId = 2
-                },
-                new Product
-                {
-                    Id = "S234NNBMV",
-                    Name = "Stroom Kabel",
-                    Description = "",
-                    Price = 45,
-                    Storage = 50,
-                    CategoryId = 1
                 },
                 new Product
                 {

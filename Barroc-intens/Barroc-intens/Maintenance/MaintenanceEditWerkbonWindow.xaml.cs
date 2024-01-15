@@ -72,7 +72,9 @@ namespace Barroc_intens.Maintenance
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-
+            var maintenanceWindow = new MaintenanceWerkbonnen();
+            maintenanceWindow.Activate();
+            this.Close();
         }
     }
 }

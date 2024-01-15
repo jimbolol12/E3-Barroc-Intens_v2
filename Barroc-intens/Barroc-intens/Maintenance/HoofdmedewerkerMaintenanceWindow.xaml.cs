@@ -46,9 +46,11 @@ namespace Barroc_intens
             werkbonnenWindow.Activate();
             this.Close();
         }
-        private void bBack_Click(object sender, RoutedEventArgs e)
+        private void bBack_Click_1(object sender, RoutedEventArgs e)
         {
-
+            var maintenanceWindow = new MaintenanceWerkbonnen();
+            maintenanceWindow.Activate();
+            this.Close();
         }
     }
 }

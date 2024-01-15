@@ -88,5 +88,12 @@ namespace Barroc_intens
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var maintenanceWindow = new HoofdmedewerkerMaintenanceWindow();
+            maintenanceWindow.Activate();
+            this.Close();
+        }
     }
 }

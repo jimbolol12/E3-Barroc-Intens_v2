@@ -14,37 +14,56 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <StackPanel Background="#FDD716"
-                        Orientation="Horizontal"
-                        Padding="20">
-                <Button x:Name="bBack"
-                        Content="Back"
-                        Click="bBack_Click"
-                        VerticalAlignment="Top"
-                        Margin="5"
-                        Background="Black" />
-            </StackPanel>
+
+
+        <Grid Grid.Row="0"
+Background="#FDD716">
+            <Button x:Name="bBack"
+      Content="Back"
+      Click="bBack_Click_1"
+      VerticalAlignment="Top"
+      Margin="5"
+      Background="Black" />
         </Grid>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0"
                   Grid.Row="1">
+                <TextBlock Margin="35,1,0,0" Text="Faulty Request"></TextBlock>
                 <ListView x:Name="lvFaultyRequests">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="localData:FaultyRequest">
                             <StackPanel Margin="20">
-                                <TextBlock Text="{x:Bind ProductId}" />
-                                <TextBlock Text="{x:Bind UserId}" />
-                                <TextBlock Text="{x:Bind EmployeeId}" />
-                                <TextBlock Text="{x:Bind ScheduledAt}" />
-                                <TextBlock Text="{x:Bind Description}" />
-                                <TextBlock Text="{x:Bind Done}" />
+                                <TextBlock>
+                                    <Run Text="Product Id:"></Run>
+                                    <Run Text="{x:Bind ProductId}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="User Id:"></Run>
+                                    <Run Text="{x:Bind UserId}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="Employe Id:"></Run>
+                                    <Run Text="{x:Bind EmployeeId}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="Date: "></Run>
+                                    <Run Text="{x:Bind ScheduledAt}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="Description: "></Run>
+                                    <Run Text="{x:Bind Description}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="Status: "></Run>
+                                    <Run Text="{x:Bind Done}"></Run>
+                                </TextBlock>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -53,13 +72,23 @@
 
             <Grid Grid.Column="1"
                   Grid.Row="1">
+                <TextBlock Margin="35,1,0,0" Text="MaintenanceProducts"></TextBlock>
                 <ListView x:Name="lvMaintenanceProducts">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="localData:MaintenanceProduct">
                             <StackPanel Margin="20">
-                                <TextBlock Text="{x:Bind Name}" />
-                                <TextBlock Text="{x:Bind PriceFormatted}" />
-                                <TextBlock Text="{x:Bind Storage}" />
+                                <TextBlock>
+                                    <Run Text="Name"></Run>
+                                    <Run Text="{x:Bind Name}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="price: $"></Run>
+                                    <Run Text="{x:Bind PriceFormatted}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="Storage:"></Run>
+                                    <Run Text="{x:Bind Storage}"></Run>
+                                </TextBlock>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

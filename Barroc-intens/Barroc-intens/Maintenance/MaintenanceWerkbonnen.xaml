@@ -26,6 +26,7 @@
             VerticalAlignment="Top"
             Margin="5"
             Background="Black" />
+            <Button Background="Black" Click="Button_Click" Content="Extra info" Margin="71,0,0,0"></Button>
         </Grid>
 
         <Grid Grid.Row="1">

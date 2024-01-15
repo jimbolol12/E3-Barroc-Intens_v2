@@ -33,6 +33,7 @@ namespace Barroc_intens
 
             LoadAppointments();
         }
+
         private void Window_Closed(object sender, WindowEventArgs args)
         {
             LoadAppointments();
@@ -45,6 +46,7 @@ namespace Barroc_intens
             windowPlanner.Closed += Window_Closed;
 
         }
+
         private void SPWerkbon_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             // Ga naar edit pagina van de appointment waar 2 keer op is gedrukt
@@ -55,10 +57,10 @@ namespace Barroc_intens
                 this.Close();
             }
         }
-        
+
         private void BDeleteSelectedAppointment_Click(object sender, RoutedEventArgs e)
         {
-            if (AppointmentListview.SelectedItem is MaintenanceAppointment selectedAppointment && AppointmentListview.SelectedItem != null)
+            if (NoteListview.SelectedItem is MaintenanceAppointment selectedAppointment && NoteListview.SelectedItem != null)
             {
                 using (var db = new AppDbContext())
                 {
@@ -66,21 +68,19 @@ namespace Barroc_intens
                     db.SaveChanges();
 
                     var maintenance = db.MaintenanceAppointments.ToList();
-                    AppointmentListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
+                    NoteListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
                 }
             }
-            else
-            {
-                MessageBox.Text = "Selecteer een afspraak";
-            }
         }
+
         public void LoadAppointments()
         {
             using (var db = new AppDbContext())
             {
-                var maintenance = db.MaintenanceAppointments.ToList();
-                AppointmentListview.ItemsSource = db.MaintenanceAppointments.Include(c => c.Company);
-
+                // Model product en company in laden//
+                NoteListview.ItemsSource = db.MaintenanceAppointments
+                    .Include(g => g.Product)
+                    .Include(c => c.Company);
             }
         }
     }

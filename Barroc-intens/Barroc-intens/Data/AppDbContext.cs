@@ -30,8 +30,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=root;" +
-                "password=18nlw;" +
+                "user=c_sharp;" +
+                "password=Krijnisleider;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );

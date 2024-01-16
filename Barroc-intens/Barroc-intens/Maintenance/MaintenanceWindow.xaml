@@ -21,7 +21,7 @@
               Background="#FDD716">
             <Button x:Name="werkbonnen" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,5,0,0" Content="Werkbonnen" Click="werkbonnen_Click"></Button>
             <Button x:Name="bBack"
-                    Content="Back"
+                    Content="Terug"
                     Click="bBack_Click"
                     VerticalAlignment="Top"
                     Margin="5"

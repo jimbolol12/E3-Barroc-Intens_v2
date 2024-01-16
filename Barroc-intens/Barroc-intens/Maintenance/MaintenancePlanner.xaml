@@ -21,7 +21,7 @@
         <Grid Grid.Row="0"
 Background="#FDD716">
             <Button x:Name="bBack"
-      Content="Back"
+      Content="Terug"
       Click="bBack_Click"
       VerticalAlignment="Top"
       Margin="5"
@@ -35,23 +35,23 @@ Background="#FDD716">
             </Grid.ColumnDefinitions>
             <!-- invul velden -->
             <StackPanel Orientation="Vertical" Margin="10">
-                <TextBlock x:Name="MessageBox"></TextBlock>
-                <TextBlock Text="Company Name"></TextBlock>
+                <TextBlock Foreground="Orange" x:Name="MessageBox"></TextBlock>
+                <TextBlock Text="Bedrijfsnaam"></TextBlock>
                 <ListBox x:Name="CompanyListBox" SelectionMode="Single" DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
-                <TextBlock Text="Tool"></TextBlock>
+                <TextBlock Text="Hulpmiddel"></TextBlock>
                 <ComboBox x:Name="ProductListBox"  DisplayMemberPath="Name" Grid.Row="3" SelectedValuePath="Id"  />
-                <TextBlock Text="Location"></TextBlock>
+                <TextBlock Text="Plaats"></TextBlock>
                 <TextBox x:Name="tbLocation" />
-                <TextBlock Text="Description"></TextBlock>
+                <TextBlock Text="Beschrijving"></TextBlock>
                 <TextBox x:Name="tbRemark" />
-                <TextBlock Text="Date"></TextBlock>
+                <TextBlock Text="Datum"></TextBlock>
                 <DatePicker x:Name="tbDateAdded"></DatePicker>
             </StackPanel>
 
 
             <!-- aan maak knop -->
             <Button x:Name="Bcreate"
-             Content="Create"
+             Content="Aan maken"
              VerticalAlignment="Bottom"
              Margin="20"
              Click="Bcreate_Click">

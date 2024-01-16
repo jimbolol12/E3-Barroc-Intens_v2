@@ -27,7 +27,7 @@
             <Button x:Name="bCustomerCreate"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"
-                    Background="black"
+                    Background="#feeb8b"
                     Margin="100 0 0 0"
                     Content="Klant aanmaken"
                     Click="bCustomerCreate_Click" />
@@ -35,14 +35,14 @@
             <Button x:Name="bOfferteCreate"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    Background="black"
+                    Background="#feeb8b"
                     Content="Offerte aanmaken"
                     Click="bOfferteCreate_Click" />
 
             <Button x:Name="bNotesCreate"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right"
-                    Background="black"
+                    Background="#feeb8b"
                     Margin="0 0 30 0"
                     Content="Notes aanmaken"
                     Click="bNotesCreate_Click" />

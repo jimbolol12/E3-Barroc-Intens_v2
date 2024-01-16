@@ -21,7 +21,7 @@
         <Grid Grid.Row="0"
       Background="#FDD716">
             <Button x:Name="bBack"
-            Content="Back"
+            Content="Terug"
             Click="bBack_Click"
             VerticalAlignment="Top"
             Margin="5"
@@ -37,15 +37,15 @@
 
             <Grid Grid.Column="0">
                 <ListView x:Name="NoteListview"
-      Grid.Column="1"
-      Background="Black"
-         DoubleTapped="SPWerkbon_DoubleTapped"
-      BorderThickness="2"
-      Margin="10">
+                  Grid.Column="1"
+                  Background="Black"
+                     DoubleTapped="SPWerkbon_DoubleTapped"
+                  BorderThickness="2"
+                  Margin="10">
                     <!-- listview vanuit MaintenanceAppoitmens met relatie naar company en Product-->
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="localData:MaintenanceAppointment">
-                            <Border Background="DarkGray" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Margin="10">
+                            <Border Background="#333333" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Margin="10">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
@@ -58,7 +58,7 @@
                                     <TextBlock x:Name="MessageBox"></TextBlock>
 
                                     <StackPanel Grid.Row="0" Margin="10">
-                                        <TextBlock Text="Company" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                        <TextBlock Text="Bedrijf" FontWeight="Bold" FontSize="14" Foreground="White"/>
                                         <TextBlock Text="{x:Bind Company.Name}" FontSize="16" Foreground="White"/>
                                     </StackPanel>
 
@@ -73,12 +73,12 @@
                                     </StackPanel>
 
                                     <StackPanel Grid.Row="3" Margin="10">
-                                        <TextBlock Text="Location" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                        <TextBlock Text="Plaats" FontWeight="Bold" FontSize="14" Foreground="White"/>
                                         <TextBlock Text="{x:Bind Location}" FontSize="12" Foreground="Gray"/>
                                     </StackPanel>
 
                                     <StackPanel Grid.Row="4" Margin="10">
-                                        <TextBlock Text="Date" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                        <TextBlock Text="Datum" FontWeight="Bold" FontSize="14" Foreground="White"/>
                                         <TextBlock Text="{x:Bind ScheduledAt}" FontSize="12" Foreground="Gray"/>
                                     </StackPanel>
                                 </Grid>

@@ -16,7 +16,7 @@
         <Grid Grid.Column="0"
               Background="#FDD716">
             <Button x:Name="bBack"
-                    Content="Back"
+                    Content="Terug"
                     Click="bBack_Click"
                     VerticalAlignment="Top"
                     Margin="5"
@@ -30,22 +30,22 @@
                 <TextBlock x:Name="MessageBox" />
 
                 <TextBox x:Name="tbProductname"
-                         Header="Name"
+                         Header="Product naam"
                          Margin="5" />
                 <TextBox x:Name="tbProductdimensions"
-                         Header="Dimensions"
+                         Header="Product afmetingen"
                          Margin="5" />
                 <TextBox x:Name="tbProductdescription"
-                         Header="Description"
+                         Header="Beschrijving"
                          Margin="5" />
                 <TextBox x:Name="tbProductprice"
-                         Header="Price"
+                         Header="Prijs"
                          Margin="5" />
 
             </StackPanel>
 
             <Button x:Name="BSave"
-                    Content="Save"
+                    Content="Opslaan"
                     VerticalAlignment="Bottom"
                     Margin="10,20,20,20"
                     Background="#FDD716"

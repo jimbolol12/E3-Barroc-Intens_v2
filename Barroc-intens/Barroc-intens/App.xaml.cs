@@ -1,5 +1,6 @@
 ﻿using Barroc_intens.Data;
 using Barroc_intens.Login;
+using Barroc_intens.Maintenance;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -48,7 +49,7 @@ namespace Barroc_intens
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            m_window = new LoginWindow();
+            m_window = new CreateRoutineVisitWindow();
             m_window.Activate();
         }
 

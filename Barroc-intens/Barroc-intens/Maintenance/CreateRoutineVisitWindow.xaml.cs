@@ -31,8 +31,10 @@ namespace Barroc_intens.Maintenance
 
             using var db = new AppDbContext();
 
+            var companyList = db.Companies.ToList();
             var userList = db.Users.Where(user => user.JobFunctionId == 5 || user.JobFunctionId == 6).ToList();
             cbEmployee.ItemsSource = userList;
+            cdCompany.ItemsSource = companyList;
         }
 
         private void bCreate_Click(object sender, RoutedEventArgs e)
@@ -66,9 +68,11 @@ namespace Barroc_intens.Maintenance
         {
             // Haal de geselecteerde gebruiker uit de combobox
             User selectedUser = (User)cbEmployee.SelectedItem;
+            // Haal de geselecteerde company uit de combobox
+            Company selectedCompany = (Company)cdCompany.SelectedItem;
 
-            // controleer of de user geselecteerd is
-            if (selectedUser != null)
+            // controleer of de user en company geselecteerd zijn
+            if (selectedUser != null && selectedCompany != null)
             {
                 // Convert DateTimeOffset? naar DateTime
                 DateTime scheduledAt = cdpVisitDate.Date.HasValue
@@ -77,7 +81,7 @@ namespace Barroc_intens.Maintenance
 
                 return new MaintenanceAppointment
                 {
-                    Id = int.Parse(tbRequestId.Text),
+                    CompanyId = selectedCompany.Id,
                     Location = tbUserlocation.Text,
                     ScheduledAt = scheduledAt,
                     EmployeeId = selectedUser.Id,

@@ -19,6 +19,7 @@
                 <Button x:Name="BRedirectBack" 
                         Content="Back"
                         Click="BRedirectBack_Click"
+                        Background="Black"
                         Margin="10"/>
             </StackPanel>
         </Grid>

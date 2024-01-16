@@ -25,18 +25,20 @@
                 Content="Bekijk Bestellingen"
                 Click="BViewOrders_Click"
                 HorizontalAlignment="Center" 
+                Background="Black"
                 Tag="{x:Bind local:LoginWindow.LoggedInUser}"/>
+        
         <Button x:Name="BContactinformatie"
                 Content="Contact informatie"
                 Click="BContactinformatie_Click"
-                Background="#fee35e"
+                Background="Black"
                 Margin="5"
                 HorizontalAlignment="Left" />
 
         <Button x:Name="BStoring"
                 Content="Storing melden"
                 Click="BStoring_Click"
-                Background="#fee35e"
+                Background="Black"
                 Margin="5"
                 HorizontalAlignment="Right" />
         

@@ -31,7 +31,7 @@ namespace Barroc_intens.Data
                 "server=localhost;" +
                 "port=3306;" +
                 "user=root;" +
-                "password=;" +
+                "password=18nlw;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );

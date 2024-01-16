@@ -38,7 +38,7 @@ namespace Barroc_intens
 
         private void BStorage_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO
         }
 
         private void BProduct_Click(object sender, RoutedEventArgs e)
@@ -50,7 +50,9 @@ namespace Barroc_intens
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-
+            var loginWindow = new LoginWindow();
+            loginWindow.Activate();
+            this.Close();
         }
     }
 }

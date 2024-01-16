@@ -53,12 +53,7 @@ namespace Barroc_intens
             }
         }
 
-        private void BRedirectBack_Click(object sender, RoutedEventArgs e)
-        {
-            var introWindow = new IntroWindow();
-            introWindow.Activate();
-            this.Close();
-        }
+        
         private User AuthenticateUser(string enteredUsername, string enteredPassword)
         {
             using (var context = new AppDbContext())

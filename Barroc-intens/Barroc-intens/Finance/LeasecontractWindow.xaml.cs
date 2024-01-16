@@ -39,7 +39,9 @@ namespace Barroc_intens
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-
+            var financeWindow = new FinanceWindow();
+            financeWindow.Activate();
+            this.Close();
         }
     }
 }

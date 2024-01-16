@@ -46,20 +46,20 @@
                                             Spacing="50">
                                     <StackPanel>
                                         <TextBlock FontSize="15"
-                                                   Text="Name: ">
-                                <Run Text="{x:Bind Name}" />
+                                                   Text="Naam: ">
+                                            <Run Text="{x:Bind Name}" />
                                         </TextBlock>
                                         <TextBlock FontSize="15"
-                                                   Text="Description: ">
-                            <Run Text="{x:Bind Description}" />
+                                                   Text="beschrijving: ">
+                                            <Run Text="{x:Bind Description}" />
                                         </TextBlock>
                                         <TextBlock FontSize="15"
-                                                   Text="Price: ">
-                                <Run Text="{x:Bind PriceFormatted}" />
+                                                   Text="Prijs: ">
+                                            <Run Text="{x:Bind PriceFormatted}" />
                                         </TextBlock>
                                         <TextBlock FontSize="15"
-                                                   Text="Storage: ">
-                                <Run Text="{x:Bind StorageFormatted}" />
+                                                   Text="Opslag: ">
+                                            <Run Text="{x:Bind StorageFormatted}" />
                                         </TextBlock>
                                     </StackPanel>
                                 </StackPanel>

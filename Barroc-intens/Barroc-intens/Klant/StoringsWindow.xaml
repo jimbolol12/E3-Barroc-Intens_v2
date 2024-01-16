@@ -31,20 +31,20 @@
                 <TextBlock x:Name="MessageBox"></TextBlock>
 
                 <TextBox x:Name="tbFaultyRequestproduct"
-                         Header="Product Id of fault"
+                         Header="Product Id"
                          Margin="0,10,0,0" />
 
                 <TextBox x:Name="tbFaultyRequestlocation"
-                         Header="Location"
+                         Header="Locatie"
                          Margin="0,10,0,0" />
 
                 <TextBox x:Name="tbFaultyRequestdescription"
-                         Header="Description"
+                         Header="Beschrijving"
                          Margin="0,10,0,0" />
             </StackPanel>
 
             <Button x:Name="BSubmit"
-                    Content="Submit"
+                    Content="Versturen"
                     VerticalAlignment="Bottom"
                     Margin="20"
                     Background="#FDD716"

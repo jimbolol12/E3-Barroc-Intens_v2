@@ -15,7 +15,6 @@ using Windows.Foundation.Collections;
 using Barroc_intens.Model;
 using Barroc_intens.Data;
 using Microsoft.UI;
-using Barroc_intens.Login;
 using Barroc_intens.Sales;
 using System.Text;
 using System.Security.Cryptography;

@@ -29,7 +29,7 @@
                 Tag="{x:Bind local:LoginWindow.LoggedInUser}"/>
         
         <Button x:Name="BContactinformatie"
-                Content="Contact informatie"
+                Content="Back"
                 Click="BContactinformatie_Click"
                 Background="Black"
                 Margin="5"

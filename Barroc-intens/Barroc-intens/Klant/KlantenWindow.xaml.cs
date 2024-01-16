@@ -102,7 +102,9 @@ namespace Barroc_intens
 
         private void BContactinformatie_Click(object sender, RoutedEventArgs e)
         {
-            // TODO : voor contact functie die niet hoefde in de sprint
+            var loginWindow = new LoginWindow();
+            loginWindow.Activate();
+            this.Close();
         }
 
         private void BContact_Click(object sender, RoutedEventArgs e)

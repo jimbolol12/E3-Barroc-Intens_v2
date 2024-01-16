@@ -41,16 +41,16 @@ Background="#FDD716">
                         <DataTemplate x:DataType="localData:FaultyRequest">
                             <StackPanel Margin="20">
                                 <TextBlock>
-                                    <Run Text="Product Id:"></Run>
-                                    <Run Text="{x:Bind ProductId}"></Run>
-                                </TextBlock>
-                                <TextBlock>
-                                    <Run Text="User Id:"></Run>
-                                    <Run Text="{x:Bind UserId}"></Run>
-                                </TextBlock>
-                                <TextBlock>
                                     <Run Text="Employe Id:"></Run>
                                     <Run Text="{x:Bind EmployeeId}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="User:"></Run>
+                                    <Run Text="{x:Bind User.Username}"></Run>
+                                </TextBlock>
+                                <TextBlock>
+                                    <Run Text="Product:"></Run>
+                                    <Run Text="{x:Bind Product.Name}"></Run>
                                 </TextBlock>
                                 <TextBlock>
                                     <Run Text="Date: "></Run>

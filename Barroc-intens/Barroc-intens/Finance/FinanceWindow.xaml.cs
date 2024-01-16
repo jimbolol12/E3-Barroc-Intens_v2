@@ -83,7 +83,9 @@ namespace Barroc_intens
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-
+            var maintenanceWindow = new LoginWindow();
+            maintenanceWindow.Activate();
+            this.Close();
         }
     }
 }

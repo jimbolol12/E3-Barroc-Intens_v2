@@ -1,4 +1,5 @@
 using Barroc_intens.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -31,6 +32,8 @@ namespace Barroc_intens
             using (var db = new AppDbContext())
             {
                 var request = db.FaultyRequests
+                    .Include(fr => fr.User)
+                    .Include(g => g.Product)
                      .ToList();
                 lvFaultyRequests.ItemsSource = request;
 

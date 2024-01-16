@@ -21,7 +21,8 @@
                 <Button Content="Terug"
                     Margin="10"
                     x:Name="BRedirectBack"
-                    Click="BRedirectBack_Click"/>
+                    Click="BRedirectBack_Click"
+                    Background="Black"/>
             </StackPanel>
         </Grid>
 

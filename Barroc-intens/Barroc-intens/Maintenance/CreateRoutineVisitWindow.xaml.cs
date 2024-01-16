@@ -77,7 +77,6 @@ namespace Barroc_intens.Maintenance
 
                 return new MaintenanceAppointment
                 {
-                    Id = int.Parse(tbRequestId.Text),
                     Location = tbUserlocation.Text,
                     ScheduledAt = scheduledAt,
                     EmployeeId = selectedUser.Id,

@@ -17,7 +17,7 @@
         <Grid Grid.Column="0"
               Background="#FDD716">
             <Button x:Name="bBack"
-                    Content="Back"
+                    Content="Terug"
                     Click="bBack_Click"
                     VerticalAlignment="Top"
                     Margin="5"

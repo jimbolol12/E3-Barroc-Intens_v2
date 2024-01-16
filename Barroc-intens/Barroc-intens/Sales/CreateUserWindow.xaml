@@ -17,7 +17,7 @@
         <Grid Background="#FDD716">
             <StackPanel>
                 <Button x:Name="BRedirectBack" 
-                        Content="Back"
+                        Content="Terug"
                         Click="BRedirectBack_Click"
                         Background="Black"
                         Margin="10"/>

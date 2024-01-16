@@ -21,7 +21,7 @@
             x:Name="BGoBack"
             Click="BGoBack_Click"
             VerticalAlignment="Top"
-            Content="Back"/>
+            Content="Terug"/>
 
         <Grid Grid.Column="1">
             <StackPanel HorizontalAlignment="Center"

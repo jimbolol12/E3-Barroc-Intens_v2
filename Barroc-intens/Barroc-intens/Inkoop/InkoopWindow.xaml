@@ -35,7 +35,7 @@
                     HorizontalAlignment="Center" />
 
             <Button x:Name="bBack"
-                    Content="Back"
+                    Content="Terug"
                     Click="bBack_Click"
                     HorizontalAlignment="Left"
                     Margin="5"

@@ -18,7 +18,7 @@
         <Grid Grid.Column="0"
               Background="#FDD716">
             <Button x:Name="bBack"
-                    Content="Back"
+                    Content="Terug"
                     Click="bBack_Click"
                     VerticalAlignment="Top"
                     Margin="5"
@@ -30,9 +30,6 @@
             <TextBlock x:Name="MessageBox" />
 
             <StackPanel Margin="10,5,5,5">
-                <TextBox x:Name="tbRequestId"
-                         Header="Id"
-                         Margin="0,5,0,0" />
 
                 <TextBox x:Name="tbUserlocation"
                          Header="Location"

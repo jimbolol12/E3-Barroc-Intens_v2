@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#FDD716">
 
-            <Button Grid.Column="0" HorizontalAlignment="Center" x:Name="BRedirectBack" Click="BRedirectBack_Click" Content="Back" Margin="0 20 0 20" Background="black"/>
+            <Button Grid.Column="0" HorizontalAlignment="Center" x:Name="BRedirectBack" Click="BRedirectBack_Click" Content="Terug" Margin="0 20 0 20" Background="black"/>
             <!--<Button Grid.Column="0" Padding="150,75" Click="Button_Click">Offerte Aanmaken</Button>-->
             
             <!--<Button Grid.Row="0" Grid.Column="2" Padding="150,75" Click="Button_Click_1">notes maken</Button>-->
@@ -49,12 +49,12 @@
                                 <StackPanel>
 
                                     <TextBlock FontSize="15"
-                                   Text="Name: ">
+                                   Text="Naam: ">
                             <Run Text="{x:Bind Name}" />
                                     </TextBlock>
 
                                     <TextBlock FontSize="15"
-                                   Text="Storage: ">
+                                   Text="Opslag: ">
                             <Run Text="{x:Bind StorageFormatted}" />
                                     </TextBlock>
 
@@ -64,10 +64,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-
         </StackPanel>
-
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <ListView x:Name="lvbedrijf">
@@ -81,12 +78,12 @@
                                 <StackPanel>
 
                                     <TextBlock FontSize="15"
-                                               Text="Name: ">
+                                               Text="Naam: ">
                                         <Run Text="{x:Bind Name}" />
                                     </TextBlock>
 
                                     <TextBlock FontSize="15"
-                                               Text="adres: ">
+                                               Text="Adres: ">
                                         <Run Text="{x:Bind Street}" />
                                     </TextBlock>
 
@@ -111,11 +108,11 @@
                                 <StackPanel>
 
                                     <TextBlock FontSize="15"
-                                               Text="titlel: ">
+                                               Text="Titel: ">
                                         <Run Text="{x:Bind Title}" />
                                     </TextBlock>
                                     <TextBlock FontSize="15"
-                                               Text="gemaakt  : ">
+                                               Text="Gemaakt  : ">
                                         <Run Text="{x:Bind Date}" />
                                     </TextBlock>
 

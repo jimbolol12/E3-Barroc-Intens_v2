@@ -23,7 +23,7 @@
                         Orientation="Horizontal"
                         Padding="30" />
             <Button x:Name="bBack"
-                    Content="Back"
+                    Content="Terug"
                     Click="bBack_Click"
                     VerticalAlignment="Center"
                     Margin="5"

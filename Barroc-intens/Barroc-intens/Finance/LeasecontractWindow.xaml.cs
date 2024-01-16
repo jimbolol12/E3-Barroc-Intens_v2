@@ -42,21 +42,7 @@ namespace Barroc_intens
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
 
-<<<<<<<< HEAD:Barroc-intens/Barroc-intens/Finance/LeasecontractWindow.xaml.cs
-========
-            using (var db = new AppDbContext())
-            {
-                // Database aan maken en verwijderen //
-                db.Database.EnsureDeleted();
-                db.Database.EnsureCreated();
-
-                // Model product en company in laden//
-                var Faulty = db.FaultyRequests
-                     .Include(g => g.Product).Include(g => g.User)
-                     .ToList();
-
-                FaultyRequestListView.ItemsSource = Faulty;
-            }
+            
         }
 
         // Niewe window openen //
@@ -64,7 +50,6 @@ namespace Barroc_intens
         {
             var window = new MaintenanceWerkbonnen();
             window.Activate();
->>>>>>>> origin/MaintanenceWerkbronnenWindow:Barroc-intens/Barroc-intens/Maintenance/MaintenanceWindow.xaml.cs
         }
     }
 }

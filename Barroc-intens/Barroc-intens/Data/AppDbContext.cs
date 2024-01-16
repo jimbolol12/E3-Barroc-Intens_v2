@@ -29,8 +29,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=root;" +
-                "password=root;" +
+                "user=c_sharp;" +
+                "password=Krijnisleider;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -297,10 +297,11 @@ namespace Barroc_intens.Data
             );
             modelBuilder.Entity<MaintenanceAppointment>().HasData(
               new MaintenanceAppointment
-              {
+              {                    
                   Id = 1,
                   CompanyId = 1,
-                  ProductId = "1",
+                  EmployeeId = 5,
+                  ProductId = "S234KNDPF",
                   Remark = "Printer stuk, moet voor vrijdg gemaakt zijn",
                   DateAdded = DateTime.Now,
               },
@@ -308,7 +309,8 @@ namespace Barroc_intens.Data
               {
                   Id = 2,
                   CompanyId = 2,
-                  ProductId = "1",
+                  EmployeeId = 5,
+                  ProductId = "S234FREKT",
                   Remark = "airco gemaakt op 2 de verdieping",
                   DateAdded = DateTime.Now,
               }

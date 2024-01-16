@@ -36,9 +36,8 @@ namespace Barroc_intens
         private void LoadCompanyDb () {
             using (var db = new AppDbContext())
             {
-                var company = db.Users
-                    .Include(c => c.Company)
-                    .Where(c => c.IsCompanyAdmin)
+                var company = db.Companies
+                  
                     .ToList();
                      
                 

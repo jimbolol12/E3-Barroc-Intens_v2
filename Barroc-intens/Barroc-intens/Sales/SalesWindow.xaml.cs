@@ -38,24 +38,10 @@ namespace Barroc_intens
             lvnote.ItemsSource = notes;
         }
 
-        private void RedirectCreateOfferte_Click(object sender, RoutedEventArgs e)
-        {
-            var Offertewindow = new offerteWindow();
-            Offertewindow.Activate();
-            this.Close();
-        }
-
-        private void RedirectCreateNote_Click(object sender, RoutedEventArgs e)
-        {
-            var notewindow = new Notes();
-            notewindow.Activate();
-            this.Close();
-        }
-
         private void lvnote_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             if(lvnote.SelectedItems.Count > 0)
-    {
+            {
                 // Hier krijg je de geselecteerde notitie
                 var selectedNote = (Note)lvnote.SelectedItems[0];
 
@@ -67,17 +53,31 @@ namespace Barroc_intens
 
         }
 
-        private void RedirectCreateCustomer_Click(object sender, RoutedEventArgs e)
+        private void BRedirectBack_Click(object sender, RoutedEventArgs e)
+        {
+            var loginWindow = new LoginWindow();
+            loginWindow.Activate();
+            this.Close();
+        }
+
+        private void bCustomerCreate_Click(object sender, RoutedEventArgs e)
         {
             var createUserWindow = new CreateUserWindow();
             createUserWindow.Activate();
             this.Close();
         }
 
-        private void BRedirectBack_Click(object sender, RoutedEventArgs e)
+        private void bOfferteCreate_Click(object sender, RoutedEventArgs e)
         {
-            var loginWindow = new LoginWindow();
-            loginWindow.Activate();
+            var Offertewindow = new offerteWindow();
+            Offertewindow.Activate();
+            this.Close();
+        }
+
+        private void bNotesCreate_Click(object sender, RoutedEventArgs e)
+        {
+            var notewindow = new Notes();
+            notewindow.Activate();
             this.Close();
         }
     }

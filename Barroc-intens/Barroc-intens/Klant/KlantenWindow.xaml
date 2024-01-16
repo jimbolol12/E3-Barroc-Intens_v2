@@ -24,21 +24,21 @@
         <Button x:Name="BViewOrders"
                 Content="Bekijk Bestellingen"
                 Click="BViewOrders_Click"
-                HorizontalAlignment="Center" 
-                Background="Black"
+                HorizontalAlignment="Center"
+                Background="#feeb8b"
                 Tag="{x:Bind local:LoginWindow.LoggedInUser}"/>
         
         <Button x:Name="BContactinformatie"
                 Content="Terug"
                 Click="BContactinformatie_Click"
-                Background="Black"
+                Background="#feeb8b"
                 Margin="5"
                 HorizontalAlignment="Left" />
 
         <Button x:Name="BStoring"
                 Content="Storing melden"
                 Click="BStoring_Click"
-                Background="Black"
+                Background="#feeb8b"
                 Margin="5"
                 HorizontalAlignment="Right" />
         

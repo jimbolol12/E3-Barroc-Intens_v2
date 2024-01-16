@@ -48,9 +48,6 @@ namespace Barroc_intens
                 storingDetailsWindow.Activate();
                 this.Close();
             }
-
-           
-            
         }
     }
 }

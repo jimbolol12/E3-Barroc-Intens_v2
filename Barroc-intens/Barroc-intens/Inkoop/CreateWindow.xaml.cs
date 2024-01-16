@@ -102,7 +102,9 @@ namespace Barroc_intens
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-
+            var productWindow = new ProductenWindow();
+            productWindow.Activate();
+            this.Close();
         }
     }
 }

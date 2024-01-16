@@ -75,7 +75,9 @@ namespace Barroc_intens
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            //blub
+            //var klantWindow = new KlantenWindow();
+            //klantWindow.Activate();
+            //this.Close();
         }
     }
 }

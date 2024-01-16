@@ -78,12 +78,6 @@ namespace Barroc_intens
                 AddOrderedProduct(clickedProduct);
             };
             ContentDialogResult result = await CdShowOrderConfirmation.ShowAsync();
-            
-
-            
-
-
-            
         }
         public void AddOrderedProduct(Product clickedProduct)
         {

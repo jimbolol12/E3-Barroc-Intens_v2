@@ -20,7 +20,7 @@
             <Button HorizontalAlignment="Left"
                     x:Name="BRedirectBack"
                     Click="BRedirectBack_Click"
-                    Content="Back"
+                    Content="Terug"
                     Margin="10,20,30,20"
                     Background="black" />
 
@@ -28,6 +28,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"
                     Background="#feeb8b"
+                    Foreground="Black"
                     Margin="100 0 0 0"
                     Content="Klant aanmaken"
                     Click="bCustomerCreate_Click" />
@@ -36,6 +37,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Background="#feeb8b"
+                    Foreground="Black"
                     Content="Offerte aanmaken"
                     Click="bOfferteCreate_Click" />
 
@@ -43,6 +45,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Right"
                     Background="#feeb8b"
+                    Foreground="Black"
                     Margin="0 0 30 0"
                     Content="Notes aanmaken"
                     Click="bNotesCreate_Click" />

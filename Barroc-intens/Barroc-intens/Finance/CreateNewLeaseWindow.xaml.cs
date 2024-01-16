@@ -59,7 +59,5 @@ namespace Barroc_intens
 
             this.Close();
         }
-
-        
     }
 }

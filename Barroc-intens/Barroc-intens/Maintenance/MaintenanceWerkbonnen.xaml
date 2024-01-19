@@ -53,6 +53,7 @@
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
 
                                     <TextBlock x:Name="MessageBox"></TextBlock>
@@ -80,6 +81,11 @@
                                     <StackPanel Grid.Row="4" Margin="10">
                                         <TextBlock Text="Datum" FontWeight="Bold" FontSize="14" Foreground="White"/>
                                         <TextBlock Text="{x:Bind ScheduledAt}" FontSize="12" Foreground="Gray"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Row="5" Margin="10">
+                                        <TextBlock Text="Status" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                                        <TextBlock Text="{x:Bind Done}" FontSize="12" Foreground="Gray"/>
                                     </StackPanel>
                                 </Grid>
                             </Border>

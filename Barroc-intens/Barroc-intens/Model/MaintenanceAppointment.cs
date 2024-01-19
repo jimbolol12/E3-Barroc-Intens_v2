@@ -20,5 +20,6 @@ namespace Barroc_intens.Model
         public DateTime DateAdded { get; set; }
         public DateTime ScheduledAt { get; set; }
         public string Description { get; set; }
+        public bool Done { get; set; }
     }
 }

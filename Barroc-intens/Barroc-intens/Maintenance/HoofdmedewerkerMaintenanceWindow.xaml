@@ -35,13 +35,13 @@ Background="#FDD716">
 
             <Grid Grid.Column="0"
                   Grid.Row="1">
-                <TextBlock Margin="35,1,0,0" Text="Faulty Request"></TextBlock>
+                <TextBlock Margin="35,1,0,0" Text="Storing meldingen"></TextBlock>
                 <ListView x:Name="lvFaultyRequests">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="localData:FaultyRequest">
                             <StackPanel Margin="20">
                                 <TextBlock>
-                                    <Run Text="Employe Id:"></Run>
+                                    <Run Text="Medewerker Id:"></Run>
                                     <Run Text="{x:Bind EmployeeId}"></Run>
                                 </TextBlock>
                                 <TextBlock>
@@ -53,11 +53,11 @@ Background="#FDD716">
                                     <Run Text="{x:Bind Product.Name}"></Run>
                                 </TextBlock>
                                 <TextBlock>
-                                    <Run Text="Date: "></Run>
+                                    <Run Text="Datum Ingepland: "></Run>
                                     <Run Text="{x:Bind ScheduledAt}"></Run>
                                 </TextBlock>
                                 <TextBlock>
-                                    <Run Text="Description: "></Run>
+                                    <Run Text="Beschrijving: "></Run>
                                     <Run Text="{x:Bind Description}"></Run>
                                 </TextBlock>
                                 <TextBlock>
@@ -78,15 +78,15 @@ Background="#FDD716">
                         <DataTemplate x:DataType="localData:MaintenanceProduct">
                             <StackPanel Margin="20">
                                 <TextBlock>
-                                    <Run Text="Name"></Run>
+                                    <Run Text="Naam"></Run>
                                     <Run Text="{x:Bind Name}"></Run>
                                 </TextBlock>
                                 <TextBlock>
-                                    <Run Text="price: $"></Run>
+                                    <Run Text="Prijs: $"></Run>
                                     <Run Text="{x:Bind PriceFormatted}"></Run>
                                 </TextBlock>
                                 <TextBlock>
-                                    <Run Text="Storage:"></Run>
+                                    <Run Text="Voorraad:"></Run>
                                     <Run Text="{x:Bind Storage}"></Run>
                                 </TextBlock>
                             </StackPanel>

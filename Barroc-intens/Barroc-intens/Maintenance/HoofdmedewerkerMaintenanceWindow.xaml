@@ -33,9 +33,9 @@ Background="#FDD716">
 
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0"
+            <Grid Grid.Column="1"
                   Grid.Row="1">
-                <TextBlock Margin="35,1,0,0" Text="Storing meldingen"></TextBlock>
+                <TextBlock Margin="35,1,0,0" Text="Vooltooide werkbonnen" FontWeight="Bold"></TextBlock>
                 <ListView x:Name="lvFaultyRequests">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="localData:FaultyRequest">
@@ -43,10 +43,6 @@ Background="#FDD716">
                                 <TextBlock>
                                     <Run Text="Medewerker Id:"></Run>
                                     <Run Text="{x:Bind EmployeeId}"></Run>
-                                </TextBlock>
-                                <TextBlock>
-                                    <Run Text="User:"></Run>
-                                    <Run Text="{x:Bind User.Username}"></Run>
                                 </TextBlock>
                                 <TextBlock>
                                     <Run Text="Product:"></Run>
@@ -70,9 +66,9 @@ Background="#FDD716">
                 </ListView>
             </Grid>
 
-            <Grid Grid.Column="1"
+            <Grid Grid.Column="0"
                   Grid.Row="1">
-                <TextBlock Margin="35,1,0,0" Text="MaintenanceProducts"></TextBlock>
+                <TextBlock Margin="35,1,0,0" Text="MaintenanceProducts" FontWeight="Bold"></TextBlock>
                 <ListView x:Name="lvMaintenanceProducts">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="localData:MaintenanceProduct">

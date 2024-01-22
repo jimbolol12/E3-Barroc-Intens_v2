@@ -220,7 +220,7 @@ namespace Barroc_intens.Data
                      Location = "Breda",
                      Description = "KoffiezetApparaat is hervuld",
                      ScheduledAt = DateTime.Now,
-                     Done = true,
+                     Done = true
 
                  },
                  new MaintenanceAppointment
@@ -232,7 +232,7 @@ namespace Barroc_intens.Data
                      Location = "Etten-Leur",
                      Description = "Printer stuk",
                      ScheduledAt = DateTime.Now,
-                     Done = false,
+                     Done = false
 
                  });
             modelBuilder.Entity<FaultyRequest>().HasData(
@@ -245,31 +245,31 @@ namespace Barroc_intens.Data
                     Location = "Terheidenseweg 320",
                     ScheduledAt = DateTime.UtcNow,
                     Description = "Aanknop is moeilijk in te drukken",
-                    Done = false,
+                    Done = true,
                 },
 
                 new FaultyRequest
                 {
                     Id = 2,
                     ProductId = "S234MMPLA",
-                    UserId = 1,
+                    UserId = 2,
                     EmployeeId = 5,
                     Location = "Terheidenseweg 301",
                     ScheduledAt = DateTime.UtcNow,
                     Description = "Blokkade in de slang",
-                    Done = false,
+                    Done = true,
                 },
 
                 new FaultyRequest
                 {
                     Id = 4,
                     ProductId = "S234MMPLA",
-                    UserId = 1,
+                    UserId = 3,
                     EmployeeId = 6,
                     Location = "Terheidenseweg 350",
                     ScheduledAt = DateTime.UtcNow,
                     Description = "Machine lekt tijdens gebruik",
-                    Done = false,
+                    Done = true,
                 });
 
             modelBuilder.Entity<MaintenanceProduct>().HasData(

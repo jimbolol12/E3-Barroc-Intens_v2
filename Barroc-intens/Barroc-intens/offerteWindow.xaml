@@ -9,71 +9,86 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Offertegegevens" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-            <TextBox PlaceholderText="Klantnaam" x:Name="KlantNaamTextBox" Width="300" Margin="0,0,0,10" />
-            <TextBox PlaceholderText="klant adres" x:Name="KlantAdresTextBox" Width="300" Margin="0,0,0,10" />
-            <TextBox PlaceholderText="klant postcode" x:Name="PostcodeTextBox" Width="300" Margin="0,0,0,10" />
+        <Grid Grid.Row="0"
+      Background="#FDD716">
 
-            <TextBox PlaceholderText="periode" x:Name="PeriodeTextBox" Width="300"  Margin="0,0,0,10" />
-            <TextBox PlaceholderText="klantnr" x:Name="klantnrTextBox" Width="300" Margin="0,0,0,10" />
-            <TextBox PlaceholderText="contractnr" x:Name="contractnrTextBox" Width="300"  Margin="0,0,0,10" />
-            <TextBox PlaceholderText="ofertenr" x:Name="ofertenrTextBox" Width="300"  Margin="0,0,0,10" />
+            <Button HorizontalAlignment="Left"
+            x:Name="BRedirectBack"
+            Click="BRedirectBack_Click"
+            Content="Terug"
+            Margin="10,20,30,20"
+            Background="black" />
+        </Grid>
 
+        <Grid Grid.Row="1">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Offertegegevens" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20" />
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+                <TextBox PlaceholderText="Klantnaam" x:Name="KlantNaamTextBox" Width="300" Margin="0,0,0,10" />
+                <TextBox PlaceholderText="klant adres" x:Name="KlantAdresTextBox" Width="300" Margin="0,0,0,10" />
+                <TextBox PlaceholderText="klant postcode" x:Name="PostcodeTextBox" Width="300" Margin="0,0,0,10" />
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-
-                <TextBlock Grid.Column="0" Text="Aantal" />
-                <TextBlock Grid.Column="1" Text="Nummer" />
-                <TextBlock Grid.Column="2" Text="Omschrijving" />
-                <TextBlock Grid.Column="3" Text="Prijs" />
-                <TextBlock Grid.Column="4" Text="Subtotaal" />
-
-                <TextBlock Grid.Column="0" Grid.Row="1" Text="Rij 1, Kolom 1" />
-                <TextBlock Grid.Column="1" Grid.Row="1" Text="Rij 1, Kolom 2" />
-                <TextBlock Grid.Column="2" Grid.Row="1" Text="Rij 1, Kolom 3" />
-                <TextBlock Grid.Column="3" Grid.Row="1" Text="Rij 1, Kolom 4" />
-                <TextBlock Grid.Column="4" Grid.Row="1" Text="Rij 1, Kolom 5" />
-
-                <TextBlock Grid.Column="0" Grid.Row="2" Text="Rij 2, Kolom 1" />
-                <TextBlock Grid.Column="1" Grid.Row="2" Text="Rij 2, Kolom 2" />
-                <TextBlock Grid.Column="2" Grid.Row="2" Text="Rij 2, Kolom 3" />
-                <TextBlock Grid.Column="3" Grid.Row="2" Text="Rij 2, Kolom 4" />
-                <TextBlock Grid.Column="4" Grid.Row="2" Text="Rij 2, Kolom 5" />
-            </Grid>
-
-            <Grid>
-                <TextBlock Grid.Column="4" Grid.Row="1" Text="totaal:" />
-                <TextBlock Grid.Column="4" Grid.Row="1" Name="totaal" />
+                <TextBox PlaceholderText="periode" x:Name="PeriodeTextBox" Width="300"  Margin="0,0,0,10" />
+                <TextBox PlaceholderText="klantnr" x:Name="klantnrTextBox" Width="300" Margin="0,0,0,10" />
+                <TextBox PlaceholderText="contractnr" x:Name="contractnrTextBox" Width="300"  Margin="0,0,0,10" />
+                <TextBox PlaceholderText="ofertenr" x:Name="ofertenrTextBox" Width="300"  Margin="0,0,0,10" />
 
 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
 
-            </Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-            <Button Content="Mail Door" Click="Button_Click_1"/>
+                    <TextBlock Grid.Column="0" Text="Aantal" />
+                    <TextBlock Grid.Column="1" Text="Nummer" />
+                    <TextBlock Grid.Column="2" Text="Omschrijving" />
+                    <TextBlock Grid.Column="3" Text="Prijs" />
+                    <TextBlock Grid.Column="4" Text="Subtotaal" />
 
-        </StackPanel>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Rij 1, Kolom 1" />
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="Rij 1, Kolom 2" />
+                    <TextBlock Grid.Column="2" Grid.Row="1" Text="Rij 1, Kolom 3" />
+                    <TextBlock Grid.Column="3" Grid.Row="1" Text="Rij 1, Kolom 4" />
+                    <TextBlock Grid.Column="4" Grid.Row="1" Text="Rij 1, Kolom 5" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Rij 2, Kolom 1" />
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="Rij 2, Kolom 2" />
+                    <TextBlock Grid.Column="2" Grid.Row="2" Text="Rij 2, Kolom 3" />
+                    <TextBlock Grid.Column="3" Grid.Row="2" Text="Rij 2, Kolom 4" />
+                    <TextBlock Grid.Column="4" Grid.Row="2" Text="Rij 2, Kolom 5" />
+                </Grid>
+
+                <Grid>
+                    <TextBlock Grid.Column="4" Grid.Row="1" Text="totaal:" />
+                    <TextBlock Grid.Column="4" Grid.Row="1" Name="totaal" />
+
+
+
+                </Grid>
+
+                <Button Content="Mail Door" Click="Button_Click_1"/>
+
+            </StackPanel>
+
+
+        </Grid>
     </Grid>
-
-
-
-
 </Window>

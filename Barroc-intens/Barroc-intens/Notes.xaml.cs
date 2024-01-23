@@ -53,5 +53,12 @@ namespace Barroc_intens
             this.Close();
 
         }
+
+        private void BRedirectBack_Click(object sender, RoutedEventArgs e)
+        {
+            var salesWindow = new SalesWindow();
+            salesWindow.Activate();
+            this.Close();
+        }
     }
 }

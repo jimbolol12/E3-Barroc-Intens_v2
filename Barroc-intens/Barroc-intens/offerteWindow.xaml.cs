@@ -85,6 +85,10 @@ namespace Barroc_intens
             smtpClient.EnableSsl = true; // Schakel SSL in als de SMTP-server dit vereist*/
 
 
+            var saleswindow = new SalesWindow();
+            saleswindow.Activate();
+            this.Close();
+
 
         }
     }

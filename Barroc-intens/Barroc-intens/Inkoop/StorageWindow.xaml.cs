@@ -39,7 +39,6 @@ namespace Barroc_intens.Inkoop
 
                     melding.Text = "Producten zijn laag op storage";
                 }
-
                 var products = db.Products
                     .ToList();
                 lvProducts.ItemsSource = products;

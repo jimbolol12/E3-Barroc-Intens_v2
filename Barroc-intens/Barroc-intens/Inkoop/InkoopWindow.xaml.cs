@@ -33,25 +33,18 @@ namespace Barroc_intens
             {
                 var maintenanceProducts = db.MaintenanceProducts.ToList();
 
-                // Filter de maintenanceProducts die een storrage van minder dan 50 hebben
                 var lowStorrageProducts = maintenanceProducts.Where(mp => mp.Storage < 50).ToList();
 
-                // Controleer of er producten zijn met een storrage van minder dan 50
                 if (lowStorrageProducts.Count > 0)
                 {
-                    // Voeg de onder50StorrageProducts toe aan je lijst of doe er iets anders mee
-                    // Bijvoorbeeld, je kunt ze doorlopen en iets doen met elk product
                     foreach (var product in lowStorrageProducts)
                     {
                         productListBox.Items.Add(product.Name);
-
                     }
-
-                    // Laat een bericht zien of neem andere acties
                     storagemelding.Text = "deze producten moeten bij besteld worden";
                 }
             }
-            }
+        }
 
 
         private void BStorage_Click(object sender, RoutedEventArgs e)

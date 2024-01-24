@@ -50,7 +50,6 @@ namespace Barroc_intens
             this.InitializeComponent();
             using var db = new AppDbContext();
             
-            // listbox met companies die beschikbaar zijn laten zien //
             using (var dbContext = new AppDbContext())
             {
                 companies = dbContext.Companies.ToList();
@@ -91,12 +90,9 @@ namespace Barroc_intens
             {
                 var selectedCompany = (Company)CompanyListBox.SelectedItem;
                 var companyId = selectedCompany.Id;
-
                 var selectedProduct = (Product)ProductListBox.SelectedItem;
                 var productId = selectedProduct.Id;
-
-                // Opslaan van ingevulde gegevens //
-                
+               
                 db.MaintenanceAppointments.Add(new MaintenanceAppointment
                 {
                     ProductId = productId,
@@ -114,7 +110,6 @@ namespace Barroc_intens
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            // Add selected product and quantity to the list view
             if (cmbProducts.SelectedItem != null && !string.IsNullOrEmpty(txtQuantity.Text))
             {
                 int productId = (int)cmbProducts.SelectedValue;
@@ -147,7 +142,6 @@ namespace Barroc_intens
                 MessageBox.Text= "Please select a product and enter the quantity.";
             }
         }
-
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
             var maintenanceWindow = new MaintenanceWerkbonnen();

@@ -74,8 +74,6 @@ namespace Barroc_intens
 
                 var selectedProduct = db.MaintenanceProducts.Find(item.Product.Id);
 
-                
-
                 if (selectedProduct != null)
                 {
                     selectedProduct.Storage -= item.Quantity;
@@ -83,7 +81,6 @@ namespace Barroc_intens
             }
 
             lstProducts.Items.Clear();
-
 
             if (string.IsNullOrEmpty(tbRemark.Text))
             {
@@ -109,11 +106,7 @@ namespace Barroc_intens
                     Location = tbLocation.Text,
                     EmployeeId = 2,
                     ScheduledAt = tbDateAdded.Date.Date
-                });
-
-
-
-                
+                });  
             }
             db.SaveChanges();
             this.Close();
@@ -125,10 +118,7 @@ namespace Barroc_intens
             if (cmbProducts.SelectedItem != null && !string.IsNullOrEmpty(txtQuantity.Text))
             {
                 int productId = (int)cmbProducts.SelectedValue;
-  
                 int quantityUsed;
-
-
 
                 if (int.TryParse(txtQuantity.Text, out quantityUsed))
                 {
@@ -139,7 +129,7 @@ namespace Barroc_intens
 
                     if (selectedProduct != null && quantityUsed <= selectedProduct.Storage)
                     {
-                        //selectedProduct.Storage -= quantityUsed;
+                      
                         lstProducts.Items.Add(new UsedMaintenanceProduct { Product = selectedProduct, Quantity = quantityUsed });
                     }
                     else

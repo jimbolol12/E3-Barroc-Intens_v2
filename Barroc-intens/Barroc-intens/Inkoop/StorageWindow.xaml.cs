@@ -46,5 +46,12 @@ namespace Barroc_intens.Inkoop
             inkoopWindow.Activate();
             this.Close();
         }
+
+        private void binkoopen_Click(object sender, RoutedEventArgs e)
+        {
+            var inkoopproductenWindow = new inkoopproductenWindow();
+            inkoopproductenWindow.Activate();
+            this.Close();
+        }
     }
 }

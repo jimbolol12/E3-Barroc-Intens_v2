@@ -26,7 +26,7 @@
     HorizontalAlignment="Left"
     Margin="5"
     Background="Black" />
-            <TextBlock x:Name="ErrorTextBlock" Foreground="Red" Margin="10,0,0,0"/>
+            <TextBlock HorizontalAlignment="Right" x:Name="ErrorTextBlock" Foreground="Red" Margin="10,0,0,0"/>
 
 
         </Grid>
@@ -43,9 +43,8 @@
                         <DataTemplate x:DataType="localData:MaintenanceProduct">
                             <StackPanel>
                                     <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                                    <TextBlock x:Name="ScrewPrice" Text="{x:Bind PriceFormatted}" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                                    
-                             </StackPanel>
+                                <TextBlock x:Name="ScrewPrice" Text="{x:Bind PriceFormatted}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </StackPanel>
                          </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

@@ -34,6 +34,12 @@ namespace Barroc_intens.Inkoop
                     .ToList();
                 lvMaintenanceProducts.ItemsSource = maintenanceProducts;
 
+                if (maintenanceProducts.Count < 50) 
+                {
+
+                    melding.Text = "Producten zijn laag op storage";
+                }
+
                 var products = db.Products
                     .ToList();
                 lvProducts.ItemsSource = products;

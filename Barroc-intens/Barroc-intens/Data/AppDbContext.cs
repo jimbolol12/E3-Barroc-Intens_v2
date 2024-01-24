@@ -292,21 +292,21 @@ namespace Barroc_intens.Data
                     Id = 3,
                     Name = "Heating Element",
                     Price = 15,
-                    Storage = 200,
+                    Storage = 49,
                 },
                 new MaintenanceProduct
                 {
                     Id = 4,
                     Name = "Water Pump",
                     Price = 10,
-                    Storage = 300,
+                    Storage = 30,
                 },
                 new MaintenanceProduct
                 {
                     Id = 5,
                     Name = "Thermostat",
                     Price = 8,
-                    Storage = 400,
+                    Storage = 40,
                 });
 
 

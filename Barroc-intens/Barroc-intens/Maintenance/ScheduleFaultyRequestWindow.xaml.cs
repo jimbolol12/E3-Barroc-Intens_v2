@@ -77,6 +77,8 @@ namespace Barroc_intens.Maintenance
 
         private void CloseCurrentWindow()
         {
+            var plannerWindow = new PlannerMaintenanceWindow();
+            plannerWindow.Activate();
             this.Close();
         }
 

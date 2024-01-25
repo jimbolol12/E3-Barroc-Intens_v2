@@ -28,7 +28,24 @@ namespace Barroc_intens
         public InkoopWindow()
         {
             this.InitializeComponent();
+
+            using (var db = new AppDbContext())
+            {
+                var maintenanceProducts = db.MaintenanceProducts.ToList();
+
+                var lowStorrageProducts = maintenanceProducts.Where(mp => mp.Storage < 50).ToList();
+
+                if (lowStorrageProducts.Count > 0)
+                {
+                    foreach (var product in lowStorrageProducts)
+                    {
+                        productListBox.Items.Add(product.Name);
+                    }
+                    storagemelding.Text = "deze producten moeten bij besteld worden";
+                }
+            }
         }
+
 
         private void BStorage_Click(object sender, RoutedEventArgs e)
         {
@@ -50,5 +67,9 @@ namespace Barroc_intens
             loginWindow.Activate();
             this.Close();
         }
+
+        
     }
+
+
 }

@@ -44,7 +44,12 @@
                     Background="Black" />
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid  Grid.Row="1">
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" x:Name="storagemelding" Margin="0,0,0,20"/>
+                <ListBox x:Name="productListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200"/>
+            </StackPanel>
 
         </Grid>
     </Grid>

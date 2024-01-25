@@ -15,6 +15,7 @@
     <None Remove="CreateNewLeaseWindow.xaml" />
     <None Remove="CreateWindow.xaml" />
     <None Remove="EditWindow.xaml" />
+    <None Remove="Inkoop\inkoopproductenWindow.xaml" />
     <None Remove="Inkoop\StorageWindow.xaml" />
     <None Remove="Klant\KlantViewOrdersWindow.xaml" />
     <None Remove="LeasecontractWindow.xaml" />
@@ -124,6 +125,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Finance\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Inkoop\inkoopproductenWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Inkoop\StorageWindow.xaml">

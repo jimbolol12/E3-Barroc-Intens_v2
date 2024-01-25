@@ -26,6 +26,16 @@
                     HorizontalAlignment="Left"
                     Margin="5"
                     Background="Black" />
+
+            <Button x:Name="binkoopen"
+        Content="inkoopen"
+        Click="binkoopen_Click"
+        HorizontalAlignment="Right"
+        Margin="5"
+        Background="Black" />
+
+            <TextBlock Foreground="Red" HorizontalAlignment="Center" x:Name="melding"/>
+
         </Grid>
 
         <Grid Grid.Row="1">

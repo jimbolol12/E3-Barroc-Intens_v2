@@ -1,4 +1,4 @@
-﻿using Barroc_intens.Model;
+using Barroc_intens.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,8 +30,8 @@ namespace Barroc_intens.Data
             optionsBuilder.UseMySql(
                 "server=localhost;" +
                 "port=3306;" +
-                "user=c_sharp;" +
-                "password=Krijnisleider;" +
+                "user=root;" +
+                "password=root;" +
                 "database=Barroc-intens",
                 ServerVersion.Parse("8.0.30-mariadb")
                 );
@@ -45,8 +45,8 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 1,
-                    Username = "Alice",
-                    Password = HashPassword("test"),
+                    Username = "klant",
+                    Password = HashPassword("a"),
                     JobFunctionId = 1,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -56,7 +56,7 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 2,
-                    Username = "Jane",
+                    Username = "finance",
                     Password = HashPassword("a"),
                     JobFunctionId = 2,
                     CompanyId = 1,
@@ -66,8 +66,8 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 3,
-                    Username = "Henk",
-                    Password = HashPassword("wachtwoord123"),
+                    Username = "inkoop",
+                    Password = HashPassword("a"),
                     JobFunctionId = 4,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -76,7 +76,7 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 4,
-                    Username = "Jan",
+                    Username = "sales",
                     Password = HashPassword("a"),
                     JobFunctionId = 3,
                     CompanyId = 1,
@@ -86,7 +86,7 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 5,
-                    Username = "Hanna",
+                    Username = "maintenance",
                     Password = HashPassword("a"),
                     JobFunctionId = 5,
                     CompanyId = 1,
@@ -96,8 +96,8 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 6,
-                    Username = "Paul",
-                    Password = HashPassword("test"),
+                    Username = "maintenance2",
+                    Password = HashPassword("a"),
                     JobFunctionId = 5,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -106,8 +106,8 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 7,
-                    Username = "Jimmy",
-                    Password = HashPassword("wachtwoord321"),
+                    Username = "plannermaintenance",
+                    Password = HashPassword("a"),
                     JobFunctionId = 7,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -116,8 +116,8 @@ namespace Barroc_intens.Data
                 new User
                 {
                     Id = 8,
-                    Username = "Poul",
-                    Password = HashPassword("wachtwoord321"),
+                    Username = "hoofdmaintenance",
+                    Password = HashPassword("a"),
                     JobFunctionId = 6,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -127,7 +127,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 9,
                     Username = "Jan",
-                    Password = HashPassword("test"),
+                    Password = HashPassword("a"),
                     JobFunctionId = 5,
                     CompanyId = 1,
                     IsCompanyAdmin = false,
@@ -137,7 +137,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 10,
                     Username = "BarrocAdmin",
-                    Password = HashPassword("admin"),
+                    Password = HashPassword("a"),
                     JobFunctionId = 1,
                     CompanyId = 1,
                     IsCompanyAdmin = true,
@@ -147,7 +147,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 11,
                     Username = "Action",
-                    Password = HashPassword("admin"),
+                    Password = HashPassword("a"),
                     JobFunctionId = 1,
                     CompanyId = 2,
                     IsCompanyAdmin = true,
@@ -157,7 +157,7 @@ namespace Barroc_intens.Data
                 {
                     Id = 12,
                     Username = "Kruidvat",
-                    Password = HashPassword("admin"),
+                    Password = HashPassword("a"),
                     JobFunctionId = 1,
                     CompanyId = 3,
                     IsCompanyAdmin = true,
@@ -220,6 +220,7 @@ namespace Barroc_intens.Data
                      Location = "Breda",
                      Description = "KoffiezetApparaat is hervuld",
                      ScheduledAt = DateTime.Now,
+                     Done = true
 
                  },
                  new MaintenanceAppointment
@@ -231,6 +232,7 @@ namespace Barroc_intens.Data
                      Location = "Etten-Leur",
                      Description = "Printer stuk",
                      ScheduledAt = DateTime.Now,
+                     Done = false
 
                  });
             modelBuilder.Entity<FaultyRequest>().HasData(
@@ -243,31 +245,31 @@ namespace Barroc_intens.Data
                     Location = "Terheidenseweg 320",
                     ScheduledAt = DateTime.UtcNow,
                     Description = "Aanknop is moeilijk in te drukken",
-                    Done = false,
+                    Done = true,
                 },
 
                 new FaultyRequest
                 {
                     Id = 2,
                     ProductId = "S234MMPLA",
-                    UserId = 1,
+                    UserId = 2,
                     EmployeeId = 5,
                     Location = "Terheidenseweg 301",
                     ScheduledAt = DateTime.UtcNow,
                     Description = "Blokkade in de slang",
-                    Done = false,
+                    Done = true,
                 },
 
                 new FaultyRequest
                 {
                     Id = 4,
                     ProductId = "S234MMPLA",
-                    UserId = 1,
+                    UserId = 3,
                     EmployeeId = 6,
                     Location = "Terheidenseweg 350",
                     ScheduledAt = DateTime.UtcNow,
                     Description = "Machine lekt tijdens gebruik",
-                    Done = false,
+                    Done = true,
                 });
 
             modelBuilder.Entity<MaintenanceProduct>().HasData(
@@ -290,21 +292,21 @@ namespace Barroc_intens.Data
                     Id = 3,
                     Name = "Heating Element",
                     Price = 15,
-                    Storage = 200,
+                    Storage = 49,
                 },
                 new MaintenanceProduct
                 {
                     Id = 4,
                     Name = "Water Pump",
                     Price = 10,
-                    Storage = 300,
+                    Storage = 30,
                 },
                 new MaintenanceProduct
                 {
                     Id = 5,
                     Name = "Thermostat",
                     Price = 8,
-                    Storage = 400,
+                    Storage = 40,
                 });
 
 

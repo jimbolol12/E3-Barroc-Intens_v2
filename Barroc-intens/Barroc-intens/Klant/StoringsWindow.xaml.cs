@@ -30,6 +30,9 @@ namespace Barroc_intens
         public StoringsWindow()
         {
             this.InitializeComponent();
+            using var db = new AppDbContext();
+            var products = db.Products.ToList();
+            ProductCombobox.ItemsSource = products;
         }
 
         private void BSubmit_Click(object sender, RoutedEventArgs e)
@@ -43,10 +46,11 @@ namespace Barroc_intens
                 employeeList = db.Users.Where(u => u.JobFunctionId == 5).ToList();
                 int index = r.Next(employeeList.Count);
                 User randomEmployee = employeeList[index];
+                var product = (Product)ProductCombobox.SelectedItem;
                 //Toevoegen aan de database
                 db.FaultyRequests.Add(new FaultyRequest
                 {
-                    ProductId = tbFaultyRequestproduct.Text,
+                    ProductId = product.Id,
                     UserId = LoginWindow.LoggedInUser.Id,
                     Employee = randomEmployee,
                     ScheduledAt = DateTime.Now,
@@ -57,6 +61,8 @@ namespace Barroc_intens
                     );
 
                 db.SaveChanges();
+                var klantenWindow = new KlantenWindow(LoginWindow.LoggedInUser);
+                klantenWindow.Activate();
                 this.Close();
             }
             catch (FormatException)

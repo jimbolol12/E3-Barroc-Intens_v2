@@ -47,10 +47,10 @@ Background="#FDD716">
                 <TextBlock Text="Datum"></TextBlock>
                 <DatePicker x:Name="tbDateAdded"></DatePicker>
                 <StackPanel>
-                    <TextBlock Text="Select Maintenance Product:"/>
+                    <TextBlock Text="Selecteer Maintenance Product:"/>
                     <ComboBox x:Name="cmbProducts" DisplayMemberPath="Name" SelectedValuePath="Id"/>
 
-                    <TextBlock Text="Quantity Used:"/>
+                    <TextBlock Text="aantal producten gebruikt:"/>
                     <TextBox x:Name="txtQuantity" />
 
                     <Button Content="Add to List" Click="BtnAdd_Click"/>
